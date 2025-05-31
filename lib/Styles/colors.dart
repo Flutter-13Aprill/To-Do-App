@@ -1,0 +1,25 @@
+import 'dart:ui';
+
+Color primaryColor = const Color.fromRGBO(134, 135, 231, 1);
+Color backgroundColor = const Color.fromRGBO(18, 18, 18, 1);
+Color yellowishGreen = const Color.fromRGBO(204, 255, 128, 1);
+Color lightRed = const Color.fromRGBO(255, 150, 128, 1);
+Color lightTurquoise = const Color.fromRGBO(128, 255, 255, 1);
+Color greenyTurquoise = const Color.fromRGBO(128, 255, 217, 1);
+Color lightPurple = const Color.fromRGBO(128, 156, 255, 1);
+Color pink = const Color.fromRGBO(255, 128, 235, 1);
+Color lightGreen = const Color.fromRGBO(128, 255, 163, 1);
+Color lightBlue = const Color.fromRGBO(128, 209, 255, 1);
+Color darkBlue = const Color.fromRGBO(0, 105, 163, 1);
+Color differentPink = const Color.fromRGBO(252, 128, 255, 1);
+Color beige = const Color.fromRGBO(255, 204, 128, 1);
+Color darkBeige = const Color.fromRGBO(163, 98, 0, 1);
+Color greenish = const Color.fromRGBO(128, 255, 209, 1);
+Color darkGreen = const Color.fromRGBO(0, 163, 105, 1);
+Color mainText = const Color.fromRGBO(255, 255, 255, 0.87);
+Color borderColor = const Color.fromRGBO(151, 151, 151, 1);
+Color textFieldBackground = const Color.fromRGBO(29, 29, 29, 1);
+Color errorColor = const Color.fromRGBO(255, 73, 73, 1);
+Color containerColor = const Color.fromRGBO(54, 54, 54, 1);
+Color dayColor = const Color.fromRGBO(39, 39, 39, 1);
+Color searchBarColor = const Color.fromRGBO(29, 29, 29, 1);

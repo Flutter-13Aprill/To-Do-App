@@ -1,0 +1,140 @@
+{
+    "OnboardingScreen": {
+        "tab1Title": "Manage your tasks",
+        "tab1Subtitle": "You can easily manage all of your daily tasks in DoMe for free",
+        "tab2Title": "Create daily routine",
+        "tab2Subtitle": "In Uptodo  you can create your personalized routine to stay productive",
+        "tab3Title": "Orgonaize your tasks",
+        "tab3Subtitle": "You can organize your daily tasks by adding your tasks into separate categories",
+        "nextButton": "Next",
+        "backButton": "Back",
+        "skipButton": "Skip",
+        "getStartedButton": "Get Started"
+    },
+    "StartScreen": {
+        "title": "Welcome to UpTodo",
+        "subtitle": "Please login to your account or create new account to continue",
+        "loginButton": "Log In",
+        "createAnAccount": "Create an Account"
+    },
+    "LoginScreen": {
+        "title": "Login",
+        "usernamePlaceholder": "Enter your username",
+        "passwordPlaceholder": "●●●●●●●●",
+        "loginButton": "LogIn",
+        "passwordValidationError": "Please enter a valid email and password.",
+        "forgotPassword": "Forgot Password?",
+        "dontHaveAnAccount":"Don't have an accout? ",
+        "register": "Register"
+    },
+    "RegisterScreen": {
+        "title": "Register",
+        "usernameLabel": "Username",
+        "passwordLabel": "Password",
+        "confirmPasswordLabel": "Confirm Password",
+        "usernamePlaceholder": "Enter your username",
+        "passwordPlaceholder": "●●●●●●●●",
+        "confirmPasswordPlaceholder": "●●●●●●●●",
+        "signUpButton": "Register",
+        "passwordValidationError": "The password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number.",
+        "passwordsDontMatchError": "The passwords do not match.",
+        "usernameValidationError": "Please enter a valid username.",
+        
+        "alreadyHaveAccount": "Already have an account?",
+        "loginTextButton":" Log In"
+    },
+    "IndexScreen" : {
+        "tab":"Index",
+        "title": "What do you want to do today?",
+        "subtitle": "Tap + to add your tasks",
+        "searchPlaceholder": "Search for your task..."
+    },
+    "TaskSheet":{
+        "title":"Add Task",
+        
+        "taskNamePlaceholder": "Do Math Homework",
+        "taskDescriptionPlaceholder": "Complete the math exercises from chapter 5",
+        "taskPriority": "Task Priority",
+        "cancelButton": "Cancel",
+        "chooseTimeButton": "Choose Time",
+        "saveButton": "Save"
+
+
+    },
+    "CategoryScreen": {
+        "title": "Create a new category",
+        "categoryName": "Category Name:",
+        "categoryNamePlaceholder": "Category name",
+        "categoryIconTitle": "Category icon:",
+        "categoryIconButton": "Choose an Icon from the library",
+        "categoryColorTitle": "Category color:",
+        "createCategoryButton": "Create Category",
+        "addCategoryButton": "Add Category",
+        "cancelButton": "Cancel",
+        "createNewTitle": "Create New",
+        "chooseCategory": "Choose Category"
+    },
+    "TaskScreen": {
+        "taskTime": "Task Time:",
+        "taskCategory": "Task Category:",
+        "taskPriority": "Task Priority:",
+        "subTask": "Subtask:",
+        "todoNameValidationError": "Please enter all the valid task details.",
+        "todoDescriptionValidationError" : "Please enter a task description.",
+        "editTaskButton": "Edit Task",
+        "deleteButton": "Delete Task"
+    }
+    ,
+    "EditTaskDialog":{
+        "title":"Edit Task"
+    }
+    , "DeleteTaskDialog": {
+        "title": "Delete Task",
+        "message": "Are you sure you want to delete this task?",
+        "taskTitle": "Task title: ",
+        "cancelButton": "Cancel",
+        "deleteButton": "Delete"
+    },
+    "CalendarScreen": {
+        "title": "Calendar",
+        "todayTab": "Today",
+        "completed": "Completed"
+    }
+, "ProfileScreen":{
+    "title": "Profile",
+    "tasksCompleted": "Tasks Completed",
+    "tasksLeft": "Tasks Left",
+    "settingsSection": "Settings",
+    "settingsTile":"App Settings",
+    "accountSection": "Account",
+    "changeAccountNameTile": "Change Account Name",
+    "changeAccountImageTile": "Change Account Image",
+    "changeAccountPasswordTile": "Change Account Password",
+    "logOutTile": "Log Out"
+
+},
+"ChangeAccountNameDialog": {
+    "title": "Change Account Name",
+    "namePlaceholder": "Enter your new account name",
+    "changeButton": "Edit",
+    "cancelButton": "Cancel"},
+    
+    "changeAccountPasswordDialog": {
+    "title": "Change Account Password",
+    "oldPasswordLabel": "Enter your old password",
+    "oldPasswordPlaceholder": "●●●●●●●●",
+    "newPasswordPlaceholder": "●●●●●●●●",
+    "newPasswordLabel": "Enter your new password"}
+, "changeAccountImageDialog": {
+    "title": "Change Account Image",
+    "takeAPictureButton": "Take a Picture",
+    "importFromGalleryButton": "Import from Gallery"},
+    "SettingsScreen": {
+        "title": "Settings",
+        "sectionTitle": "Settings",
+        "appColorTile": "Change App Color",
+        "language": "Change app language"
+
+    }
+
+}
