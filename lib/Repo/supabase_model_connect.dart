@@ -10,6 +10,14 @@ class SupabaseConnect {
   List<ToDoModel> todosList = [];
   User? user;
 
+  String getUserName() {
+    return user?.email?.split('@').first ?? "Guest";
+  }
+
+  int howManyTodosDone() {
+    return todosList.where((todo) => todo.isDone).length;
+  }
+
   Future<void> init() async {
     try {
       await dotenv.load(fileName: ".env");

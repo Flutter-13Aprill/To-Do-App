@@ -91,7 +91,7 @@ class SignUpScreen extends StatelessWidget {
                           child: TextButton(
                             onPressed: () => Navigator.of(context).pop(),
                             child: Text(
-                              'Already have an account? Login',
+                              "${context.tr("RegisterScreen.alreadyHaveAccount")} ${context.tr("RegisterScreen.loginTextButton")}",
                               style: TextStyle(
                                 color: primaryColor,
                                 fontSize: 14,

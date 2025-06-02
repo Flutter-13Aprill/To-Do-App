@@ -61,6 +61,7 @@ class CategoriesGrid extends StatelessWidget {
                           backgroundColor: cat.backgroundColor,
                           onTap: () {
                             bloc.selectedCategory = cat;
+                            Navigator.pop(context);
                           },
                           iconColor: colors[Random().nextInt(colors.length)],
                         );

@@ -83,9 +83,11 @@ class PriorityDialog extends StatelessWidget {
                       ),
                     ),
                     ElevatedButton(
-                      onPressed: () async {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                       child: Text(
-                        context.tr("TaskSheet.chooseTimeButton"),
+                        context.tr("TaskSheet.saveButton"),
                         style: TextStyle(color: mainText),
                       ),
                     ),

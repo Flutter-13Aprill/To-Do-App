@@ -17,12 +17,11 @@
     "loginButton": "تسجيل الدخول",
     "createAnAccount": "إنشاء حساب"
   },
-  "loginScreen": {
+  "LoginScreen": {
     "title": "تسجيل الدخول",
     "usernamePlaceholder": "أدخل اسم المستخدم",
     "passwordPlaceholder": "●●●●●●●●",
-            "passwordValidationError": "يرجى إدخال اسم مستخدم وكلمة مرور صالحين.",
-
+    "passwordValidationError": "يرجى إدخال اسم مستخدم وكلمة مرور صالحين.",
     "loginButton": "تسجيل الدخول",
     "forgotPassword": "هل نسيت كلمة المرور؟",
     "createAccount": "إنشاء حساب"
