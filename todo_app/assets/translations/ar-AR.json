@@ -1,0 +1,22 @@
+{
+  "titleOnboard1": "إدارة مهامك",
+  "subTitleOnboard1": "يمكنك بسهولة إدارة جميع مهامك اليومية في DoMe مجانًا",
+  "titleOnboard2": "إنشاء روتين يومي",
+  "subTitleOnboard2": "في Uptodo يمكنك إنشاء روتين مخصص للبقاء منتجًا",
+  "titleOnboard3": "تنظيم مهامك",
+  "subTitleOnboard3": "يمكنك تنظيم مهامك اليومية عن طريق إضافتها إلى فئات منفصلة",
+  "index": "الرئيسية",
+  "calendar": "التقويم",
+  "profile": "الملف الشخصي",
+    "settings": "الإعدادات",
+  "appSettings": "إعدادات التطبيق",
+  "changeAccountName": "تغيير اسم الحساب",
+  "changeAccountPassword": "تغيير كلمة مرور الحساب",
+  "changeAccountImage": "تغيير صورة الحساب",
+  "logout": "تسجيل الخروج",
+  "account": "الحساب",
+  "changeAppColor": "تغيير لون التطبيق",
+  "changeAppLanguage": "تغيير لغة التطبيق",
+  "whatToDoToday": "ماذا تريد أن تفعل اليوم؟",
+  "tapToAddTasks": "اضغط + لإضافة مهامك"
+}
