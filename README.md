@@ -1,75 +1,68 @@
 # 📝 To-Do App Development
 
-![To-Do App](https://paper-attachments.dropboxusercontent.com/s_00CD5CACA09F1C68917B504E80CC816F26752426CE251F931A757D85A4A86FEC_1734423199269_image.png)
 
 ---
 
 ## 📘 Introduction
 
-The goal of this project is to develop a **To-Do Application**. This app will allow users to manage their daily tasks efficiently by adding, organizing, and viewing tasks. You will focus on creating a polished, functional app with a **user-friendly design**.
+ دThis project aims to develop a To-Do Application that helps users efficiently manage and organize their daily tasks through a simple interface and user-friendly design. The app allows users to add, view, and organize tasks, and includes essential screens such as intro screens, login and registration screens, a main screen for managing tasks, a calendar screen to view tasks by date, and a settings screen for customizing the user experience.
 
-The app will include several features and screens, such as:
-
-- Intro Screens for welcoming the user.
-- Login & Register screens for user authentication.
-- A Home Screen for managing tasks.
-- A Calendar Screen for viewing tasks by date.
-- A Settings Screen for customization.
 
 ---
 
-## 📱 Core Functionality
+### 🔍 Project Preview
 
-- Intro Screens  
-- Login & Register Screens  
-- Home Screen (Index)  
-- Category Screens  
-- Task Screen  
-- Calendar Screen  
-- User Profile Screen  
-- Settings Screen  
+
+[🎥 Watch Project Preview on Google Drive]()
+
+
+---
+### 📦 Packages Used
+
+- **flutter_bloc**
+- **dotted_border**
+- **image_picker**
+- **path_provider**
+- **flutter_inset_shadow**
+-  **supabase_flutter**
+- **intl**
+- **flutter_dotenv**
+- **dart_mappable**
+- **get_it**
 
 ---
 
-## 🔧 Concepts to Implement
-
-- Custom Theme Design  
-- Form Validation  
-- Localization Support  
-- BLoC Pattern  
-- Supabase Integration  
-- Dependency Injection using GetIt  
-
-> **Note:**  
-> _All logical operations should be performed within the interface._
+### ⚙️ Tech Stack
+- **Flutter**
+- **Dart**
 
 ---
+### 💻  Setup instructions 
 
-## 🎨 Figma Design
+ 1. Clone the repository:
 
-- [Figma Design Link (Main)](https://www.figma.com/design/uRS0DgqudB60wE47MadsFB/todo-app?node-id=1-16749&t=BWTFqAeY2FjwyIRe-1)  
-- [Figma Design Link (Alternative)](https://www.figma.com/design/uRS0DgqudB60wE47MadsFB/todo-app?node-id=1-16749&t=BWTFqAeY2FjwyIRe-1)
+```
+https://github.com/RemasNg1/To-Do-App.git
+```
+2. Navigate to the project folder:
+
+```
+cd To-Do-App\todo_list
+```
+
+3. Install dependencies:
+```
+flutter pub get
+```
+
+ 4. Run the app:
+ ```
+ flutter run 
+ ```  
 
 ---
+### 🖊️ Author
+Remas Alnugaithan
 
-## 💻 GitHub Submission Guidelines
 
-- Your pull request must include a **well-structured `README.md` file**.
-- The README should include:
-  - Description of the project  
-  - Setup instructions  
-  - A screenshot of your app  
 
----
-
-## ⏰ Deadline
-
-**Your project must be submitted by June 2, before 10:00 AM.**
-
----
-
-## 🌟 Reminder
-
-> Dream big,  
-> Code smart,  
-> And never stop learning. 🌠💡
