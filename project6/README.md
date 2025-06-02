@@ -33,8 +33,14 @@ not any todo app a todo app that even can clean your backyard !!!
 
 ## 📦 Packages
 
- [Flutter Bloc](https://pub.dev/packages/flutter_bloc)
- [Dotted Border](https://pub.dev/packages/dotted_border)
+ [Flutter Bloc](https://pub.dev/packages/flutter_bloc)<br>
+ [Dotted Border](https://pub.dev/packages/dotted_border)<br>
+ [Screen util](https://pub.dev/packages/flutter_screenutil)<br>
+ [Supabase flutter](https://pub.dev/packages/supabase_flutter)<br>
+ [Easy localization](https://pub.dev/packages/easy_localization)<br>
+ [Get it](https://pub.dev/packages/get_it)<br>
+ [Dart mappable](https://pub.dev/packages/dart_mappable)<br>
+ [Flutter dotenv](https://pub.dev/packages/flutter_dotenv)
  
 
 
@@ -86,7 +92,7 @@ plaese if you have any suggestions contact me <a href="mailto:aymangormallah@gma
 
 
 
-You might ask why I made this app, to create a to-do that reminds me to finish the app later.
+You might ask why I made this app, just so I could make a todo that reminds me to finish making the app.
 
 
 
