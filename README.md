@@ -20,11 +20,7 @@
 ### 📦 Packages Used
 
 - **flutter_bloc**
-- **dotted_border**
-- **image_picker**
-- **path_provider**
-- **flutter_inset_shadow**
--  **supabase_flutter**
+- **supabase_flutter**
 - **intl**
 - **flutter_dotenv**
 - **dart_mappable**
