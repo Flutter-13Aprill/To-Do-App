@@ -19,7 +19,7 @@ The streak is halted, not shattered but standing down, not by failure, but by th
 
 ---
 
-This project shall not be completed — not today.  
+This project shall be completed — not today.  
 
 The fire inside will blaze anew after Eid Al-Adha, sharper, stronger, and relentless, with a mind honed like the edge of a blade, ready to conquer what lies ahead.  
 
