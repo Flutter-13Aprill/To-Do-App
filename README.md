@@ -1,75 +1,115 @@
 # 📝 To-Do App Development
+## Overview
+This project is a To-Do application developed using Flutter. It allows users to manage their tasks, set reminders, and organize their daily activities effectively. The application features a clean and modern user interface, providing an intuitive experience for users.
 
-![To-Do App](https://paper-attachments.dropboxusercontent.com/s_00CD5CACA09F1C68917B504E80CC816F26752426CE251F931A757D85A4A86FEC_1734423199269_image.png)
+## Features
+User Authentication:
 
----
+Users can register and log in to their accounts.
+The app supports user account management, including profile updates.
 
-## 📘 Introduction
+Task Management:
 
-The goal of this project is to develop a **To-Do Application**. This app will allow users to manage their daily tasks efficiently by adding, organizing, and viewing tasks. You will focus on creating a polished, functional app with a **user-friendly design**.
+Users can create, edit, and delete tasks.
+Tasks can have titles, descriptions, due dates, categories, and priority levels.
+Completed tasks can be marked and filtered.
 
-The app will include several features and screens, such as:
+Calendar Integration:
 
-- Intro Screens for welcoming the user.
-- Login & Register screens for user authentication.
-- A Home Screen for managing tasks.
-- A Calendar Screen for viewing tasks by date.
-- A Settings Screen for customization.
+A calendar view to visualize tasks based on due dates.
+Users can toggle between viewing today's tasks and completed tasks.
+Category Management:
 
----
+Users can create and customize categories for better organization.
+Categories can have specific icons and colors for easy identification.
 
-## 📱 Core Functionality
+Onboarding Experience:
 
-- Intro Screens  
-- Login & Register Screens  
-- Home Screen (Index)  
-- Category Screens  
-- Task Screen  
-- Calendar Screen  
-- User Profile Screen  
-- Settings Screen  
+A welcoming onboarding screen to guide new users through the app features.
+Users can skip the onboarding process if they are familiar with the app.
 
----
+Responsive Design:
 
-## 🔧 Concepts to Implement
+The app is designed to be responsive and works well on various screen sizes.
 
-- Custom Theme Design  
-- Form Validation  
-- Localization Support  
-- BLoC Pattern  
-- Supabase Integration  
-- Dependency Injection using GetIt  
+State Management:
 
-> **Note:**  
-> _All logical operations should be performed within the interface._
+The application uses the BLoC (Business Logic Component) pattern to manage state efficiently.
 
----
+Dark Mode:
 
-## 🎨 Figma Design
+The app features a dark theme, providing a visually appealing experience, especially in low-light environments.
 
-- [Figma Design Link (Main)](https://www.figma.com/design/uRS0DgqudB60wE47MadsFB/todo-app?node-id=1-16749&t=BWTFqAeY2FjwyIRe-1)  
-- [Figma Design Link (Alternative)](https://www.figma.com/design/uRS0DgqudB60wE47MadsFB/todo-app?node-id=1-16749&t=BWTFqAeY2FjwyIRe-1)
+Technologies Used
+Flutter: For building cross-platform mobile applications.
+Dart: The programming language used for Flutter development.
+BLoC: For state management.
 
----
 
-## 💻 GitHub Submission Guidelines
+## ⚙️ Setup Instructions
 
-- Your pull request must include a **well-structured `README.md` file**.
-- The README should include:
-  - Description of the project  
-  - Setup instructions  
-  - A screenshot of your app  
+Clone the repository: Use the command line: git clone <Your Repository Path>
 
----
+Install dependencies: Make sure you have Flutter installed. Then run: flutter pub get
 
-## ⏰ Deadline
+Run the app: You can launch the app using: flutter run
 
-**Your project must be submitted by June 2, before 10:00 AM.**
+Note: You need a working emulator or a connected real device
 
----
+# 📱Screen Design Overview
 
-## 🌟 Reminder
+## Splash Screen
+![alt text](ScreenShout/image.png)
 
-> Dream big,  
-> Code smart,  
-> And never stop learning. 🌠💡
+## Onboarding Screen
+
+### Onboarding 1 Screen
+![alt text](ScreenShout/image-1.png)
+
+###   Onboarding 2 Screen
+
+![alt text](ScreenShout/image-2.png)
+###   Onboarding 3 Screen
+
+![alt text](ScreenShout/image-3.png)
+
+## Started Screen
+![alt text](ScreenShout/image-4.png)
+
+## Register  Screen 
+![alt text](ScreenShout/image-6.png)
+## Login Screen
+![alt text](ScreenShout/image-5.png)
+
+## Index Screen before added task
+![alt text](ScreenShout/image-7.png)
+
+## Index Screen after added task
+![alt text](ScreenShout/image-8.png)
+
+## berfor edit to the task
+![alt text](ScreenShout/image-9.png)
+
+## After edited and added other task
+![alt text](ScreenShout/image-10.png)
+
+## Dialog show deleted task with name
+![alt text](ScreenShout/image-11.png)
+
+## After deleted task 
+![alt text](ScreenShout/image-12.png)
+
+## Calendar Screen 
+![alt text](ScreenShout/image-13.png)
+
+## Profile Screen
+![alt text](ScreenShout/image-14.png)
+
+## Settings Screen
+![alt text](ScreenShout/image-15.png)
+
+## change account name Dialog
+
+![alt text](ScreenShout/image-16.png)
+## Change Image BottomSheet
+![alt text](ScreenShout/image-17.png)
