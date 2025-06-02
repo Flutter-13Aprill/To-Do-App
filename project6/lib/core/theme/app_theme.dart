@@ -10,6 +10,22 @@ class AppTheme {
       foregroundColor: AppPalette.whiteColor,
       centerTitle: true,
     ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: AppPalette.lightBlack2,
+      selectedItemColor: AppPalette.whiteColor,
+      unselectedItemColor: AppPalette.grayColor,
+    ),
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: AppPalette.lightPurple,
+      foregroundColor: AppPalette.whiteColor,
+      shape: CircleBorder(),
+      iconSize:32,
+      sizeConstraints:BoxConstraints(
+        minWidth: 64,
+        minHeight: 64,
+
+      )
+    ),
     //Elevated Button Theme
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(

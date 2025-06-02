@@ -46,8 +46,11 @@ class AppText {
   static const String task = "Add Task";
   static const String hintTask = "Do math homework";
   static const String description = "Description";
- 
+  static const String hintDescription = "Do chapter 2 to 5 for next week";
 
-
-
+//Flag
+static const String priority = "Task Priority";
+static const String cancel = "Cancel";
+static const String save = "Save";
+static const String time = "Choose Time";
 }
