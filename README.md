@@ -20,30 +20,30 @@ With a focus on usability and performance, the app delivers a seamless user expe
 
 ## 🔍 Features
 
-1. ** User Registration with Supabase:**
-   - Seamless sign-up functionality using Supabase Authentication to securely register new users.
+1. **User Registration with Supabase:**
+    - Seamless sign-up functionality using Supabase Authentication to securely register new users.
 
 
 
 2. **Add Task to Supabase:**
-   - Allows users to create and store tasks in the Supabase database with relevant details such as title and description.
+    - Allows users to create and store tasks in the Supabase database with relevant details such as title and description.
 
 
      
 
 3. **Update Task Completion Status:**
-   - Enables users to mark tasks as complete or incomplete, with real-time updates saved to Supabase.
+    - Enables users to mark tasks as complete or incomplete, with real-time updates saved to Supabase.
 
 
      
 
-4. ** Update User Name (Locally):**
- - Users can edit their display name within the app. Changes are saved locally without using Supabase.
+4. **Update User Name (Locally):**
+  - Users can edit their display name within the app. Changes are saved locally without using Supabase.
 
 
 
 5. **Change Profile Picture (Locally):**
-   - Allows users to select and update their profile picture from their device. The image is handled locally, not uploaded to Supabase.
+    - Allows users to select and update their profile picture from their device. The image is handled locally, not uploaded to Supabase.
 
 
 
