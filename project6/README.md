@@ -1,6 +1,6 @@
 <img src = "assets/github/Tuwaiq.png" alt = "Tuwaiq - Output">
 
-#  Recpies App ✅📜
+#  Todo App ✅📜
 
 
 This project is a project I personally waited for a long time a project where I can use it to orgnize my todos you gussed it right my fella programmer without any hints a todo app !
