@@ -25,7 +25,7 @@ not any todo app a todo app that even can clean your backyard !!!
 - ✅ **Check please 🪱** – you can check your todos and mark them as done ! (if you know the refrence in the title you are a LEGEND)
 - 🔎 **Search** – You can look for your Long Lost Tasks.
 - 💻 **Supabase** – connected to database you can signup and login also the tasks will appear their !!!
-- 🖼️ **** – You have your own profile and the others can follow you and you can follow them too and share with them your amazing recpies !!!!.
+- 🖼️ **Onboarding** – Onboarding screen smooth and explains the app well.
 - 📱 **Splash Screen** – Ofcourse a masterpiece no discussion needed
 
 
