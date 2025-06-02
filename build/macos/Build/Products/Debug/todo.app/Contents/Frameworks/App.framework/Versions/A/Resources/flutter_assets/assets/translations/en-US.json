@@ -1,0 +1,34 @@
+{
+    "onboarding_screen": {
+        "first_title": "Manage your tasks",
+        "first_body": "You can easily manage all of your daily tasks in DoMe for free",
+        "second_title": "Create daily routine",
+        "second_body": "In Uptodo  you can create your personalized routine to stay productive",
+        "third_title": "Organize your tasks",
+        "third_body": "You can organize your daily tasks by adding your tasks into separate categories",
+        "skip": "SKIP",
+        "back": "BACK",
+        "next": "NEXT",
+        "get_started": "GET STARTED"
+    },
+
+    "auth_start_screen": {
+        "title": "Welcome to UpTodo",
+        "body": "Please login to your account or create new account to continue",
+        "login_text" : "LOGIN",
+        "create_account_text": "CREATE ACCOUNT"
+    },
+
+    "auth_screen": {
+        "login": "Login",
+        "register": "Register",
+        "username": "Username",
+        "password": "Password",
+        "confirm_password": "Confirm Password",
+        "asking_for_username": "Enter your username",
+        "asking_for_password": "Enter your password",
+        "asking_to_confirming_password": "Confirm your password",
+        "not_have_account": "Don’t have an account?",
+        "have_have_account": "Already have an account?"
+    }
+}

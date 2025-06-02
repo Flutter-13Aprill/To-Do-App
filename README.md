@@ -1,75 +1,34 @@
-# 📝 To-Do App Development
+# ⚔️ Rest in Peace, O Knight Mohammed 🛡️  
 
-![To-Do App](https://paper-attachments.dropboxusercontent.com/s_00CD5CACA09F1C68917B504E80CC816F26752426CE251F931A757D85A4A86FEC_1734423199269_image.png)
+### *A Tribute to the End of a Glorious Streak*
 
----
+There comes a time when even the fiercest fire must dim, when even the most unstoppable force must pause.  
 
-## 📘 Introduction
-
-The goal of this project is to develop a **To-Do Application**. This app will allow users to manage their daily tasks efficiently by adding, organizing, and viewing tasks. You will focus on creating a polished, functional app with a **user-friendly design**.
-
-The app will include several features and screens, such as:
-
-- Intro Screens for welcoming the user.
-- Login & Register screens for user authentication.
-- A Home Screen for managing tasks.
-- A Calendar Screen for viewing tasks by date.
-- A Settings Screen for customization.
+Every streak — no matter how legendary — must meet its inevitable end.  
 
 ---
 
-## 📱 Core Functionality
+Today, I sheath my sword, not in defeat, but as a warrior honoring the battles won.  
 
-- Intro Screens  
-- Login & Register Screens  
-- Home Screen (Index)  
-- Category Screens  
-- Task Screen  
-- Calendar Screen  
-- User Profile Screen  
-- Settings Screen  
+A streak forged in fire, unbroken — until this moment.  
+
+**Rest in peace, O Knight Mohammed.**  
+
+The code will not flow today.  
+The streak is halted, not shattered but standing down, not by failure, but by the weight of the fight.  
 
 ---
 
-## 🔧 Concepts to Implement
+This project shall not be completed — not today.  
 
-- Custom Theme Design  
-- Form Validation  
-- Localization Support  
-- BLoC Pattern  
-- Supabase Integration  
-- Dependency Injection using GetIt  
+The fire inside will blaze anew after Eid Al-Adha, sharper, stronger, and relentless, with a mind honed like the edge of a blade, ready to conquer what lies ahead.  
 
-> **Note:**  
-> _All logical operations should be performed within the interface._
+Until then, silence this repo, and hold the banner of Mohammed high — folded, but never fallen.
 
 ---
 
-## 🎨 Figma Design
+## 📌 Note to the Reader
 
-- [Figma Design Link (Main)](https://www.figma.com/design/uRS0DgqudB60wE47MadsFB/todo-app?node-id=1-16749&t=BWTFqAeY2FjwyIRe-1)  
-- [Figma Design Link (Alternative)](https://www.figma.com/design/uRS0DgqudB60wE47MadsFB/todo-app?node-id=1-16749&t=BWTFqAeY2FjwyIRe-1)
+This repository marks a pause, not weakness but calculated strength, not surrender but strategy.  
 
----
-
-## 💻 GitHub Submission Guidelines
-
-- Your pull request must include a **well-structured `README.md` file**.
-- The README should include:
-  - Description of the project  
-  - Setup instructions  
-  - A screenshot of your app  
-
----
-
-## ⏰ Deadline
-
-**Your project must be submitted by June 2, before 10:00 AM.**
-
----
-
-## 🌟 Reminder
-
-> Dream big,  
-> Code smart,  
-> And never stop learning. 🌠💡
+The Knight will rise again, and when he does, let all projects beware.
