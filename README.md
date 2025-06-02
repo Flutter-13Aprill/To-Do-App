@@ -1,75 +1,122 @@
-# 📝 To-Do App Development
+![image alt](https://cdn.tuwaiq.edu.sa/landing/images/logo/logo-h.png)
 
-![To-Do App](https://paper-attachments.dropboxusercontent.com/s_00CD5CACA09F1C68917B504E80CC816F26752426CE251F931A757D85A4A86FEC_1734423199269_image.png)
 
----
+# 📘  ToDo App — Overview
 
-## 📘 Introduction
 
-The goal of this project is to develop a **To-Do Application**. This app will allow users to manage their daily tasks efficiently by adding, organizing, and viewing tasks. You will focus on creating a polished, functional app with a **user-friendly design**.
+This application is a robust task management tool that allows users to register accounts, add tasks, and update their completion status using Supabase as the backend. It offers real-time interaction with the database, enabling efficient organization and tracking of daily tasks.
 
-The app will include several features and screens, such as:
+The app also includes local profile customization features, allowing users to change their display name and profile picture directly within the app, without relying on Supabase or any external storage service.
 
-- Intro Screens for welcoming the user.
-- Login & Register screens for user authentication.
-- A Home Screen for managing tasks.
-- A Calendar Screen for viewing tasks by date.
-- A Settings Screen for customization.
+With a focus on usability and performance, the app delivers a seamless user experience for managing tasks and personal settings.
 
----
 
-## 📱 Core Functionality
 
-- Intro Screens  
-- Login & Register Screens  
-- Home Screen (Index)  
-- Category Screens  
-- Task Screen  
-- Calendar Screen  
-- User Profile Screen  
-- Settings Screen  
+## 📷 Screenshots 
 
----
+![image alt](https://github.com/azizotbb/To-Do-App/blob/90b0fe31c298643c5a993a8c53ac0faf8acb0779/todoapp.jpg)
 
-## 🔧 Concepts to Implement
 
-- Custom Theme Design  
-- Form Validation  
-- Localization Support  
-- BLoC Pattern  
-- Supabase Integration  
-- Dependency Injection using GetIt  
 
-> **Note:**  
-> _All logical operations should be performed within the interface._
+## 🔍 Features
 
----
+1. ** User Registration with Supabase:**
+   - Seamless sign-up functionality using Supabase Authentication to securely register new users.
 
-## 🎨 Figma Design
 
-- [Figma Design Link (Main)](https://www.figma.com/design/uRS0DgqudB60wE47MadsFB/todo-app?node-id=1-16749&t=BWTFqAeY2FjwyIRe-1)  
-- [Figma Design Link (Alternative)](https://www.figma.com/design/uRS0DgqudB60wE47MadsFB/todo-app?node-id=1-16749&t=BWTFqAeY2FjwyIRe-1)
 
----
+2. **Add Task to Supabase:**
+   - Allows users to create and store tasks in the Supabase database with relevant details such as title and description.
 
-## 💻 GitHub Submission Guidelines
 
-- Your pull request must include a **well-structured `README.md` file**.
-- The README should include:
-  - Description of the project  
-  - Setup instructions  
-  - A screenshot of your app  
+     
 
----
+3. **Update Task Completion Status:**
+   - Enables users to mark tasks as complete or incomplete, with real-time updates saved to Supabase.
 
-## ⏰ Deadline
 
-**Your project must be submitted by June 2, before 10:00 AM.**
+     
 
----
+4. ** Update User Name (Locally):**
+ - Users can edit their display name within the app. Changes are saved locally without using Supabase.
 
-## 🌟 Reminder
 
-> Dream big,  
-> Code smart,  
-> And never stop learning. 🌠💡
+
+5. **Change Profile Picture (Locally):**
+   - Allows users to select and update their profile picture from their device. The image is handled locally, not uploaded to Supabase.
+
+
+
+
+## 📦 Packages
+`easy_localization`
+
+`google_fonts`
+
+`flutter_bloc`
+
+`image_picker`
+
+`supabase_flutter`
+
+`flutter_dotenv`
+
+`get_it`
+
+`dart_mappable`
+
+`easy_date_timeline`
+
+
+
+
+
+##  🎨 Figma UI:
+https://www.figma.com/design/uRS0DgqudB60wE47MadsFB/todo-app?node-id=1-16749&t=fzim0ujdDDsexCWB-0
+
+
+## Tech Stack
+
+- Flutter (latest version) 
+- Dart
+
+
+
+## Installation
+
+1.  Clone the repository:
+
+    `https://github.com/azizotbb/To-Do-App.git` 
+
+2.  Navigate to the project folder:
+
+    `cd To-Do-App` 
+
+3.  Install dependencies:
+
+    `flutter pub get` 
+
+4.  Run the app:
+
+    `flutter run`
+
+
+
+
+## Folder Structure
+
+    lib/
+    ├── layer_data/
+    ├── model/
+    ├── repo/
+    ├── screens/
+    ├── style/
+    ├── utilts/
+    ├── widgets/
+    └── main.dart
+    
+
+    
+## ✨ Author
+
+- AbdulAziz Alotaibi
