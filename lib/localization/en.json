@@ -1,0 +1,14 @@
+{
+    "app_name": "UpTodo",
+    "welcome_title": "Welcome to UpTodo",
+    "welcome_subtitle": "Please login to your account or create new account to continue",
+    "login": "Login",
+    "create_account": "Create Account",
+    "skip": "SKIP",
+    "next": "NEXT",
+    "get_started": "GET STARTED",
+    "manage_tasks": "Manage your tasks",
+    "create_routine": "Create daily routine",
+    "organize_tasks": "Organize your tasks"
+  }
+  
