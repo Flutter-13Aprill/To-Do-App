@@ -1,75 +1,61 @@
-# 📝 To-Do App Development
+# 📝 UpTodo - Flutter To-Do App
 
-![To-Do App](https://paper-attachments.dropboxusercontent.com/s_00CD5CACA09F1C68917B504E80CC816F26752426CE251F931A757D85A4A86FEC_1734423199269_image.png)
+A modern to-do list app built with **Flutter**, using **Supabase** for backend and **BLoC** for state management. It supports light/dark themes, localization, and real-time task storage.
 
----
+## 🚀 Features
 
-## 📘 Introduction
+- Login and Register functionality
+- Add tasks with title, date, time, and priority
+- View tasks on the home screen
+- Clean and dark UI design
+- Supports English and Arabic languages
+- State management using BLoC
+- Cloud sync with Supabase
 
-The goal of this project is to develop a **To-Do Application**. This app will allow users to manage their daily tasks efficiently by adding, organizing, and viewing tasks. You will focus on creating a polished, functional app with a **user-friendly design**.
+## 🛠️ Technologies Used
 
-The app will include several features and screens, such as:
+- Flutter 3.8+
+- Supabase
+- flutter_bloc
+- get_it
+- intl
+- flutter_localizations
 
-- Intro Screens for welcoming the user.
-- Login & Register screens for user authentication.
-- A Home Screen for managing tasks.
-- A Calendar Screen for viewing tasks by date.
-- A Settings Screen for customization.
 
----
+## 📸 Screenshots
 
-## 📱 Core Functionality
+| Splash Screen           | Onboarding 1           | Onboarding 2           |
+|------------------------|------------------------|------------------------|
+| ![](assets/images/screenshot1.png) | ![](assets/images/screenshot2.png) | ![](assets/images/screenshot3.png) |
 
-- Intro Screens  
-- Login & Register Screens  
-- Home Screen (Index)  
-- Category Screens  
-- Task Screen  
-- Calendar Screen  
-- User Profile Screen  
-- Settings Screen  
+| Onboarding 3           | Start Screen           | Register Screen        |
+|------------------------|------------------------|------------------------|
+| ![](assets/images/screenshot4.png) | ![](assets/images/screenshot5.png) | ![](assets/images/screenshot6.png) |
 
----
+| Home Screen            | Calendar View          | Time Picker            |
+|------------------------|------------------------|------------------------|
+| ![](assets/images/screenshot7.png) | ![](assets/images/screenshot8.png) | ![](assets/images/screenshot9.png) |
 
-## 🔧 Concepts to Implement
+| Priority Selector      | Task Details    |
+|------------------------|------------------------|
+| ![](assets/images/screenshot10.png) | ![](assets/images/screenshot11.png) |
+## 🧾 Getting Started
 
-- Custom Theme Design  
-- Form Validation  
-- Localization Support  
-- BLoC Pattern  
-- Supabase Integration  
-- Dependency Injection using GetIt  
+### 1. Install dependencies
 
-> **Note:**  
-> _All logical operations should be performed within the interface._
+```bash
+flutter pub get
+2. Connect to Supabase
+In main.dart, replace:
 
----
+await Supabase.initialize(
+  url: 'hhttps://rjthvmrfcjqxnpgewpsx.supabase.co',
+  anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJqdGh2bXJmY2pxeG5wZ2V3cHN4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDg4MzI1NTEsImV4cCI6MjA2NDQwODU1MX0.g3-F17TMaYo_2rqI7bFXyymOI6kBm_mDMgZ1GLFM3N8',
+);
 
-## 🎨 Figma Design
 
-- [Figma Design Link (Main)](https://www.figma.com/design/uRS0DgqudB60wE47MadsFB/todo-app?node-id=1-16749&t=BWTFqAeY2FjwyIRe-1)  
-- [Figma Design Link (Alternative)](https://www.figma.com/design/uRS0DgqudB60wE47MadsFB/todo-app?node-id=1-16749&t=BWTFqAeY2FjwyIRe-1)
+3. Run the app
+flutter run
 
----
-
-## 💻 GitHub Submission Guidelines
-
-- Your pull request must include a **well-structured `README.md` file**.
-- The README should include:
-  - Description of the project  
-  - Setup instructions  
-  - A screenshot of your app  
-
----
-
-## ⏰ Deadline
-
-**Your project must be submitted by June 2, before 10:00 AM.**
-
----
-
-## 🌟 Reminder
-
-> Dream big,  
-> Code smart,  
-> And never stop learning. 🌠💡
+# auther
+Ameerah Aloufi
