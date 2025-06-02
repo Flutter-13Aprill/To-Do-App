@@ -8,18 +8,11 @@ You will focus on creating a functional and well-designed app with a user-friend
 
 ---
 
-### Output 📱
-
-(You can add a screenshot or a video link of your app here)
-
----
-
 ### Features ⭐️
 
 - Intro Screens to welcome the user  
 - Login & Register screens for user authentication  
 - Home Screen for managing tasks  
-- Calendar Screen to view tasks by date  
 - Settings Screen for app customization  
 - Category Screens to organize tasks  
 - Task Screen for task details  
@@ -36,4 +29,40 @@ You will focus on creating a functional and well-designed app with a user-friend
 - **GetIt** for dependency injection  
 
 ---
+
+### Installation 🛠️
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/lamyaalsuhaibani/To-Do-App.git
+```
+
+2. Navigate to the project folder:
+
+```bash
+cd To-Do-App.git
+```
+
+3. Fetch dependencies:
+
+```bash
+flutter pub get
+```
+
+4. Run the app:
+
+```bash
+flutter run
+```
+
+---
+
+### Author 👩‍💻
+
+**Lamya Alsuhaibani**
+
+[🌐 Portfolio Website](https://picayune-mouth-ade.notion.site/Lamya-Alsuhaibani-310c29eda5ba40638fa895968d3f630d)
+[💼 LinkedIn](https://www.linkedin.com/in/lamya-a-alsuhaibani/)
+
 
