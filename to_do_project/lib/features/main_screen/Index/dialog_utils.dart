@@ -144,8 +144,12 @@ Future<void> showPriorityDialog(BuildContext context) async {
               ),
               ElevatedButton(
                 onPressed: () {
+                  context.read<TaskBloc>().add(
+                    TaskPriorityChanged(selectedPriority.toString()),
+                  );
                   Navigator.pop(context);
                 },
+
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF8875FF),
                   minimumSize: const Size(153, 48),

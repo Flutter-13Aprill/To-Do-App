@@ -1,6 +1,7 @@
 // Onboarding Model
 
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 
 class OnboardingModel {
   final String title;
@@ -37,6 +38,9 @@ class TaskModel extends Equatable {
   final DateTime dueDate;
   final String time;
   final String priority;
+  final String categoryName;
+  final IconData categoryIcon;
+  final Color categoryColor;
 
   const TaskModel({
     required this.id,
@@ -45,19 +49,49 @@ class TaskModel extends Equatable {
     required this.dueDate,
     required this.time,
     required this.priority,
+    required this.categoryName,
+    required this.categoryIcon,
+    required this.categoryColor,
   });
 
   @override
-  List<Object?> get props => [id, title, description, dueDate, time, priority];
+  List<Object?> get props => [
+    id,
+    title,
+    description,
+    dueDate,
+    time,
+    priority,
+    categoryName,
+    categoryIcon,
+    categoryColor,
+  ];
 }
 
 // Category Model
 class CategoryModel {
-  final String id;
   final String name;
-  final String colorHex;
+  final IconData icon;
+  final Color color;
 
-  CategoryModel({required this.id, required this.name, required this.colorHex});
+  const CategoryModel({
+    required this.name,
+    required this.icon,
+    required this.color,
+  });
+
+  Map<String, dynamic> toMap() => {
+    'name': name,
+    'iconCodePoint': icon.codePoint,
+    'iconFontFamily': icon.fontFamily,
+    'colorValue': color.value,
+  };
+
+  static CategoryModel fromMap(Map<String, dynamic> map) => CategoryModel(
+    name: map['name'],
+    icon: IconData(map['iconCodePoint'], fontFamily: map['iconFontFamily']),
+    color: Color(map['colorValue']),
+  );
 }
 
 // Settings Model

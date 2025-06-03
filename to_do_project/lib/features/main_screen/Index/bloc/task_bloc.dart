@@ -26,12 +26,25 @@ class TaskBloc extends Bloc<TaskEvent, TaskState> {
       emit(state.copyWith(priority: event.priority));
     });
 
+    on<TaskCategoryChanged>((event, emit) {
+      emit(
+        state.copyWith(
+          categoryName: event.name,
+          categoryIcon: event.icon,
+          categoryColor: event.color,
+        ),
+      );
+    });
+
     on<TaskSubmitted>((event, emit) {
       if (state.title.isEmpty ||
           state.description.isEmpty ||
           state.dueDate == null ||
           state.time.isEmpty ||
-          state.priority.isEmpty) {
+          state.priority.isEmpty ||
+          state.categoryName.isEmpty ||
+          state.categoryIcon == null ||
+          state.categoryColor == null) {
         emit(state.copyWith(isFailure: true));
         return;
       }
@@ -43,11 +56,28 @@ class TaskBloc extends Bloc<TaskEvent, TaskState> {
         dueDate: state.dueDate!,
         time: state.time,
         priority: state.priority,
+        categoryName: state.categoryName,
+        categoryIcon: state.categoryIcon!,
+        categoryColor: state.categoryColor!,
       );
 
       final updatedTasks = List<TaskModel>.from(state.tasks)..add(newTask);
 
-      emit(TaskState.initial().copyWith(tasks: updatedTasks, isSuccess: true));
+      emit(
+        state.copyWith(
+          title: '',
+          description: '',
+          dueDate: null,
+          time: '',
+          priority: '',
+          categoryName: '',
+          categoryIcon: null,
+          categoryColor: null,
+          tasks: updatedTasks,
+          isSuccess: true,
+          isFailure: false,
+        ),
+      );
     });
   }
 }
