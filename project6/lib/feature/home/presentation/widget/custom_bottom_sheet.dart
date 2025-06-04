@@ -107,7 +107,7 @@ class CustomBottomSheet extends StatelessWidget {
                           ],
                         ),
                       ),
-                    ), 
+                    ),
                   );
                 },
                 icon: Icons.local_offer_outlined,
@@ -144,8 +144,9 @@ class CustomBottomSheet extends StatelessWidget {
               ),
               Spacer(),
               CustomIconButton(
-                onPressed: () {
+                onPressed: () async {
                   bloc.add(AddTaskEvent());
+                  context.customPop();
                 },
                 icon: Icons.send,
                 color: AppPalette.purpleColor,

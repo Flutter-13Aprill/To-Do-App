@@ -22,7 +22,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   int? selectedPriority;
   IconData? selectedIcon;
   Color? selectedColor;
-  final List<TaskDataModel> tasks = [];
+  List<TaskDataModel> tasks = [];
   final getItData = GetIt.I.get<LocalStorage>();
   List<CategoryModel> categories = GetIt.I.get<LocalStorage>().categories;
   String get formattedDate => DateFormat('dd/MM/yyyy').format(today);
@@ -30,6 +30,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   HomeBloc() : super(HomeInitial()) {
     on<HomeEvent>((event, emit) {});
+    add(FetchTasksEvent());
     on<GetDateEvent>(dateSelected);
     on<GetTimeEvent>(timeSelected);
     on<TaskPriorityEvent>(taskPrioritySelected);
@@ -115,9 +116,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   ) async {
     emit(HomeLoading());
     try {
-      await SupabaseConnect.getTaskData();
-
-      emit(HomeSuccess());
+      final result = await SupabaseConnect.getTaskData();
+      tasks = result;
+      emit(TasksLoaded(tasks: tasks));
     } catch (e) {
       emit(HomeFailure(message: e.toString()));
     }

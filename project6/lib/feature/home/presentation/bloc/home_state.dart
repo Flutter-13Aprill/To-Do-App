@@ -14,6 +14,11 @@ final class HomeFailure extends HomeState {
   HomeFailure({required this.message});
 }
 
+final class TasksLoaded extends HomeState {
+  final List<TaskDataModel> tasks;
+  TasksLoaded({required this.tasks});
+}
+
 //date
 final class DateSelected extends HomeState {
   final DateTime date;

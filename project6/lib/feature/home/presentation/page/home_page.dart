@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project6/core/text/app_text.dart';
 import 'package:project6/core/text/text_styles.dart';
+import 'package:project6/core/widget/custom_circular_progress.dart';
 import 'package:project6/feature/home/presentation/bloc/home_bloc.dart';
 import 'package:project6/feature/home/presentation/widget/custom_bottom_sheet.dart';
 import 'package:project6/feature/home/presentation/widget/tasks.dart';
@@ -33,19 +34,22 @@ class HomePage extends StatelessWidget {
                 ),
               ],
             ),
-            body: bloc.tasks.isNotEmpty
-                ? Tasks()
-                : Center(
+            body: BlocBuilder<HomeBloc, HomeState>(
+              builder: (context, state) {
+                if (state is HomeLoading) {
+                  return Center(child: CustomCircularProgress());
+                } else if (state is TasksLoaded) {
+                  return Tasks(tasks: bloc.tasks);
+                } else {
+                  return Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SizedBox(
                           height: 227,
                           width: 227,
                           child: Image.asset(
                             "asset/image/Checklist-rafiki 1.jpg",
-                            fit: BoxFit.cover,
                           ),
                         ),
                         SizedBox(height: 10),
@@ -57,7 +61,11 @@ class HomePage extends StatelessWidget {
                         ),
                       ],
                     ),
-                  ),
+                  );
+                }
+              },
+            ),
+
             floatingActionButton: FloatingActionButton(
               onPressed: () {
                 CustomBottomSheet.show(context);

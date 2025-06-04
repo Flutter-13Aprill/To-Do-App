@@ -3,7 +3,7 @@ import 'package:project6/core/service/supabase_connect.dart';
 import 'package:project6/core/service_locator/setup.dart';
 import 'package:project6/core/theme/app_theme.dart';
 import 'package:project6/feature/home/data/model/category/category_model.dart';
-import 'package:project6/feature/home/presentation/page/home_page.dart';
+import 'package:project6/feature/splash/presentation/page/splash_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.theme,
-      home: HomePage(),
+      home: SplashPage(),
     );
   }
 }

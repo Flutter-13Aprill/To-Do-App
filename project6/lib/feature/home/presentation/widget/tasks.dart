@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project6/core/text/text_styles.dart';
 import 'package:project6/core/theme/app_palette.dart';
+import 'package:project6/feature/home/data/model/task_data/task_data_model.dart';
 import 'package:project6/feature/home/presentation/bloc/home_bloc.dart';
 
 class Tasks extends StatelessWidget {
-  const Tasks({super.key});
-
+  const Tasks({super.key, required this.tasks});
+final List<TaskDataModel> tasks;
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(

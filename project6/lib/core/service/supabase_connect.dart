@@ -71,7 +71,7 @@ class SupabaseConnect {
 
   // Insert
   static Future insertTask({required TaskDataModel task}) async {
-    await supabase!.client.from('task_data').insert({task.mapForAddSupabase()});
+    await supabase!.client.from('task_data').insert(task.mapForAddSupabase());
   }
 
   //Read
