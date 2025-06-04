@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,7 +18,6 @@ class CategoriesGrid extends StatelessWidget {
       builder: (context, state) {
         final bloc = context.read<IndexBloc>();
         final categories = bloc.categories.categories;
-        final colors = bloc.categories.colorOptions;
         return AlertDialog(
           backgroundColor: containerColor,
           title: Column(
@@ -61,21 +58,15 @@ class CategoriesGrid extends StatelessWidget {
                           backgroundColor: cat.backgroundColor,
                           onTap: () {
                             bloc.selectedCategory = cat;
-                            Navigator.pop(context);
                           },
-                          iconColor: colors[Random().nextInt(colors.length)],
+                          iconColor: cat.iconColor,
                         );
                       } else {
                         // “Create New” tile
                         return CategoryTile(
                           name: context.tr("CategoryScreen.createNewTitle"),
                           icon: Icons.add,
-                          backgroundColor:
-                              bloc.categories.colorOptions[bloc
-                                      .categories
-                                      .colorOptions
-                                      .length -
-                                  1],
+                          backgroundColor: greenish,
                           onTap: () {
                             Navigator.of(context).push(
                               MaterialPageRoute(

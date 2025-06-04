@@ -62,7 +62,7 @@ class AddDialogCalendar extends StatelessWidget {
                           ),
                           // Customize today's date appearance
                           todayDecoration: BoxDecoration(
-                            color: primaryColor,
+                            color: dayColor,
                             borderRadius: BorderRadius.circular(4.0),
                           ),
                         ),

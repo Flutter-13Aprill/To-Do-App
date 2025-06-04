@@ -42,13 +42,13 @@ class PriorityDialog extends StatelessWidget {
                       final priority = priorities[index];
                       return InkWell(
                         onTap: () {
-                          bloc.add(SelectPriority(index));
+                          bloc.add(SelectPriority(priority));
                         },
                         child: Container(
                           height: 64,
                           width: 64,
                           decoration: BoxDecoration(
-                            color: bloc.selectedPriority == index
+                            color: bloc.selectedPriority == priority
                                 ? primaryColor
                                 : dayColor,
                             borderRadius: BorderRadius.circular(4.0),

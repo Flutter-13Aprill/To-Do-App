@@ -35,11 +35,7 @@ class CategoryTile extends StatelessWidget {
               color: backgroundColor,
               borderRadius: BorderRadius.circular(4),
             ),
-            child: Icon(
-              icon,
-              color: iconColor == backgroundColor ? mainText : iconColor,
-              size: 24,
-            ),
+            child: Icon(icon, color: iconColor, size: 24),
           ),
           const SizedBox(height: 8),
           Expanded(

@@ -47,7 +47,7 @@
     "subtitle": "اضغط على + لإضافة مهامك",
     "searchPlaceholder": "ابحث عن مهمتك..."
   },
-  "Tasksheet": {
+  "TaskSheet": {
     "title": "إضافة مهمة",
     "taskNamePlaceholder": "واجب الرياضيات",
     "taskDescriptionPlaceholder": "أكمل تمارين الرياضيات من الفصل الخامس",
@@ -73,10 +73,13 @@
     "taskTime": "وقت المهمة:",
     "taskCategory": "فئة المهمة:",
     "taskPriority": "أولوية المهمة:",
+    "editTaskPriority": "تعديل أولوية المهمة",
     "subTask": "مهمة فرعية:",
+    "subTaskButton": "إضافة مهمة فرعية",
     "todoNameValidationError": "يرجى إدخال جميع تفاصيل المهمة الصالحة.", 
     "todoDescriptionValidationError": "يرجى إدخال وصف المهمة.",
     "editTaskButton": "تعديل المهمة",
+    "cancelButton": "إلغاء",
     "deleteButton": "حذف المهمة"
   },
   "EditTaskDialog": {
@@ -103,7 +106,6 @@
     "accountSection": "الحساب",
     "changeAccountNameTile": "تغيير اسم الحساب",
     "changeAccountImageTile": "تغيير صورة الحساب",
-    "changeAccountPasswordTile": "تغيير كلمة المرور",
     "logOutTile": "تسجيل الخروج"
   },
   "ChangeAccountNameDialog": {

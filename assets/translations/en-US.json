@@ -77,10 +77,13 @@
         "taskTime": "Task Time:",
         "taskCategory": "Task Category:",
         "taskPriority": "Task Priority:",
-        "subTask": "Subtask:",
+        "editTaskPriority": "Edit Task Priority",
+        "subTask": "Sub-Task:",
+        "subTaskButton": "Add Sub-Task",
         "todoNameValidationError": "Please enter all the valid task details.",
         "todoDescriptionValidationError" : "Please enter a task description.",
         "editTaskButton": "Edit Task",
+        "cancelButton": "Cancel",
         "deleteButton": "Delete Task"
     }
     ,
@@ -108,7 +111,6 @@
     "accountSection": "Account",
     "changeAccountNameTile": "Change Account Name",
     "changeAccountImageTile": "Change Account Image",
-    "changeAccountPasswordTile": "Change Account Password",
     "logOutTile": "Log Out"
 
 },

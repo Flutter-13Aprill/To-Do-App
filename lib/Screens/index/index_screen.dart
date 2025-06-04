@@ -6,6 +6,7 @@ import 'package:getit/CustomWidgets/index/custom_search_bar.dart';
 import 'package:getit/CustomWidgets/index/empty_index.dart';
 import 'package:getit/CustomWidgets/shared/todo_tile.dart';
 import 'package:getit/Screens/index/bloc/index_bloc.dart';
+import 'package:getit/Screens/todo/todo_screen.dart';
 import 'package:getit/Styles/colors.dart';
 import 'package:getit/Utilities/screen_extension.dart';
 
@@ -91,10 +92,48 @@ class IndexScreen extends StatelessWidget {
                           width: context.screenWidth,
                           child: ListView.builder(
                             itemBuilder: (context, index) {
-                              return BlocProvider.value(
-                                value: bloc,
-                                child: TodoTile(
-                                  todo: bloc.supabase.todosList[index],
+                              return GestureDetector(
+                                onTap: () {
+                                  bloc.selectedCategory = bloc
+                                      .categories
+                                      .categories
+                                      .firstWhere(
+                                        (c) =>
+                                            c.name ==
+                                            bloc
+                                                .supabase
+                                                .todosList[index]
+                                                .category,
+                                      );
+                                  bloc.selectedPriority = bloc
+                                      .supabase
+                                      .todosList[index]
+                                      .priority
+                                      .toString();
+                                  bloc.fullDateTime = DateTime.parse(
+                                    bloc.supabase.todosList[index].dueDate,
+                                  ).toLocal();
+
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (context) => BlocProvider.value(
+                                        value: bloc,
+                                        child: TodoScreen(
+                                          todoId: bloc
+                                              .supabase
+                                              .todosList[index]
+                                              .id!,
+                                          category: bloc.selectedCategory!,
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                },
+                                child: BlocProvider.value(
+                                  value: bloc,
+                                  child: TodoTile(
+                                    todo: bloc.supabase.todosList[index],
+                                  ),
                                 ),
                               );
                             },

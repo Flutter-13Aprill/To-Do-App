@@ -19,16 +19,16 @@ class IndexBloc extends Bloc<IndexEvent, IndexState> {
     name: 'Default',
     icon: Icons.category,
     backgroundColor: Colors.blue,
+    iconColor: Colors.white,
   );
-  int selectedPriority = -1;
+  String selectedPriority = "";
   TextEditingController todoNameController = TextEditingController();
   TextEditingController todoDescriptionController = TextEditingController();
   GlobalKey<FormState> addFormKey = GlobalKey<FormState>();
+  GlobalKey<FormState> editFormKey = GlobalKey<FormState>();
 
   IndexBloc() : super(IndexInitial()) {
-    on<IndexEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+    on<IndexEvent>((event, emit) {});
     on<AddToDoButtonPressed>((event, emit) {
       emit(AddTaskDialogShown());
     });
@@ -58,7 +58,7 @@ class IndexBloc extends Bloc<IndexEvent, IndexState> {
         task: todoNameController.text,
         description: todoDescriptionController.text,
         category: selectedCategory!.name,
-        priority: selectedPriority,
+        priority: int.tryParse(selectedPriority),
         isDone: false,
         dueDate: fullDateTime.toLocal().toString(),
       );
@@ -69,11 +69,65 @@ class IndexBloc extends Bloc<IndexEvent, IndexState> {
         name: 'Default',
         icon: Icons.category,
         backgroundColor: Colors.blue,
+        iconColor: Colors.white,
       );
-      ;
-      selectedPriority = -1;
+
+      selectedPriority = "";
       fullDateTime = DateTime.now();
+      selectedDate = DateTime.now();
+
       emit(TodoAdded());
+    });
+    on<DeleteTodo>((event, emit) async {
+      await supabase.deleteToDo(event.todo);
+
+      emit(TodoDeleted());
+    });
+    on<PopTaskscreen>((event, emit) async {
+      await supabase.fetchToDos();
+      todoNameController.clear();
+      todoDescriptionController.clear();
+      selectedCategory = Category(
+        name: 'Default',
+        icon: Icons.category,
+        backgroundColor: Colors.blue,
+        iconColor: Colors.white,
+      );
+
+      selectedPriority = "";
+      fullDateTime = DateTime.now();
+      selectedDate = DateTime.now();
+      Navigator.pop(event.context);
+      emit(TaskScreenPopped());
+    });
+    on<RefreshScreen>((event, emit) {
+      emit(StateRefreshed());
+    });
+    on<EditTodo>((event, emit) async {
+      ToDoModel todo = ToDoModel(
+        id: event.todo.id,
+        userId: supabase.user!.id,
+        task: todoNameController.text,
+        description: todoDescriptionController.text,
+        dueDate: fullDateTime.toLocal().toString(),
+        isDone: false,
+        category: selectedCategory!.name,
+        priority: int.parse(selectedPriority),
+      );
+      await supabase.updateToDo(todo);
+      todoNameController.clear();
+      todoDescriptionController.clear();
+      selectedCategory = Category(
+        name: 'Default',
+        icon: Icons.category,
+        backgroundColor: Colors.blue,
+        iconColor: Colors.white,
+      );
+      selectedPriority = "";
+      fullDateTime = DateTime.now();
+      selectedDate = DateTime.now();
+
+      emit(TodoEdited());
     });
   }
 }

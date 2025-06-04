@@ -63,18 +63,50 @@ class SupabaseConnect {
           .from('todos')
           .update(todo.toMap())
           .eq("id", todo.id!);
-      log(response.toString());
       await fetchToDos();
 
       if (response == null) {
-        log(
-          "ToDo updated successfully: ${todosList[todosList.indexOf(todo)].isDone}",
+        var updatedTodo = todosList.firstWhere(
+          (t) => t.id == todo.id,
+          orElse: () => ToDoModel(
+            id: todo.id,
+            userId: todo.userId,
+            task: todo.task,
+            description: todo.description,
+            dueDate: todo.dueDate,
+            isDone: todo.isDone,
+            category: todo.category,
+            priority: todo.priority,
+          ),
         );
+        log("ToDo updated successfully: ${updatedTodo.toString()}");
       } else {
         log("Error updating ToDo: ${response.toString()}");
       }
     } catch (e) {
       log("Error updating ToDo: $e");
+    }
+  }
+
+  Future deleteToDo(ToDoModel todo) async {
+    try {
+      var todoID = todo.id!;
+      todosList.remove(todo);
+      final todosClient = supabase.client;
+      final response = await todosClient
+          .from('todos')
+          .delete()
+          .eq("id", todoID);
+      log(response.toString());
+      await fetchToDos();
+
+      if (response == null) {
+        log("ToDo deleted successfully: ${todo.task}");
+      } else {
+        log("Error deleting ToDo: ${response.toString()}");
+      }
+    } catch (e) {
+      log("Error deleting ToDo: $e");
     }
   }
 
@@ -91,6 +123,7 @@ class SupabaseConnect {
               (todo) => ToDoModelMapper.fromJson(jsonEncode(todo)),
             )
             .toList();
+        todosList.sort((a, b) => a.priority?.compareTo(b.priority ?? 10) ?? 0);
       }
       log(jsonEncode(todos));
     } catch (e) {

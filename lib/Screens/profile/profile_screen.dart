@@ -28,7 +28,7 @@ class ProfileScreen extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 20.0),
                       child: Center(
                         child: Text(
-                          'Profile',
+                          context.tr('ProfileScreen.title'),
                           style: TextStyle(
                             color: mainText,
                             fontSize: 24.0,
@@ -43,11 +43,11 @@ class ProfileScreen extends StatelessWidget {
                       radius: 40,
                       backgroundColor: borderColor,
                       child: ClipOval(
-                        child: Image.network(
-                          'https://via.placeholder.com/150/000000/FFFFFF/?text=F',
-                          fit: BoxFit.cover,
+                        child: Image.asset(
+                          "assets/images/pfp.png", // Placeholder image
                           width: 80,
                           height: 80,
+                          fit: BoxFit.cover,
                         ),
                       ),
                     ),
@@ -125,7 +125,7 @@ class ProfileScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           Text(
-                            'Settings',
+                            context.tr('ProfileScreen.settingsSection'),
                             style: TextStyle(
                               color: mainText,
                               fontSize: 14,
@@ -144,7 +144,7 @@ class ProfileScreen extends StatelessWidget {
                       child: ListTile(
                         leading: Icon(Icons.settings, color: mainText),
                         title: Text(
-                          'App Settings',
+                          context.tr('ProfileScreen.settingsTile'),
                           style: TextStyle(color: mainText, fontSize: 16),
                         ),
                         trailing: Icon(
@@ -173,7 +173,7 @@ class ProfileScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           Text(
-                            'Account',
+                            context.tr('ProfileScreen.accountSection'),
                             style: TextStyle(
                               color: mainText,
                               fontSize: 14,
@@ -192,7 +192,7 @@ class ProfileScreen extends StatelessWidget {
                       child: ListTile(
                         leading: Icon(Icons.person, color: mainText),
                         title: Text(
-                          'Change account name',
+                          context.tr('ProfileScreen.changeAccountNameTile'),
                           style: TextStyle(color: mainText, fontSize: 16),
                         ),
                         trailing: Icon(
@@ -212,7 +212,7 @@ class ProfileScreen extends StatelessWidget {
                       child: ListTile(
                         leading: Icon(Icons.camera_alt, color: mainText),
                         title: Text(
-                          'Change account Image',
+                          context.tr('ProfileScreen.changeAccountImageTile'),
                           style: TextStyle(color: mainText, fontSize: 16),
                         ),
                         trailing: Icon(
@@ -232,7 +232,7 @@ class ProfileScreen extends StatelessWidget {
                       child: ListTile(
                         leading: Icon(Icons.logout, color: Colors.red),
                         title: Text(
-                          'Log out',
+                          context.tr('ProfileScreen.logOutTile'),
                           style: TextStyle(color: Colors.red, fontSize: 16),
                         ),
                         onTap: () {},

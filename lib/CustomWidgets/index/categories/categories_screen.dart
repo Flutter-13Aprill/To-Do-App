@@ -20,7 +20,7 @@ class CategoriesScreen extends StatelessWidget {
     return BlocBuilder<IndexBloc, IndexState>(
       builder: (context, state) {
         final bloc = context.read<IndexBloc>();
-        final colorOptions = bloc.categories.colorOptions;
+        final categories = bloc.categories.categories;
         return Scaffold(
           body: SafeArea(
             child: Padding(
@@ -126,7 +126,7 @@ class CategoriesScreen extends StatelessWidget {
                       height: 48,
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
-                        itemCount: colorOptions.length,
+                        itemCount: categories.length,
                         itemBuilder: (context, index) {
                           return Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -136,10 +136,11 @@ class CategoriesScreen extends StatelessWidget {
                                 width: 36,
                                 height: 36,
                                 decoration: BoxDecoration(
-                                  color: colorOptions[index],
+                                  color: categories[index].backgroundColor,
                                   shape: BoxShape.circle,
                                   border:
-                                      (colorOptions[index] == _selectedColor)
+                                      (categories[index].backgroundColor ==
+                                          _selectedColor)
                                       ? Border.all(
                                           color: Colors.white,
                                           width: 3,

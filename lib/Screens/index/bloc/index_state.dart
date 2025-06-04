@@ -20,3 +20,11 @@ final class DateSelectedChanged extends IndexState {}
 final class PrioritySelected extends IndexState {}
 
 final class TodoAdded extends IndexState {}
+
+final class TodoDeleted extends IndexState {}
+
+final class StateRefreshed extends IndexState {}
+
+final class TodoEdited extends IndexState {}
+
+final class TaskScreenPopped extends IndexState {}
