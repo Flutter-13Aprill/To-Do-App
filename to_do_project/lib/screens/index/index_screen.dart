@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:to_do_project/screens/index/bloc/index_bloc.dart';
 import 'package:to_do_project/style/color_theme.dart';
+// import 'package:table_calendar/table_calendar.dart';
+import 'package:to_do_project/widgets/custom_alert_calender.dart';
 
 class IndexScreen extends StatelessWidget {
   const IndexScreen({super.key});
@@ -69,7 +71,14 @@ class IndexScreen extends StatelessWidget {
                                 Row(
                                   children: [
                                     ElevatedButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        showDialog(
+                                          context: context,
+                                          builder: (BuildContext context) {
+                                            return CustomAlertCalender();
+                                          },
+                                        );
+                                      },
                                       child: Icon(
                                         Icons.access_time_rounded,
                                         color: AppColors.primaryColor,
@@ -97,7 +106,7 @@ class IndexScreen extends StatelessWidget {
                         },
                       );
                     },
-          
+
                     backgroundColor: AppColors.primaryColor,
                     shape: const CircleBorder(),
                     child: const Icon(Icons.add),
@@ -106,7 +115,7 @@ class IndexScreen extends StatelessWidget {
               ),
             ),
           );
-        }
+        },
       ),
     );
   }

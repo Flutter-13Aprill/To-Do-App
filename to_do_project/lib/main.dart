@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:to_do_project/screens/index/index_screen.dart';
+import 'package:to_do_project/repos/supabase.dart';
+// import 'package:to_do_project/screens/index/index_screen.dart';
 // import 'package:to_do_project/screens/intro/onbaording/onbarding_screen.dart';
 import 'package:to_do_project/screens/intro/onboarding.dart';
-import 'package:to_do_project/screens/login_and_regiter/login_screen.dart';
-import 'package:to_do_project/screens/nav/bottom_nav.dart';
+// import 'package:to_do_project/screens/login_and_regiter/login_screen.dart';
+// import 'package:to_do_project/screens/nav/bottom_nav.dart';
 import 'package:to_do_project/style/theme.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:to_do_project/utils/supabase_connect.dart';
-import 'package:to_do_project/utils/utils.dart';
+// import 'package:to_do_project/utils/setup.dart';
+// import 'package:supabase_flutter/supabase_flutter.dart';
+// import 'package:to_do_project/utils/setup.dart';
+// import 'package:to_do_project/utils/utils.dart';
 
 void main() async {
   // WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +26,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       theme: CustomTheme.darkTheme,
-      home: BottomNav()
+      home: Onboarding()
     );
   }
 }

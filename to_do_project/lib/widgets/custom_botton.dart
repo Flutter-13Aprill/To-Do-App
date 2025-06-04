@@ -13,9 +13,10 @@ class CustomBotton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
+        Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(builder: (context) => screen),
+          (route) => false,
         );
       },
       child: Container(

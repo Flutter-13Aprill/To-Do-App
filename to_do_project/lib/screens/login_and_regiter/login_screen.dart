@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:to_do_project/screens/index/index_screen.dart';
+// import 'package:to_do_project/screens/index/index_screen.dart';
 import 'package:to_do_project/screens/login_and_regiter/register_screen.dart';
+import 'package:to_do_project/screens/nav/bottom_nav.dart';
 // import 'package:to_do_project/screens/login_and_regiter/register.dart';
 import 'package:to_do_project/style/color_theme.dart';
 import 'package:to_do_project/widgets/custom_botton.dart';
@@ -15,7 +16,9 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 32.0),
@@ -44,9 +47,9 @@ class LoginScreen extends StatelessWidget {
 
               CustomBotton(
                 // login button
-                text: 'Register',
+                text: 'Login',
                 color: AppColors.primaryColor,
-                screen: IndexScreen(),
+                screen: BottomNav(),
               ),
 
               SizedBox(height: 32.0),
