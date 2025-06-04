@@ -1,75 +1,74 @@
-# 📝 To-Do App Development
+#  To_Do App
 
-![To-Do App](https://paper-attachments.dropboxusercontent.com/s_00CD5CACA09F1C68917B504E80CC816F26752426CE251F931A757D85A4A86FEC_1734423199269_image.png)
+![Screenshot_20250602_065820](https://github.com/user-attachments/assets/6e2eb920-ebc5-492c-9f55-cabde710ac84)
+![3](https://github.com/user-attachments/assets/824a9c0f-27e4-4278-830d-709d7f57558f)
+![2](https://github.com/user-attachments/assets/9c86ad40-2c85-43e6-91ba-6c2a75aa49dd)
+
+
+A new Flutter project.
+
+---
+# 📱 Purpose & Features
+
+## This app is a To_Do List :
+
+  Create and save the tasks you want to finish
+
+  schedule and time when each task should be done
 
 ---
 
-## 📘 Introduction
+## Key Features
 
-The goal of this project is to develop a **To-Do Application**. This app will allow users to manage their daily tasks efficiently by adding, organizing, and viewing tasks. You will focus on creating a polished, functional app with a **user-friendly design**.
-
-The app will include several features and screens, such as:
-
-- Intro Screens for welcoming the user.
-- Login & Register screens for user authentication.
-- A Home Screen for managing tasks.
-- A Calendar Screen for viewing tasks by date.
-- A Settings Screen for customization.
+  🏠 Home Page which display the tasks
 
 ---
 
-## 📱 Core Functionality
+  # 🧰 Widgets & External Packages Used
 
-- Intro Screens  
-- Login & Register Screens  
-- Home Screen (Index)  
-- Category Screens  
-- Task Screen  
-- Calendar Screen  
-- User Profile Screen  
-- Settings Screen  
+## This project relies on Flutter’s core widgets as well as several community packages to enhance the UI/UX.
 
----
+flutter_bloc: advanced state management
 
-## 🔧 Concepts to Implement
+supabase_flutter: and SDK for the Supabase deticated for flutter
 
-- Custom Theme Design  
-- Form Validation  
-- Localization Support  
-- BLoC Pattern  
-- Supabase Integration  
-- Dependency Injection using GetIt  
-
-> **Note:**  
-> _All logical operations should be performed within the interface._
+flutter_dotenv: for more simple and flexible access to the .env file
 
 ---
 
-## 🎨 Figma Design
+## 💻 Setup Instructions
 
-- [Figma Design Link (Main)](https://www.figma.com/design/uRS0DgqudB60wE47MadsFB/todo-app?node-id=1-16749&t=BWTFqAeY2FjwyIRe-1)  
-- [Figma Design Link (Alternative)](https://www.figma.com/design/uRS0DgqudB60wE47MadsFB/todo-app?node-id=1-16749&t=BWTFqAeY2FjwyIRe-1)
+1- Clone the repository:
 
+  ```
+  git clone https://github.com/Saad-Alwazrah/To-Do-App.git
+  ```
+
+2- Navigate to the project directory:
+
+   ```
+   cd To-Do-App
+   ```
+
+3- Install dependencies:
+
+   ```
+   flutter pub get
+   ```
+
+4- Run the app:
+
+   ```
+   flutter run
+   ```
 ---
 
-## 💻 GitHub Submission Guidelines
+## Dependencies 
 
-- Your pull request must include a **well-structured `README.md` file**.
-- The README should include:
-  - Description of the project  
-  - Setup instructions  
-  - A screenshot of your app  
+  *Packages*:  flutter_bloc 9.1.1 - supabase_flutter 2.9.0 - flutter_dotenv 5.2.1  
 
----
+  
+  *Frameworks*: Flutter
 
-## ⏰ Deadline
-
-**Your project must be submitted by June 2, before 10:00 AM.**
-
----
-
-## 🌟 Reminder
-
-> Dream big,  
-> Code smart,  
-> And never stop learning. 🌠💡
+  
+  *Languages*:  Dart
