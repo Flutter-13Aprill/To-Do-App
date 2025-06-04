@@ -15,4 +15,16 @@ class AuthLayer {
       rethrow;
     }
   }
+
+  signInMethod({required String email, required String password}) async {
+    try {
+      final user = await SupabaseConnect.login(
+        email: email,
+        password: password,
+      );
+      idUser = user.id;
+    } catch (_) {
+      rethrow;
+    }
+  }
 }

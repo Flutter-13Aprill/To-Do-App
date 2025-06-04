@@ -54,7 +54,7 @@ class LoginWidget extends StatelessWidget {
                 } else if (value.length < 6) {
                   return "Password must be at least 6 characters long. Please try again";
                 } else if (!value.contains(RegExp(r'\d'))) {
-                  return "not Contains a number";
+                  return "Please include at least one number";
                 }
                 return null;
               },

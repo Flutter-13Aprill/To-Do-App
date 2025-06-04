@@ -18,6 +18,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc() : super(AuthInitial()) {
     on<CheckCharactersPassword>(checkCharactersPasswordMethod);
     on<SignUpEvent>(signUpEventMethod);
+    on<SignInEvent>(signInEventMethod);
   }
 
   FutureOr<void> checkCharactersPasswordMethod(
@@ -39,6 +40,16 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     Emitter<AuthState> emit,
   ) async {
     await authGetit.signUpMethod(
+      email: "${emailController.text}@gmail.com",
+      password: passController.text,
+    );
+  }
+
+  FutureOr<void> signInEventMethod(
+    SignInEvent event,
+    Emitter<AuthState> emit,
+  ) async {
+    await authGetit.signInMethod(
       email: "${emailController.text}@gmail.com",
       password: passController.text,
     );

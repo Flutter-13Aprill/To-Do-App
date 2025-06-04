@@ -41,10 +41,17 @@ class SupabaseConnect {
     }
     return tasks;
   }
-  // to update tasks to supabase
+  // to update tasks
 
   static taskUpdate({required isDone, required id}) async {
     await supabase?.client.from("task").update({"isDone": isDone}).eq("id", id);
+    await GetIt.I.get<AppDataLayer>().loadDataFromSupabase();
+  }
+
+  // to delete task
+
+  static taskDelete({required id}) async {
+    await supabase?.client.from("task").delete().eq("id", id);
     await GetIt.I.get<AppDataLayer>().loadDataFromSupabase();
   }
 
@@ -63,6 +70,24 @@ class SupabaseConnect {
       throw FormatException(error.message);
     } catch (error) {
       throw FormatException("There is error with sign Up");
+    }
+  }
+
+  // for signup
+  static Future<User> login({
+    required String email,
+    required String password,
+  }) async {
+    try {
+      final user = await supabase!.client.auth.signInWithPassword(
+        password: password,
+        email: email,
+      );
+      return user.user!;
+    } on AuthException catch (error) {
+      throw FormatException(error.message);
+    } catch (error) {
+      throw FormatException("There is error with sign in");
     }
   }
 }

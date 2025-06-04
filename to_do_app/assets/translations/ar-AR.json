@@ -45,5 +45,9 @@
   "Please login to your account or create\nnew account to continue": "الرجاء تسجيل الدخول او تسجيل حساب جديد",
   "LOGIN": "تسجيل دخول",
   "CREATE ACCOUNT": "تسجيل حساب جديد",
-  "Confirm Password": "تأكيد كلمة المرور"
+  "Confirm Password": "تأكيد كلمة المرور",
+  "Task Time :": "المدة :",
+  "Task Category :": "التصنيف :",
+  "Task Priority :": "الاولوية :",
+  "Delete Task": "حذف المهمة"
 }

@@ -10,3 +10,5 @@ class CheckCharactersPassword extends AuthEvent {
 }
 
 class SignUpEvent extends AuthEvent {}
+
+class SignInEvent extends AuthEvent {}

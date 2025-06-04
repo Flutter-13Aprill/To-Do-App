@@ -46,6 +46,7 @@ class CalendarScreen extends StatelessWidget {
                                   value: bloc,
                                   child: TaskCard(
                                     id: taskinfo.id,
+                                    desciption: taskinfo.desciption,
                                     task: taskinfo.task,
                                     day: taskinfo.day,
                                     month: taskinfo.month,

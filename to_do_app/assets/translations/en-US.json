@@ -44,5 +44,9 @@
   "Welcome to UpTodo": "Welcome to UpTodo",
   "Please login to your account or create\nnew account to continue": "Please login to your account or create\nnew account to continue",
   "LOGIN": "LOGIN",
-  "CREATE ACCOUNT": "CREATE ACCOUNT"
+  "CREATE ACCOUNT": "CREATE ACCOUNT",
+  "Task Time :": "Task Time :",
+  "Task Category :": "Task Category :",
+  "Task Priority :": "Task Priority :",
+  "Delete Task": "Delete Task"
 }
