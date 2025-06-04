@@ -121,6 +121,12 @@ class SignupScreen extends StatelessWidget {
                               onPressed: () {
                                 if (formKey.currentState!.validate()) {
                                   bloc.add(SignupSubmittedEvent());
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (_) => LoginScreen(),
+                                    ),
+                                  );
                                 }
                               },
                             ),

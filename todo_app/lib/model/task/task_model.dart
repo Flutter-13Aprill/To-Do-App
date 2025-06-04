@@ -22,6 +22,17 @@ class TaskModel with TaskModelMappable {
     required this.priority,
   });
 
+  factory TaskModel.fromJson(Map<String, dynamic> json) {
+    return TaskModel(
+      id: json['id'] as int?,
+      title: json['title'] as String? ?? '',
+      description: json['description'] as String? ?? '',
+      dateTime: DateTime.parse(json['date_time'] as String),
+      priority: json['priority'] as int? ?? 1,
+      userId: json['user_id'] as String? ?? '',
+    );
+  }
+
   Map<String, dynamic> toMap() {
     return {
       'title': title,

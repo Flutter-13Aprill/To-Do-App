@@ -74,9 +74,8 @@ class SupabaseConnect {
         .select()
         .eq('user_id', userId)
         .order('date_time', ascending: true);
-    return (response as List)
-        .map((json) => TaskModelMapper.fromJson(json))
-        .toList();
+
+    return (response as List).map((json) => TaskModel.fromJson(json)).toList();
   }
 
   String getCurrentUserId() {

@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app/repository/supabase.dart';
+import 'package:todo_app/screen/home/bloc/home_bloc.dart';
 import 'package:todo_app/screen/splash/splash_screen.dart';
 import 'package:todo_app/theme/bloc/theme_bloc.dart';
 import 'package:todo_app/theme/them_app.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<ThemeBloc>(create: (BuildContext context) => ThemeBloc()),
+        BlocProvider<HomeBloc>(create: (BuildContext context) => HomeBloc()),
       ],
       child: MaterialApp(
         localizationsDelegates: context.localizationDelegates,

@@ -3,11 +3,28 @@ part of 'home_bloc.dart';
 @immutable
 sealed class HomeEvent {}
 
-class AddTaskEvent extends HomeEvent {
-  final String title;
-  final String description;
+class AddTaskEvent extends HomeEvent {}
 
-  AddTaskEvent({required this.title, required this.description});
+class SelectPriorityEvent extends HomeEvent {
+  final int priority;
+  SelectPriorityEvent(this.priority);
 }
 
-class LodTasksEvent extends HomeEvent {}
+class SelectDateTimeEvent extends HomeEvent {
+  final DateTime dateTime;
+  SelectDateTimeEvent(this.dateTime);
+}
+
+// class LodTasksEvent extends HomeEvent {}
+
+// class SelectTaskDateEvent extends HomeEvent {
+//   final DateTime date;
+
+//   SelectTaskDateEvent(this.date);
+// }
+
+// class SelectTaskTimeEvent extends HomeEvent {
+//   final TimeOfDay time;
+
+//   SelectTaskTimeEvent(this.time);
+// }
