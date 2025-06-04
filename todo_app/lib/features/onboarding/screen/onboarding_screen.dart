@@ -28,7 +28,7 @@ class OnboardingScreen extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => StartScren()),
                   );
                 },
-                child: Text('SKIP', style: StyleText.latoRegular12Grey),
+                child: Text('skip'.tr(), style: StyleText.latoRegular12Grey),
               ),
             ),
 
@@ -88,7 +88,7 @@ class OnboardingScreen extends StatelessWidget {
                                       }
                                     },
                                     child: Text(
-                                      'BACK',
+                                      'back'.tr(),
                                       style: StyleText.latoRegular16Grey,
                                     ),
                                   ),
@@ -107,7 +107,7 @@ class OnboardingScreen extends StatelessWidget {
                                         );
                                       }
                                     },
-                                    child: Text('NEXT'),
+                                    child: Text('next'.tr()),
                                   ),
                                 ],
                               ),

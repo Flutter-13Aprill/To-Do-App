@@ -20,6 +20,9 @@ class TaskModelMapper extends ClassMapperBase<TaskModel> {
   @override
   final String id = 'TaskModel';
 
+  static String? _$userId(TaskModel v) => v.userId;
+  static const Field<TaskModel, String> _f$userId =
+      Field('userId', _$userId, key: r'user_id', opt: true);
   static int? _$id(TaskModel v) => v.id;
   static const Field<TaskModel, int> _f$id = Field('id', _$id, opt: true);
   static String _$title(TaskModel v) => v.title;
@@ -49,6 +52,7 @@ class TaskModelMapper extends ClassMapperBase<TaskModel> {
 
   @override
   final MappableFields<TaskModel> fields = const {
+    #userId: _f$userId,
     #id: _f$id,
     #title: _f$title,
     #description: _f$description,
@@ -62,6 +66,7 @@ class TaskModelMapper extends ClassMapperBase<TaskModel> {
 
   static TaskModel _instantiate(DecodingData data) {
     return TaskModel(
+        userId: data.dec(_f$userId),
         id: data.dec(_f$id),
         title: data.dec(_f$title),
         description: data.dec(_f$description),
@@ -125,7 +130,8 @@ extension TaskModelValueCopy<$R, $Out> on ObjectCopyWith<$R, TaskModel, $Out> {
 abstract class TaskModelCopyWith<$R, $In extends TaskModel, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   $R call(
-      {int? id,
+      {String? userId,
+      int? id,
       String? title,
       String? description,
       String? category,
@@ -147,7 +153,8 @@ class _TaskModelCopyWithImpl<$R, $Out>
       TaskModelMapper.ensureInitialized();
   @override
   $R call(
-          {Object? id = $none,
+          {Object? userId = $none,
+          Object? id = $none,
           String? title,
           Object? description = $none,
           Object? category = $none,
@@ -157,6 +164,7 @@ class _TaskModelCopyWithImpl<$R, $Out>
           Object? createdAt = $none,
           Object? updatedAt = $none}) =>
       $apply(FieldCopyWithData({
+        if (userId != $none) #userId: userId,
         if (id != $none) #id: id,
         if (title != null) #title: title,
         if (description != $none) #description: description,
@@ -169,6 +177,7 @@ class _TaskModelCopyWithImpl<$R, $Out>
       }));
   @override
   TaskModel $make(CopyWithData data) => TaskModel(
+      userId: data.get(#userId, or: $value.userId),
       id: data.get(#id, or: $value.id),
       title: data.get(#title, or: $value.title),
       description: data.get(#description, or: $value.description),

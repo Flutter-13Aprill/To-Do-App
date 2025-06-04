@@ -1,9 +1,11 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:meta/meta.dart';
+import 'package:todo_app/features/Index/model/category.dart';
 import 'package:todo_app/layer_data/app_data.dart';
 import 'package:todo_app/model/task_model.dart';
 import 'package:todo_app/repo/supabase.dart';
@@ -22,8 +24,10 @@ class IndexBloc extends Bloc<IndexEvent, IndexState> {
   final taskController = TextEditingController();
   final descriptionController = TextEditingController();
   int priority = 1;
-  String category = 'Home';
-  DateTime taskTime = DateTime.now();
+  String category = 'categoryHome'.tr();
+  DateTime? day;
+  DateTime? time;
+
   IndexBloc() : super(IndexInitial()) {
     on<IndexEvent>((event, emit) {});
     on<LoadinDataEvent>(loadMethod);
@@ -46,6 +50,14 @@ class IndexBloc extends Bloc<IndexEvent, IndexState> {
     SaveDataEvent event,
     Emitter<IndexState> emit,
   ) async {
+    final userId = SupabaseConnect.supabase?.client.auth.currentUser?.id;
+    final DateTime taskTime = DateTime(
+      day!.year,
+      day!.month,
+      day!.day,
+      time!.hour,
+      time!.minute,
+    );
     try {
       await SupabaseConnect.addNewTask(
         taskData: TaskModel(
@@ -56,6 +68,7 @@ class IndexBloc extends Bloc<IndexEvent, IndexState> {
           taskTime: taskTime,
           createdAt: DateTime.now(),
           updatedAt: DateTime.now(),
+          userId: userId,
         ),
       );
       emit(LoadingState());

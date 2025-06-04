@@ -1,22 +1,9 @@
 import 'package:flutter/material.dart';
 
 /// A customizable time picker widget
-class name extends StatefulWidget {
-  const name({super.key});
-
-  @override
-  State<name> createState() => _nameState();
-}
-
-class _nameState extends State<name> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
-
 class TimePickerWidget extends StatefulWidget {
-  const TimePickerWidget({super.key});
+  TimePickerWidget({super.key, required this.onTimeChanged});
+  final Function(DateTime) onTimeChanged;
   @override
   State<TimePickerWidget> createState() => _TimePickerWidgetState();
 }
@@ -32,6 +19,8 @@ class _TimePickerWidgetState extends State<TimePickerWidget> {
     hour = now.hour > 12 ? now.hour - 12 : now.hour;
     minute = now.minute;
     period = now.hour >= 12 ? "PM" : "AM";
+    final time = DateTime(0, 0, 0, hour, minute);
+    widget.onTimeChanged(time);
   }
 
   void incrementHour() {
@@ -90,7 +79,6 @@ class _TimePickerWidgetState extends State<TimePickerWidget> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Hour Up Button
             Column(
               children: [
                 IconButton(
@@ -110,7 +98,7 @@ class _TimePickerWidgetState extends State<TimePickerWidget> {
                 ),
               ],
             ),
-            // Separator
+
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 8.0),
               child: Text(
@@ -118,7 +106,7 @@ class _TimePickerWidgetState extends State<TimePickerWidget> {
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
             ),
-            // Minute Up Button
+
             Column(
               children: [
                 IconButton(
@@ -138,7 +126,7 @@ class _TimePickerWidgetState extends State<TimePickerWidget> {
                 ),
               ],
             ),
-            // Period Up Button
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Column(

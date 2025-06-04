@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_app/features/index/bloc/index_bloc.dart';
 import 'package:todo_app/features/index/widget/buttons_widget.dart';
@@ -19,7 +20,7 @@ showPriorityDialog(context, IndexBloc bloc) {
             height: 300,
             child: Column(
               children: [
-                Text('Task Priority', style: StyleText.latoBold16),
+                Text("taskPriority".tr(), style: StyleText.latoBold16),
                 Divider(color: Colors.white),
                 Expanded(
                   child: GridView.builder(
@@ -56,7 +57,7 @@ showPriorityDialog(context, IndexBloc bloc) {
                   ),
                 ),
                 ButtonsWidget(
-                  text: 'Save',
+                  text: "save".tr(),
                   onPressedNext: () {
                     if (selectedPriority != null) {
                       bloc.priority = selectedPriority!;

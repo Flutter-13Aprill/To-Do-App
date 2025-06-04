@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class TextFieldWidget extends StatelessWidget {
+class AuthTextFieldWidget extends StatelessWidget {
   /// A reusable text field widget with label, hint, and validation.
-  const TextFieldWidget({
+  const AuthTextFieldWidget({
     super.key,
 
     this.validate,

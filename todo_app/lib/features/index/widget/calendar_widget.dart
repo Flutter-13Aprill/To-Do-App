@@ -4,8 +4,8 @@ import 'package:todo_app/style/style_color.dart';
 
 /// A customizable calendar widget using `TableCalendar`.
 class CalendarWidget extends StatefulWidget {
-  const CalendarWidget({super.key});
-
+  const CalendarWidget({super.key, required this.onDaySelected});
+  final Function(DateTime) onDaySelected;
   @override
   State<CalendarWidget> createState() => _CalendarWidgetState();
 }
@@ -29,6 +29,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
               _selectedDay = selectedDay;
               _focusedDay = focusedDay;
             });
+            widget.onDaySelected(selectedDay);
           },
           calendarStyle: CalendarStyle(
             todayDecoration: BoxDecoration(

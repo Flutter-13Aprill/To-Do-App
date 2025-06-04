@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_app/features/auth/screen/login_screen.dart';
 import 'package:todo_app/features/auth/screen/signup_screen.dart';
@@ -22,10 +23,10 @@ class StartScren extends StatelessWidget {
               Column(
                 spacing: 16,
                 children: [
-                  Text('Welcome to UpTodo', style: StyleText.latoBold20),
+                  Text("welcome".tr(), style: StyleText.latoBold20),
 
                   Text(
-                    'Please login to your account or create new account to continue',
+                    "login_message".tr(),
                     style: StyleText.latoRegular16,
                     textAlign: TextAlign.center,
                   ),
@@ -45,7 +46,7 @@ class StartScren extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => LoginScreen()),
                       );
                     },
-                    child: Text('Login', style: StyleText.latoRegular16),
+                    child: Text("login".tr(), style: StyleText.latoRegular16),
                   ),
 
                   ElevatedButton(
@@ -61,7 +62,7 @@ class StartScren extends StatelessWidget {
                       );
                     },
                     child: Text(
-                      'Create account',
+                      "create_account".tr(),
                       style: StyleText.latoRegular16,
                     ),
                   ),

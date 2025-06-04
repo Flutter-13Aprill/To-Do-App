@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_app/style/style_text.dart';
 
@@ -18,7 +19,7 @@ class ButtonsWidget extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
-          child: Text('Cancel', style: StyleText.latoRegular16purple),
+          child: Text("cancel".tr(), style: StyleText.latoRegular16purple),
         ),
         ElevatedButton(
           onPressed: onPressedNext,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class StyleColor {
-  // Light Theme
   static const black = Color(0xFF121212); //Background
   static const purple = Color(0xFF8687E7); //Buttons
   static const grey = Color(0xFF363636); //Bottom bar

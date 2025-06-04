@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:todo_app/features/Index/model/category.dart';
@@ -23,7 +24,7 @@ showCategoryDialog(context, IndexBloc bloc) {
             height: 500,
             child: Column(
               children: [
-                Text('Task Priority', style: StyleText.latoBold16),
+                Text('chooseCategory'.tr(), style: StyleText.latoBold16),
                 Divider(color: Colors.white),
                 Expanded(
                   child: GridView.builder(
@@ -50,14 +51,14 @@ showCategoryDialog(context, IndexBloc bloc) {
                               width: 50,
                             ),
                           ),
-                          Text(categoryList[index].category),
+                          Text(categoryList[index].category.tr()),
                         ],
                       );
                     },
                   ),
                 ),
                 ButtonsWidget(
-                  text: 'Save',
+                  text: "save".tr(),
                   onPressedNext: () {
                     if (chooseCategory != null) {
                       bloc.category = chooseCategory!;

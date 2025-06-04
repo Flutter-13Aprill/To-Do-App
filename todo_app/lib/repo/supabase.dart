@@ -20,11 +20,31 @@ class SupabaseConnect {
   }
 
   static addNewTask({required TaskModel taskData}) async {
+    final userId = supabase?.client.auth.currentUser?.id;
+    if (userId == null) throw Exception("User not authenticated");
     await supabase?.client.from('task').insert(taskData.mapForAddSupabase());
   }
 
+  static updateTaskData() async {
+    final userId = supabase?.client.auth.currentUser?.id;
+    if (userId == null) throw Exception("User not authenticated");
+    final allData = await supabase?.client.from('task').update({
+      'user_id': userId,
+    });
+    if (allData == null || allData.isEmpty) {
+      return [];
+    }
+    return allData.map((items) {
+      return TaskModelMapper.fromMap(items);
+    }).toList();
+  }
+
   static getTaskData() async {
-    final allData = await supabase?.client.from('task').select("*");
+    final userId = supabase?.client.auth.currentUser?.id;
+    final allData = await supabase?.client
+        .from('task')
+        .select("*")
+        .eq('user_id', userId as Object);
     if (allData == null || allData.isEmpty) {
       return [];
     }
@@ -66,6 +86,33 @@ class SupabaseConnect {
       throw FormatException(error.message);
     } catch (error) {
       throw FormatException("There is error with sign Up");
+    }
+  }
+
+  static Future<void> signOut() async {
+    try {
+      await supabase!.client.auth.signOut();
+    } catch (error) {
+      print('Error signing out');
+      rethrow;
+    }
+  }
+
+  static Future<void> updateEmail(String newEmail) async {
+    try {
+      await supabase!.client.auth.updateUser(UserAttributes(email: newEmail));
+    } catch (e) {
+      throw Exception("Failed to update password: $e");
+    }
+  }
+
+  static Future<void> updatePassword(String newPassword) async {
+    try {
+      await supabase!.client.auth.updateUser(
+        UserAttributes(password: newPassword),
+      );
+    } catch (e) {
+      throw Exception("Failed to update email: $e");
     }
   }
 }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:todo_app/style/style_color.dart';
 
 class CustomTheme {
-  //lightTheme
   static final darkTheme = ThemeData(
     colorScheme: ColorScheme(
       brightness: Brightness.dark,
@@ -24,6 +23,7 @@ class CustomTheme {
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         ),
         backgroundColor: WidgetStateProperty.all(StyleColor.purple),
+        foregroundColor: WidgetStateProperty.all(Colors.white),
         overlayColor: WidgetStatePropertyAll(Colors.grey.shade600),
       ),
     ),

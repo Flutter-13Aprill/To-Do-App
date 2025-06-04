@@ -27,7 +27,7 @@ class SettingsScreen extends StatelessWidget {
               ),
               ProfileTileWidget(
                 title: "changeAppColor".tr(),
-                icon: Icons.person,
+                icon: Icons.color_lens,
                 iconTrailing: Icon(
                   Icons.arrow_forward_ios_rounded,
                   color: Colors.white,
@@ -37,7 +37,7 @@ class SettingsScreen extends StatelessWidget {
               ),
               ProfileTileWidget(
                 title: "changeAppLanguage".tr(),
-                icon: Icons.settings,
+                icon: Icons.language,
                 iconTrailing: SizedBox(width: 70, child: LanguageButton()),
                 style: StyleText.latoRegular16,
                 iconColor: Colors.white,

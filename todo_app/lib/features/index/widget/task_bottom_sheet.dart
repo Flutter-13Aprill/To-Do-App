@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app/features/index/bloc/index_bloc.dart';
 import 'package:flutter/material.dart';
@@ -25,14 +26,14 @@ class TaskBottomSheet extends StatelessWidget {
           spacing: 16,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text('Add Task', style: StyleText.latoBold20),
+            Text("addTask".tr(), style: StyleText.latoBold20),
             TextFieldWidget(
               input: bloc.taskController,
-              hintText: 'Enter your task',
+              hintText: "enterYourTask".tr(),
             ),
             TextFieldWidget(
               input: bloc.descriptionController,
-              hintText: "Description",
+              hintText: "description".tr(),
               lines: 3,
             ),
             Row(
@@ -42,7 +43,7 @@ class TaskBottomSheet extends StatelessWidget {
                   children: [
                     IconButton(
                       onPressed: () {
-                        showCalendarDialog(context);
+                        showCalendarDialog(context, bloc);
                       },
                       icon: Icon(Icons.timer_outlined),
                     ),
@@ -65,9 +66,11 @@ class TaskBottomSheet extends StatelessWidget {
                     bloc.add(SaveDataEvent());
                   },
                   icon: Icon(
-                    Icons.keyboard_arrow_right,
+                    context.locale.languageCode == 'en'
+                        ? Icons.keyboard_arrow_right
+                        : Icons.keyboard_arrow_left,
                     color: StyleColor.purple,
-                    size: 50,
+                    size: 40,
                   ),
                 ),
               ],

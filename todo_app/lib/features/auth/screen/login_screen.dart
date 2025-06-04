@@ -1,8 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app/features/auth/bloc/auth_bloc.dart';
 import 'package:todo_app/features/auth/screen/signup_screen.dart';
-import 'package:todo_app/features/auth/widgets/text_field_widget.dart';
+import 'package:todo_app/features/auth/widgets/auth_text_field_widget.dart';
 import 'package:todo_app/features/nav/navigation_bar_screen.dart';
 import 'package:todo_app/style/style_text.dart';
 
@@ -32,19 +33,19 @@ class LoginScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           spacing: 16,
                           children: [
-                            Text('Login', style: StyleText.latoBold38),
+                            Text("login".tr(), style: StyleText.latoBold38),
 
-                            Text('Username', style: StyleText.latoBold16),
+                            Text("username".tr(), style: StyleText.latoBold16),
 
-                            TextFieldWidget(
+                            AuthTextFieldWidget(
                               controller: bloc.userNameController,
-                              textHint: 'Enter your Username',
+                              textHint: "enterUsername".tr(),
                             ),
-                            Text('Password', style: StyleText.latoBold16),
+                            Text("password".tr(), style: StyleText.latoBold16),
 
-                            TextFieldWidget(
+                            AuthTextFieldWidget(
                               controller: bloc.passwordController,
-                              textHint: 'Enter your password',
+                              textHint: "enterPassword".tr(),
                             ),
 
                             BlocListener<AuthBloc, AuthState>(
@@ -71,7 +72,7 @@ class LoginScreen extends StatelessWidget {
                                   bloc.add(LogInEvent());
                                 },
                                 child: Text(
-                                  'Login',
+                                  'login'.tr(),
                                   style: StyleText.latoRegular16,
                                 ),
                               ),
@@ -83,7 +84,7 @@ class LoginScreen extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Don’t have an account?',
+                                  "dontHaveAccount".tr(),
                                   style: StyleText.latoRegular16,
                                 ),
                                 Padding(
@@ -98,7 +99,7 @@ class LoginScreen extends StatelessWidget {
                                       );
                                     },
                                     child: Text(
-                                      'Register',
+                                      "register".tr(),
                                       style: StyleText.latoRegular16,
                                     ),
                                   ),

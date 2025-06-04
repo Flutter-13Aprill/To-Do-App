@@ -17,8 +17,11 @@ class TaskModel with TaskModelMappable {
   final DateTime? createdAt;
   @MappableField(key: 'updated_at')
   final DateTime? updatedAt;
+  @MappableField(key: 'user_id')
+  final String? userId;
 
   TaskModel({
+    this.userId,
     this.id,
     required this.title,
     this.description,
@@ -40,6 +43,7 @@ class TaskModel with TaskModelMappable {
       "is_completed": isCompleted,
       "created_at": createdAt?.toIso8601String(),
       "updated_at": updatedAt?.toIso8601String(),
+      "user_id": userId,
     };
   }
 }

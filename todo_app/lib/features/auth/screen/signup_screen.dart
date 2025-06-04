@@ -1,8 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app/features/auth/bloc/auth_bloc.dart';
 import 'package:todo_app/features/auth/screen/login_screen.dart';
-import 'package:todo_app/features/auth/widgets/text_field_widget.dart';
+import 'package:todo_app/features/auth/widgets/auth_text_field_widget.dart';
 import 'package:todo_app/features/loading/loading_screen.dart';
 import 'package:todo_app/style/style_text.dart';
 
@@ -32,28 +33,28 @@ class SignupScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           spacing: 16,
                           children: [
-                            Text('Register', style: StyleText.latoBold38),
+                            Text("register".tr(), style: StyleText.latoBold38),
 
-                            Text('Username', style: StyleText.latoBold16),
+                            Text("username".tr(), style: StyleText.latoBold16),
 
-                            TextFieldWidget(
+                            AuthTextFieldWidget(
                               controller: bloc.userNameController,
-                              textHint: 'Enter your Username',
+                              textHint: "enterUsername".tr(),
                             ),
-                            Text('Password', style: StyleText.latoBold16),
+                            Text("password".tr(), style: StyleText.latoBold16),
 
-                            TextFieldWidget(
+                            AuthTextFieldWidget(
                               controller: bloc.passwordController,
-                              textHint: 'Enter your password',
+                              textHint: "enterPassword".tr(),
                             ),
                             Text(
-                              'Confirm Password',
+                              "confirmPassword".tr(),
                               style: StyleText.latoBold16,
                             ),
 
-                            TextFieldWidget(
+                            AuthTextFieldWidget(
                               controller: bloc.conpasswordController,
-                              textHint: 'Conform your password',
+                              textHint: "confirmPasswordHint".tr(),
                             ),
                             BlocListener<AuthBloc, AuthState>(
                               listener: (context, state) {
@@ -78,7 +79,7 @@ class SignupScreen extends StatelessWidget {
                                   bloc.add(SignUpEvent());
                                 },
                                 child: Text(
-                                  'Register',
+                                  'register'.tr(),
                                   style: StyleText.latoRegular16,
                                 ),
                               ),
@@ -90,7 +91,7 @@ class SignupScreen extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Already have an account? ',
+                                  "alreadyHaveAccount".tr(),
                                   style: StyleText.latoRegular16,
                                 ),
                                 Padding(
@@ -105,7 +106,7 @@ class SignupScreen extends StatelessWidget {
                                       );
                                     },
                                     child: Text(
-                                      'Login',
+                                      'login'.tr(),
                                       style: StyleText.latoRegular16,
                                     ),
                                   ),

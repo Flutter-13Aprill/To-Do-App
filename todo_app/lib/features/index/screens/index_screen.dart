@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app/features/index/bloc/index_bloc.dart';
 import 'package:todo_app/features/index/widget/task_bottom_sheet.dart';
+import 'package:todo_app/features/index/widget/task_details_sheet.dart';
 
 import 'package:todo_app/style/style_color.dart';
 import 'package:todo_app/style/style_text.dart';
@@ -42,74 +43,95 @@ class IndexScreen extends StatelessWidget {
                         return Column(
                           children: [
                             SizedBox(height: 16),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: StyleColor.grey,
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  ListTile(
-                                    leading: Checkbox(
-                                      value: state.tasks[index].isCompleted,
-                                      onChanged: (value) {},
-                                    ),
-                                    title: Text(state.tasks[index].title),
-                                    subtitle: Text(
-                                      state.tasks[index].taskTime.toString(),
+                            InkWell(
+                              onTap: () {
+                                showModalBottomSheet(
+                                  context: context,
+                                  backgroundColor: StyleColor.grey,
+                                  shape: const RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.vertical(
+                                      top: Radius.circular(20),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Row(
-                                      spacing: 8,
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        // Chip - University
-                                        Chip(
-                                          avatar: const Icon(
-                                            Icons.school,
-                                            size: 12,
-                                            color: Colors.white,
-                                          ),
-                                          label: Text(
-                                            state.tasks[index].category
-                                                .toString(),
-                                            style: StyleText.latoRegular10,
-                                          ),
-                                          backgroundColor: StyleColor.purple,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(
-                                              8,
-                                            ),
-                                          ),
-                                        ),
-
-                                        Chip(
-                                          avatar: const Icon(
-                                            Icons.flag_outlined,
-                                            size: 16,
-                                            color: Colors.white,
-                                          ),
-                                          label: Text(
-                                            state.tasks[index].priority
-                                                .toString(),
-                                            style: TextStyle(
+                                  isScrollControlled: true,
+                                  builder: (context) {
+                                    return BlocProvider.value(
+                                      value: bloc,
+                                      child: TaskDetailsSheet(
+                                        task: state.tasks[index],
+                                      ),
+                                    );
+                                  },
+                                );
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: StyleColor.grey,
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    ListTile(
+                                      leading: Checkbox(
+                                        value: state.tasks[index].isCompleted,
+                                        onChanged: (value) {},
+                                      ),
+                                      title: Text(state.tasks[index].title),
+                                      subtitle: Text(
+                                        state.tasks[index].taskTime.toString(),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Row(
+                                        spacing: 8,
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          // Chip - University
+                                          Chip(
+                                            avatar: const Icon(
+                                              Icons.school,
+                                              size: 12,
                                               color: Colors.white,
                                             ),
-                                          ),
-                                          backgroundColor: Colors.transparent,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(
-                                              8,
+                                            label: Text(
+                                              state.tasks[index].category
+                                                  .toString()
+                                                  .tr(),
+                                              style: StyleText.latoRegular10,
+                                            ),
+                                            backgroundColor: StyleColor.purple,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(8),
                                             ),
                                           ),
-                                        ),
-                                      ],
+
+                                          Chip(
+                                            avatar: const Icon(
+                                              Icons.flag_outlined,
+                                              size: 16,
+                                              color: Colors.white,
+                                            ),
+                                            label: Text(
+                                              state.tasks[index].priority
+                                                  .toString(),
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                            backgroundColor: Colors.transparent,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(8),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ],
