@@ -1,7 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<<<<<<< HEAD
 <uses-permission android:name="android.permission.CAMERA"/>
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+=======
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
     <application
         android:label="to_do_app_development"
         android:name="${applicationName}"

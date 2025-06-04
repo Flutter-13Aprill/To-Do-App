@@ -13,9 +13,12 @@ dependencies:
   table_calendar: ^3.0.8
   flutter_time_picker_spinner: ^2.0.0
   calendar_view: ^1.0.5
+<<<<<<< HEAD
   image_picker: ^1.0.4
   easy_localization: ^3.0.5
   rxdart: ^0.27.7
+=======
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
 
 dev_dependencies:
   flutter_test:
@@ -26,5 +29,8 @@ flutter:
   uses-material-design: true
   assets:
    - assets/
+<<<<<<< HEAD
    - translations/
    
+=======
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed

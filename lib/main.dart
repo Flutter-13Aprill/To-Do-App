@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,6 +22,15 @@ void main() async {
        ),
     ),
   );
+=======
+import 'package:flutter/material.dart';
+import 'package:to_do_app_development/Screen/Splash_Screen.dart';
+import 'package:provider/provider.dart';
+import 'package:to_do_app_development/Screen/Task/bloc/task_bloc.dart';
+
+void main() {
+  runApp(Provider<TaskBloc>(create: (_) => TaskBloc(), child: const MainApp()));
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
 }
 
 class MainApp extends StatelessWidget {
@@ -28,6 +38,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return MultiBlocProvider(
       providers: [
         BlocProvider<TaskBloc>(create: (_) => TaskBloc()),
@@ -40,6 +51,11 @@ class MainApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: SplashScreen(),
       ),
+=======
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: SplashScreen(),
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
     );
   }
 }

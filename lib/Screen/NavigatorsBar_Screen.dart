@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_app_development/Screen/Calendar_Screen.dart';
 import 'package:to_do_app_development/Screen/Profile_Screen.dart';
+<<<<<<< HEAD
 import 'package:easy_localization/easy_localization.dart'; 
 import 'index_screen.dart';
 class NavigatorsBarScreen extends StatelessWidget {
   NavigatorsBarScreen({super.key});
+=======
+
+
+import 'index_screen.dart';
+
+class NavigatorsBarScreen extends StatelessWidget {
+  NavigatorsBarScreen({super.key});
+
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
   final ValueNotifier<int> _currentIndexNotifier = ValueNotifier<int>(0);
 
   final List<Widget> _pages = [IndexScreen() ,CalendarScreen(),ProfileScreen() ];
@@ -30,6 +40,7 @@ class NavigatorsBarScreen extends StatelessWidget {
             onTap: (index) {
               _currentIndexNotifier.value = index;
             },
+<<<<<<< HEAD
             items: [
               BottomNavigationBarItem(
                 icon: Icon(Icons.home_outlined),
@@ -42,6 +53,20 @@ class NavigatorsBarScreen extends StatelessWidget {
               BottomNavigationBarItem(
                 icon: Icon(Icons.person_outline),
                 label: tr('profile'),
+=======
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home_outlined),
+                label: 'Index',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.calendar_today_outlined),
+                label: 'Calendar',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person_outline),
+                label: 'Profile',
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
               ),
             ],
           );

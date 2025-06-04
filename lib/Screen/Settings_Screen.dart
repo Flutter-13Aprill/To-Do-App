@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:provider/provider.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:to_do_app_development/Screen/NavigatorsBar_Screen.dart';
@@ -99,6 +100,33 @@ class SettingsScreen extends StatelessWidget {
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: textColor,
+=======
+import 'package:to_do_app_development/Screen/NavigatorsBar_Screen.dart';
+class SettingsScreen extends StatelessWidget {
+  const SettingsScreen({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) =>  NavigatorsBarScreen()),
+            );
+          },
+        ),
+        title: const Text(
+          'Settings',
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
           ),
         ),
         centerTitle: true,
@@ -108,6 +136,7 @@ class SettingsScreen extends StatelessWidget {
         child: Column(
           children: [
             Align(
+<<<<<<< HEAD
               alignment:
                   Localizations.localeOf(context).languageCode == 'ar'
                       ? Alignment.topRight
@@ -118,11 +147,21 @@ class SettingsScreen extends StatelessWidget {
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
                   color: textColor,
+=======
+              alignment: Alignment.topLeft,
+              child: Text(
+                'Settings',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                 ),
               ),
             ),
             const SizedBox(height: 20),
             ListTile(
+<<<<<<< HEAD
               leading: Icon(Icons.color_lens, color: iconColor),
               title: Text(
                 'change_app_color'.tr(),
@@ -142,6 +181,35 @@ class SettingsScreen extends StatelessWidget {
               ),
               trailing: Icon(Icons.arrow_forward_ios, color: iconColor),
               onTap: () => _showLanguageDialog(context),
+=======
+              leading: const Icon(Icons.color_lens, color: Colors.white),
+              title: const Text(
+                'Change app color',
+                style: TextStyle(color: Colors.white),
+              ),
+              trailing: const Icon(
+                Icons.arrow_forward_ios,
+                color: Colors.white,
+              ),
+              onTap: () {
+                // Handle app color change
+              },
+            ),
+
+            ListTile(
+              leading: const Icon(Icons.language, color: Colors.white),
+              title: const Text(
+                'Change app language',
+                style: TextStyle(color: Colors.white),
+              ),
+              trailing: const Icon(
+                Icons.arrow_forward_ios,
+                color: Colors.white,
+              ),
+              onTap: () {
+                // Handle language change
+              },
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
             ),
           ],
         ),

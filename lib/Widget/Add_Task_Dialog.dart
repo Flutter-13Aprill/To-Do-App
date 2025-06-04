@@ -4,14 +4,20 @@ import 'package:to_do_app_development/Models/Catagory_Model.dart';
 import 'package:to_do_app_development/Models/Task_model.dart';
 import 'package:to_do_app_development/Screen/Catgory_Screeen.dart';
 
+<<<<<<< HEAD
 import 'package:easy_localization/easy_localization.dart';
 
+=======
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
 class AddTaskDialog extends StatefulWidget {
   const AddTaskDialog({super.key});
   @override
   State<AddTaskDialog> createState() => _AddTaskDialogWidgetState();
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
 class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _descController = TextEditingController();
@@ -19,7 +25,10 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
   TimeOfDay? selectedTime;
   Category? seletedCatagory;
   TaskPriority priority = TaskPriority.p1;
+<<<<<<< HEAD
 
+=======
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
   // --- Date Picker Dialog ---
   Future<void> _pickDate() async {
     final DateTime now = DateTime.now();
@@ -71,9 +80,15 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
                   children: [
                     TextButton(
                       onPressed: () => Navigator.pop(context),
+<<<<<<< HEAD
                       child: Text(
                         'cancel'.tr(),
                         style: const TextStyle(color: Colors.white),
+=======
+                      child: const Text(
+                        'Cancel',
+                        style: TextStyle(color: Colors.white),
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                       ),
                     ),
                     TextButton(
@@ -85,9 +100,15 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
                           vertical: 10,
                         ),
                       ),
+<<<<<<< HEAD
                       child: Text(
                         'choose_time'.tr(),
                         style: const TextStyle(color: Colors.white),
+=======
+                      child: const Text(
+                        'Choose Time',
+                        style: TextStyle(color: Colors.white),
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                       ),
                     ),
                   ],
@@ -124,9 +145,15 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
+<<<<<<< HEAD
                 Text(
                   'choose_time'.tr(),
                   style: const TextStyle(color: Colors.white, fontSize: 16),
+=======
+                const Text(
+                  'Choose Time',
+                  style: TextStyle(color: Colors.white, fontSize: 16),
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                 ),
 
                 Divider(color: Colors.white24, thickness: 1),
@@ -155,9 +182,15 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
                   children: [
                     TextButton(
                       onPressed: () => Navigator.pop(context),
+<<<<<<< HEAD
                       child: Text(
                         'cancel'.tr(),
                         style: const TextStyle(color: Colors.white),
+=======
+                      child: const Text(
+                        'Cancel',
+                        style: TextStyle(color: Colors.white),
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                       ),
                     ),
                     TextButton(
@@ -165,9 +198,15 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
                       style: TextButton.styleFrom(
                         backgroundColor: const Color(0xFF8875FF),
                       ),
+<<<<<<< HEAD
                       child: Text(
                         'save'.tr(),
                         style: const TextStyle(color: Colors.white),
+=======
+                      child: const Text(
+                        'Save',
+                        style: TextStyle(color: Colors.white),
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                       ),
                     ),
                   ],
@@ -187,7 +226,10 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
   }
 
   // --- Priority Picker ---
+<<<<<<< HEAD
   // --- Priority Picker ---
+=======
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
   Future<void> _pickPriority() async {
     TaskPriority selected = priority;
 
@@ -204,9 +246,15 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
+<<<<<<< HEAD
                 Text(
                   'task_priority'.tr(),
                   style: const TextStyle(color: Colors.white, fontSize: 16),
+=======
+                const Text(
+                  'Task Priority',
+                  style: TextStyle(color: Colors.white, fontSize: 16),
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                 ),
                 Divider(color: Colors.white24, thickness: 1),
                 const SizedBox(height: 12),
@@ -254,9 +302,15 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
                   children: [
                     TextButton(
                       onPressed: () => Navigator.pop(context),
+<<<<<<< HEAD
                       child: Text(
                         'cancel'.tr(),
                         style: const TextStyle(color: Colors.white),
+=======
+                      child: const Text(
+                        'Cancel',
+                        style: TextStyle(color: Colors.white),
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                       ),
                     ),
                     TextButton(
@@ -264,9 +318,15 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
                       style: TextButton.styleFrom(
                         backgroundColor: const Color(0xFF8875FF),
                       ),
+<<<<<<< HEAD
                       child: Text(
                         'save'.tr(),
                         style: const TextStyle(color: Colors.white),
+=======
+                      child: const Text(
+                        'Save',
+                        style: TextStyle(color: Colors.white),
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                       ),
                     ),
                   ],
@@ -282,12 +342,16 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
   }
 
   void _submitTask() {
+<<<<<<< HEAD
     if (_titleController.text.trim().isEmpty) {
       ScaffoldMessenger.of(
         context,
       ).showSnackBar(SnackBar(content: Text('title_required'.tr())));
       return;
     }
+=======
+    if (_titleController.text.trim().isEmpty) return;
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
 
     final task = Task(
       title: _titleController.text.trim(),
@@ -302,6 +366,7 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
   }
 
   List<Category> categories = [
+<<<<<<< HEAD
     Category(
       name: "Grocery".tr(),
       icon: Icons.shopping_cart,
@@ -324,6 +389,22 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
     ),
     Category(name: "Movie".tr(), icon: Icons.movie, color: Colors.indigo),
     Category(name: "Home".tr(), icon: Icons.home, color: Colors.brown),
+=======
+    Category(name: "Grocery", icon: Icons.shopping_cart, color: Colors.green),
+    Category(name: "Work", icon: Icons.work, color: Colors.orange),
+    Category(name: "Sport", icon: Icons.fitness_center, color: Colors.blue),
+    Category(name: "Design", icon: Icons.brush, color: Colors.purple),
+    Category(name: "University", icon: Icons.school, color: Colors.pink),
+    Category(name: "Social", icon: Icons.people, color: Colors.cyan),
+    Category(name: "Music", icon: Icons.music_note, color: Colors.red),
+    Category(
+      name: "Health",
+      icon: Icons.health_and_safety,
+      color: Colors.teal,
+    ),
+    Category(name: "Movie", icon: Icons.movie, color: Colors.indigo),
+    Category(name: "Home", icon: Icons.home, color: Colors.brown),
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
   ];
 
   Future<void> _pickCategory(BuildContext context) async {
@@ -340,10 +421,17 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
+<<<<<<< HEAD
                 Center(
                   child: Text(
                     'choose_category'.tr(),
                     style: const TextStyle(
+=======
+                const Center(
+                  child: Text(
+                    'Choose Category',
+                    style: TextStyle(
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                       color: Colors.white,
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
@@ -357,12 +445,22 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount: categories.length + 1,
+<<<<<<< HEAD
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
                     mainAxisSpacing: 20,
                     crossAxisSpacing: 20,
                     childAspectRatio: 0.9,
                   ),
+=======
+                  gridDelegate:
+                      const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 3,
+                        mainAxisSpacing: 20,
+                        crossAxisSpacing: 20,
+                        childAspectRatio: 0.9,
+                      ),
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                   itemBuilder: (context, index) {
                     if (index < categories.length) {
                       final category = categories[index];
@@ -421,12 +519,24 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
                                   width: 1.5,
                                 ),
                               ),
+<<<<<<< HEAD
                               child: const Icon(Icons.add, color: Colors.white),
                             ),
                             const SizedBox(height: 8),
                             Text(
                               'create_new'.tr(),
                               style: const TextStyle(
+=======
+                              child: const Icon(
+                                Icons.add,
+                                color: Colors.white,
+                              ),
+                            ),
+                            const SizedBox(height: 8),
+                            const Text(
+                              'Create New',
+                              style: TextStyle(
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                                 color: Colors.white70,
                                 fontSize: 13,
                               ),
@@ -447,7 +557,11 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
 
     if (selectedCategory != null) {
       setState(() {
+<<<<<<< HEAD
         categories.add(selectedCategory); //  Add new category
+=======
+        categories.add(selectedCategory); // ✅ Add new category
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
         seletedCatagory = selectedCategory;
       });
     }
@@ -465,9 +579,15 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+<<<<<<< HEAD
               Text(
                 'add_task'.tr(),
                 style: const TextStyle(
+=======
+              const Text(
+                'Add Task',
+                style: TextStyle(
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                   color: Colors.white,
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
@@ -481,7 +601,11 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
                   fontWeight: FontWeight.w500,
                 ),
                 decoration: InputDecoration(
+<<<<<<< HEAD
                   hintText: 'task_title'.tr(),
+=======
+                  hintText: 'Task Title',
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                   hintStyle: const TextStyle(color: Colors.white54),
                   filled: true,
                   fillColor: const Color(0xFF2C2C2C),
@@ -500,7 +624,11 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
                 controller: _descController,
                 style: const TextStyle(color: Colors.white),
                 decoration: InputDecoration(
+<<<<<<< HEAD
                   hintText: 'enter_description'.tr(),
+=======
+                  hintText: 'Enter description',
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                   hintStyle: const TextStyle(color: Colors.white54),
                   filled: true,
                   fillColor: const Color(0xFF2C2C2C),
@@ -520,7 +648,10 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
                   IconButton(
                     icon: const Icon(Icons.category, color: Colors.white70),
                     onPressed: () => _pickCategory(context),
+<<<<<<< HEAD
                     tooltip: 'category'.tr(),
+=======
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                   ),
                   IconButton(
                     icon: const Icon(
@@ -528,7 +659,10 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
                       color: Colors.white70,
                     ),
                     onPressed: _pickDate,
+<<<<<<< HEAD
                     tooltip: 'pick_date'.tr(),
+=======
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                   ),
                   IconButton(
                     icon: const Icon(
@@ -536,13 +670,19 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
                       color: Colors.white70,
                     ),
                     onPressed: _pickPriority,
+<<<<<<< HEAD
                     tooltip: 'priority'.tr(),
+=======
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                   ),
                   const Spacer(),
                   IconButton(
                     icon: const Icon(Icons.send, color: Color(0xFF8875FF)),
                     onPressed: _submitTask,
+<<<<<<< HEAD
                     tooltip: 'submit'.tr(),
+=======
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                   ),
                 ],
               ),
@@ -551,7 +691,11 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
                 Padding(
                   padding: const EdgeInsets.only(top: 8),
                   child: Text(
+<<<<<<< HEAD
                     '${'selected_date'.tr()}: ${selectedDate!.toLocal().toString().split(' ')[0]}',
+=======
+                    'Selected Date: ${selectedDate!.toLocal().toString().split(' ')[0]}',
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                     style: const TextStyle(color: Colors.white70),
                   ),
                 ),
@@ -559,7 +703,11 @@ class _AddTaskDialogWidgetState extends State<AddTaskDialog> {
                 Padding(
                   padding: const EdgeInsets.only(top: 4),
                   child: Text(
+<<<<<<< HEAD
                     '${'selected_time'.tr()}: ${selectedTime!.format(context)}',
+=======
+                    'Selected Time: ${selectedTime!.format(context)}',
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                     style: const TextStyle(color: Colors.white70),
                   ),
                 ),

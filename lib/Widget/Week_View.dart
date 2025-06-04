@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:easy_localization/easy_localization.dart';
+=======
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
 
 class WeekView extends StatelessWidget {
   final DateTime selectedDate;
@@ -39,7 +42,11 @@ class WeekView extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
+<<<<<<< HEAD
                     _getDayLabel(day.weekday).tr(), 
+=======
+                    ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'][day.weekday % 7],
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                     style: TextStyle(
                       color: isSelected ? Colors.white : Colors.white70,
                       fontWeight: FontWeight.w600,
@@ -62,6 +69,7 @@ class WeekView extends StatelessWidget {
       ),
     );
   }
+<<<<<<< HEAD
 
   String _getDayLabel(int weekday) {
     switch (weekday % 7) {
@@ -82,4 +90,6 @@ class WeekView extends StatelessWidget {
         return 'sat';
     }
   }
+=======
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
 }

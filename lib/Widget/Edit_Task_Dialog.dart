@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import 'package:easy_localization/easy_localization.dart';
+=======
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
 import 'package:flutter/material.dart';
 import 'package:flutter_time_picker_spinner/flutter_time_picker_spinner.dart';
 import 'package:to_do_app_development/Models/Catagory_Model.dart';
@@ -12,7 +15,10 @@ class EditTaskDialog extends StatefulWidget {
   @override
   State<EditTaskDialog> createState() => _EditTaskDialogState();
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
 class _EditTaskDialogState extends State<EditTaskDialog> {
   late TextEditingController _titleController;
   late TextEditingController _descController;
@@ -24,7 +30,11 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
   @override
   void initState() {
     super.initState();
+<<<<<<< HEAD
 
+=======
+   
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
     _titleController = TextEditingController(text: widget.task.title);
     _descController = TextEditingController(text: widget.task.description);
     selectedDate = widget.task.dueDate;
@@ -32,7 +42,10 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
     selectedCategory = widget.task.category;
     priority = widget.task.priority;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
   @override
   void dispose() {
     _titleController.dispose();
@@ -86,9 +99,15 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
                   children: [
                     TextButton(
                       onPressed: () => Navigator.pop(context),
+<<<<<<< HEAD
                       child: Text(
                         'cancel'.tr(),
                         style: const TextStyle(color: Colors.white),
+=======
+                      child: const Text(
+                        'Cancel',
+                        style: TextStyle(color: Colors.white),
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                       ),
                     ),
                     TextButton(
@@ -100,9 +119,15 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
                           vertical: 10,
                         ),
                       ),
+<<<<<<< HEAD
                       child: Text(
                         'edit_time'.tr(),
                         style: const TextStyle(color: Colors.white),
+=======
+                      child: const Text(
+                        'Edit Time',
+                        style: TextStyle(color: Colors.white),
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                       ),
                     ),
                   ],
@@ -139,9 +164,15 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
+<<<<<<< HEAD
                 Text(
                   'choose_time'.tr(),
                   style: const TextStyle(color: Colors.white, fontSize: 16),
+=======
+                const Text(
+                  'Choose Time',
+                  style: TextStyle(color: Colors.white, fontSize: 16),
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                 ),
                 Divider(color: Colors.white24, thickness: 1),
                 const SizedBox(height: 12),
@@ -168,9 +199,15 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
                   children: [
                     TextButton(
                       onPressed: () => Navigator.pop(context),
+<<<<<<< HEAD
                       child: Text(
                         'cancel'.tr(),
                         style: const TextStyle(color: Colors.white),
+=======
+                      child: const Text(
+                        'Cancel',
+                        style: TextStyle(color: Colors.white),
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                       ),
                     ),
                     TextButton(
@@ -178,9 +215,15 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
                       style: TextButton.styleFrom(
                         backgroundColor: const Color(0xFF8875FF),
                       ),
+<<<<<<< HEAD
                       child: Text(
                         'edit'.tr(),
                         style: const TextStyle(color: Colors.white),
+=======
+                      child: const Text(
+                        'Edit',
+                        style: TextStyle(color: Colors.white),
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                       ),
                     ),
                   ],
@@ -200,6 +243,7 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
   }
 
   // --- Category Picker ---
+<<<<<<< HEAD
   List<Category> categories = [
     Category(
       name: "Grocery".tr(),
@@ -227,6 +271,27 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
 
   Future<void> _pickCategory(BuildContext context) async {
     final pickedCategory = await showDialog<Category>(
+=======
+   List<Category> categories = [
+    Category(name: "Grocery", icon: Icons.shopping_cart, color: Colors.green),
+    Category(name: "Work", icon: Icons.work, color: Colors.orange),
+    Category(name: "Sport", icon: Icons.fitness_center, color: Colors.blue),
+    Category(name: "Design", icon: Icons.brush, color: Colors.purple),
+    Category(name: "University", icon: Icons.school, color: Colors.pink),
+    Category(name: "Social", icon: Icons.people, color: Colors.cyan),
+    Category(name: "Music", icon: Icons.music_note, color: Colors.red),
+    Category(
+      name: "Health",
+      icon: Icons.health_and_safety,
+      color: Colors.teal,
+    ),
+    Category(name: "Movie", icon: Icons.movie, color: Colors.indigo),
+    Category(name: "Home", icon: Icons.home, color: Colors.brown),
+  ];
+
+  Future<void> _pickCategory(BuildContext context) async {
+    var selectedCategory = await showDialog<Category>(
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
       context: context,
       builder: (context) {
         return Dialog(
@@ -239,10 +304,17 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
+<<<<<<< HEAD
                 Center(
                   child: Text(
                     'choose_category'.tr(),
                     style: const TextStyle(
+=======
+                const Center(
+                  child: Text(
+                    'Choose Category',
+                    style: TextStyle(
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                       color: Colors.white,
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
@@ -256,12 +328,22 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount: categories.length + 1,
+<<<<<<< HEAD
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
                     mainAxisSpacing: 20,
                     crossAxisSpacing: 20,
                     childAspectRatio: 0.9,
                   ),
+=======
+                  gridDelegate:
+                      const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 3,
+                        mainAxisSpacing: 20,
+                        crossAxisSpacing: 20,
+                        childAspectRatio: 0.9,
+                      ),
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                   itemBuilder: (context, index) {
                     if (index < categories.length) {
                       final category = categories[index];
@@ -320,12 +402,24 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
                                   width: 1.5,
                                 ),
                               ),
+<<<<<<< HEAD
                               child: const Icon(Icons.add, color: Colors.white),
                             ),
                             const SizedBox(height: 8),
                             Text(
                               'edit'.tr(),
                               style: const TextStyle(
+=======
+                              child: const Icon(
+                                Icons.add,
+                                color: Colors.white,
+                              ),
+                            ),
+                            const SizedBox(height: 8),
+                            const Text(
+                              'Edit',
+                              style: TextStyle(
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                                 color: Colors.white70,
                                 fontSize: 13,
                               ),
@@ -344,14 +438,26 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
       },
     );
 
+<<<<<<< HEAD
     if (pickedCategory != null) {
       setState(() {
         categories.add(pickedCategory);
         selectedCategory = pickedCategory; // update the field correctly
+=======
+    if (selectedCategory != null) {
+      setState(() {
+        categories.add(selectedCategory!); 
+        selectedCategory = selectedCategory;
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
       });
     }
   }
 
+<<<<<<< HEAD
+=======
+
+ 
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
   // --- Priority Picker ---
   Future<void> _pickPriority() async {
     TaskPriority selected = priority;
@@ -369,9 +475,15 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
+<<<<<<< HEAD
                 Text(
                   'task_priority'.tr(),
                   style: const TextStyle(color: Colors.white, fontSize: 16),
+=======
+                const Text(
+                  'Task Priority',
+                  style: TextStyle(color: Colors.white, fontSize: 16),
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                 ),
                 Divider(color: Colors.white24, thickness: 1),
                 const SizedBox(height: 12),
@@ -419,9 +531,15 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
                   children: [
                     TextButton(
                       onPressed: () => Navigator.pop(context),
+<<<<<<< HEAD
                       child: Text(
                         'cancel'.tr(),
                         style: const TextStyle(color: Colors.white),
+=======
+                      child: const Text(
+                        'Cancel',
+                        style: TextStyle(color: Colors.white),
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                       ),
                     ),
                     TextButton(
@@ -429,9 +547,15 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
                       style: TextButton.styleFrom(
                         backgroundColor: const Color(0xFF8875FF),
                       ),
+<<<<<<< HEAD
                       child: Text(
                         'edit'.tr(),
                         style: const TextStyle(color: Colors.white),
+=======
+                      child: const Text(
+                        'Edit',
+                        style: TextStyle(color: Colors.white),
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                       ),
                     ),
                   ],
@@ -445,6 +569,7 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
 
     if (result != null) setState(() => priority = result);
   }
+<<<<<<< HEAD
 
   // --- Submit Updated Task ---
   void _submitTask() {
@@ -454,6 +579,11 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
       ).showSnackBar(SnackBar(content: Text('title_required'.tr())));
       return;
     }
+=======
+  // --- Submit Updated Task ---
+  void _submitTask() {
+    if (_titleController.text.trim().isEmpty) return;
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
 
     final updatedTask = Task(
       title: _titleController.text.trim(),
@@ -479,9 +609,15 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+<<<<<<< HEAD
               Text(
                 'edit_task'.tr(),
                 style: const TextStyle(
+=======
+              const Text(
+                'Edit Task',
+                style: TextStyle(
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                   color: Colors.white,
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
@@ -495,7 +631,11 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
                   fontWeight: FontWeight.w500,
                 ),
                 decoration: InputDecoration(
+<<<<<<< HEAD
                   hintText: 'task_title'.tr(),
+=======
+                  hintText: 'Task Title',
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                   hintStyle: const TextStyle(color: Colors.white54),
                   filled: true,
                   fillColor: const Color(0xFF2C2C2C),
@@ -514,7 +654,11 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
                 controller: _descController,
                 style: const TextStyle(color: Colors.white),
                 decoration: InputDecoration(
+<<<<<<< HEAD
                   hintText: 'enter_description'.tr(),
+=======
+                  hintText: 'Enter description',
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
                   hintStyle: const TextStyle(color: Colors.white54),
                   filled: true,
                   fillColor: const Color(0xFF2C2C2C),
@@ -562,4 +706,8 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
       ),
     );
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed

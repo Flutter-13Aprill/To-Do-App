@@ -18,6 +18,7 @@ Calendar Integration:
 
 A calendar view to visualize tasks based on due dates.
 Users can toggle between viewing today's tasks and completed tasks.
+<<<<<<< HEAD
 
 Category Management:
 
@@ -62,6 +63,51 @@ Note: You need a working emulator or a connected real device
 ## Splash Screen
 ![alt text](ScreenShout/image.png)
 
+=======
+Category Management:
+
+Users can create and customize categories for better organization.
+Categories can have specific icons and colors for easy identification.
+
+Onboarding Experience:
+
+A welcoming onboarding screen to guide new users through the app features.
+Users can skip the onboarding process if they are familiar with the app.
+
+Responsive Design:
+
+The app is designed to be responsive and works well on various screen sizes.
+
+State Management:
+
+The application uses the BLoC (Business Logic Component) pattern to manage state efficiently.
+
+Dark Mode:
+
+The app features a dark theme, providing a visually appealing experience, especially in low-light environments.
+
+Technologies Used
+Flutter: For building cross-platform mobile applications.
+Dart: The programming language used for Flutter development.
+BLoC: For state management.
+
+
+## ⚙️ Setup Instructions
+
+Clone the repository: Use the command line: git clone <Your Repository Path>
+
+Install dependencies: Make sure you have Flutter installed. Then run: flutter pub get
+
+Run the app: You can launch the app using: flutter run
+
+Note: You need a working emulator or a connected real device
+
+# 📱Screen Design Overview
+
+## Splash Screen
+![alt text](ScreenShout/image.png)
+
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
 ## Onboarding Screen
 
 ### Onboarding 1 Screen
@@ -86,6 +132,7 @@ Note: You need a working emulator or a connected real device
 ![alt text](ScreenShout/image-7.png)
 
 ## Index Screen after added task
+<<<<<<< HEAD
 ![alt text](ScreenShout/image8.png)
 
 ## berfor edit to the task
@@ -137,3 +184,33 @@ Note: You need a working emulator or a connected real device
 ## Logout Confirmation
 ![alt text](ScreenShout/image24.png)
 ///////////////////////////////////////
+=======
+![alt text](ScreenShout/image-8.png)
+
+## berfor edit to the task
+![alt text](ScreenShout/image-9.png)
+
+## After edited and added other task
+![alt text](ScreenShout/image-10.png)
+
+## Dialog show deleted task with name
+![alt text](ScreenShout/image-11.png)
+
+## After deleted task 
+![alt text](ScreenShout/image-12.png)
+
+## Calendar Screen 
+![alt text](ScreenShout/image-13.png)
+
+## Profile Screen
+![alt text](ScreenShout/image-14.png)
+
+## Settings Screen
+![alt text](ScreenShout/image-15.png)
+
+## change account name Dialog
+
+![alt text](ScreenShout/image-16.png)
+## Change Image BottomSheet
+![alt text](ScreenShout/image-17.png)
+>>>>>>> cdd6b355a4275f9c1fc6085dd11dcb1a41ec23ed
