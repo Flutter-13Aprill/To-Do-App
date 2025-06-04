@@ -10,8 +10,11 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Locale currentLocale = Localizations.localeOf(context);
+
+    bool isEnable = currentLocale.languageCode == 'en';
     return BlocProvider(
-      create: (context) => SettingsBloc(),
+      create: (context) => SettingsBloc(isEnable: isEnable),
       child: Builder(
         builder: (context) {
           final bloc = context.read<SettingsBloc>();

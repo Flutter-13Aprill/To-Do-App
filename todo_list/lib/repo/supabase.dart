@@ -111,4 +111,68 @@ class SupabaseConnect {
 
     return data?.length ?? 0;
   }
+
+  static Future<void> updateEmail(String newEmail) async {
+    try {
+      final response = await Supabase.instance.client.auth.updateUser(
+        UserAttributes(email: newEmail),
+      );
+
+      if (response.user == null) {
+        throw FormatException("Failed to update email");
+      }
+
+      print("Email updated successfully to $newEmail");
+    } on AuthException catch (e) {
+      throw FormatException(e.message);
+    } catch (e) {
+      throw FormatException("Unexpected error occurred while updating email");
+    }
+  }
+
+  static Future<void> changeUserPassword({
+    required String oldPassword,
+    required String newPassword,
+  }) async {
+    try {
+      final user = Supabase.instance.client.auth.currentUser;
+
+      if (user == null || user.email == null) {
+        throw FormatException("User is not logged in");
+      }
+
+      final session = await Supabase.instance.client.auth.signInWithPassword(
+        email: user.email!,
+        password: oldPassword,
+      );
+
+      if (session.user == null) {
+        throw FormatException('Incorrect current password');
+      }
+
+      final updateResponse = await Supabase.instance.client.auth.updateUser(
+        UserAttributes(password: newPassword),
+      );
+
+      if (updateResponse.user == null) {
+        throw FormatException('Password update failed');
+      }
+
+      print("Password updated successfully");
+    } on AuthException catch (e) {
+      throw FormatException(e.message);
+    } catch (e) {
+      throw FormatException('Unexpected error while changing password');
+    }
+  }
+
+  static Future<void> deleteTask({required int taskId}) async {
+    try {
+      await supabase?.client.from('tasks').delete().eq('id', taskId);
+
+      print("deleted successfully.");
+    } catch (e) {
+      print("Error while deleting task");
+    }
+  }
 }

@@ -6,6 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:meta/meta.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:todo_list/models/task/task_model.dart';
+import 'package:todo_list/repo/supabase.dart';
 import 'package:todo_list/style/app_colors.dart';
 
 part 'index_event.dart';
@@ -133,6 +134,7 @@ class IndexBloc extends Bloc<IndexEvent, IndexState> {
       selectedTime = event.time;
       print("Selected time updated in bloc: $selectedTime");
     });
+    on<DeleteTaskEvent>(deleteTask);
 
     add(FetchTasksEvent());
   }
@@ -251,5 +253,18 @@ class IndexBloc extends Bloc<IndexEvent, IndexState> {
     final timeLabel = TimeOfDay.fromDateTime(dateTime).format(context);
 
     return '$dayLabel at $timeLabel';
+  }
+
+  FutureOr<void> deleteTask(
+    DeleteTaskEvent event,
+    Emitter<IndexState> emit,
+  ) async {
+    emit(LoadingState());
+
+    await SupabaseConnect.deleteTask(taskId: event.taskId);
+
+    tasks.removeWhere((task) => task.id == event.taskId);
+
+    emit(TasksLoadedState(tasks: tasks));
   }
 }

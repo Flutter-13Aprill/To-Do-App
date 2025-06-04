@@ -9,6 +9,7 @@ import 'package:todo_list/widgets/custom_text_field_Widget.dart';
 
 class ChangePasswordDialogWidget extends StatelessWidget {
   const ChangePasswordDialogWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     final bloc = context.read<ProfileBloc>();
@@ -17,98 +18,136 @@ class ChangePasswordDialogWidget extends StatelessWidget {
       onTap: () {
         FocusScope.of(context).unfocus();
       },
-      child: AlertDialog(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-        backgroundColor: AppColors.darkGray,
-        actionsPadding: EdgeInsets.all(8),
+      child: BlocConsumer<ProfileBloc, ProfileState>(
+        listener: (context, state) {
+          if (state is ErrorState) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text("Incorrext Password"),
+                backgroundColor: Colors.red,
+              ),
+            );
+          } else if (state is SuccessState) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text("password_changed_successfully".tr()),
+                backgroundColor: Colors.green,
+              ),
+            );
+            Navigator.of(context).pop();
+          }
+        },
+        builder: (context, state) {
+          return AlertDialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5),
+            ),
+            backgroundColor: AppColors.darkGray,
+            actionsPadding: EdgeInsets.all(8),
 
-        title: Text(
-          "change_account_password".tr(),
-          textAlign: TextAlign.center,
-          style: TextStyle(color: AppColors.whiteTransparent),
-        ),
-        content: SizedBox(
-          width: context.getWidth(factor: 0.8),
-          height: context.getHeight(factor: 0.25),
-          child: Column(
-            children: [
-              Divider(thickness: 1, color: AppColors.mediumGray),
+            title: Text(
+              "change_account_password".tr(),
+              textAlign: TextAlign.center,
+              style: TextStyle(color: AppColors.whiteTransparent),
+            ),
+            content: SizedBox(
+              width: context.getWidth(factor: 0.8),
+              height: context.getHeight(factor: 0.29),
+              child: Column(
+                children: [
+                  Divider(thickness: 1, color: AppColors.mediumGray),
 
-              Form(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "enter_old_password".tr(),
-                      style: TextStyle(color: AppColors.whiteTransparent),
+                  Form(
+                    key: bloc.formKey,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "enter_old_password".tr(),
+                          style: TextStyle(color: AppColors.whiteTransparent),
+                        ),
+                        AppSpacing.h8,
+                        CustomTextFieldWidget(
+                          controller: bloc.oldPassController,
+                          hintText: "*******************",
+                          obscureText: true,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'old_password_required'.tr();
+                            }
+                            return null;
+                          },
+                        ),
+                        AppSpacing.h24,
+                        Text(
+                          "enter_new_password".tr(),
+                          style: TextStyle(color: AppColors.whiteTransparent),
+                        ),
+                        AppSpacing.h8,
+                        CustomTextFieldWidget(
+                          controller: bloc.newPassController,
+                          hintText: "*******************",
+                          obscureText: true,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'new_password_required'.tr();
+                            }
+                            if (value.length < 8) {
+                              return 'password_too_short'.tr();
+                            }
+                            return null;
+                          },
+                        ),
+                      ],
                     ),
-                    AppSpacing.h8,
-                    CustomTextFieldWidget(
-                      controller: bloc.oldPassController,
-                      hintText: "*******************",
-                      obscureText: true,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'username_validation'.tr();
-                        }
-                        return null;
+                  ),
+                ],
+              ),
+            ),
+            actions: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(
+                    width: context.getWidth(factor: 0.37),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
                       },
+                      child: Text(
+                        "cancel".tr(),
+                        style: TextStyle(color: AppColors.lightPurole),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
-                    AppSpacing.h24,
-                    Text(
-                      "enter_new_password".tr(),
-                      style: TextStyle(color: AppColors.whiteTransparent),
+                  ),
+
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.lightPurole,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      minimumSize: Size(context.getWidth(factor: 0.37), 48),
                     ),
-                    AppSpacing.h8,
-                    CustomTextFieldWidget(
-                      controller: bloc.newPassController,
-                      hintText: "*******************",
-                      obscureText: true,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'username_validation'.tr();
-                        }
-                        return null;
-                      },
-                    ),
-                  ],
-                ),
+                    onPressed: () {
+                      if (bloc.formKey.currentState!.validate()) {
+                        bloc.add(ChanegPassEvent());
+                      }
+                    },
+                    child:
+                        (state is LoadingState)
+                            ? CircularProgressIndicator(color: Colors.white)
+                            : Text(
+                              "edit".tr(),
+                              style: TextStyle(color: Colors.white),
+                            ),
+                  ),
+                ],
               ),
             ],
-          ),
-        ),
-        actions: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SizedBox(
-                width: context.getWidth(factor: 0.37),
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: Text(
-                    "cancel".tr(),
-                    style: TextStyle(color: AppColors.lightPurole),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ),
-
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.lightPurole,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  minimumSize: Size(context.getWidth(factor: 0.37), 48),
-                ),
-                onPressed: () {},
-                child: Text("edit".tr(), style: TextStyle(color: Colors.white)),
-              ),
-            ],
-          ),
-        ],
+          );
+        },
       ),
     );
   }

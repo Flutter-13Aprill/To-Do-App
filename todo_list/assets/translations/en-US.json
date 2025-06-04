@@ -71,5 +71,8 @@
     "save": "Save",
     "choose_time": "Choose time",
     "task_priority": "Task priority",
-    "search_for_your_task": "Search for your task..."
+    "search_for_your_task": "Search for your task...",
+    "old_password_required": "Old password is required",
+    "new_password_required": "New password is required",
+    "delete_task": "Delete Task"
 }

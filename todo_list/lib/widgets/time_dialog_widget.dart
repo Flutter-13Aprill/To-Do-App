@@ -73,9 +73,7 @@ class TimeDialogWidget extends StatelessWidget {
               ),
               onPressed: () {
                 final selectedTime = TimeOfDay.fromDateTime(tempTime);
-                print(
-                  "Selected time saved: $selectedTime",
-                ); // طباعة الوقت عند الحفظ
+                print("Selected time saved: $selectedTime");
                 context.read<IndexBloc>().add(TimeSelectedEvent(selectedTime));
                 Navigator.of(context).pop();
               },

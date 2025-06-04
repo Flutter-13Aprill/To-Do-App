@@ -10,29 +10,10 @@ import 'package:todo_list/utils/setup.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-  // await dotenv.load();
-  // // WidgetsFlutterBinding.ensureInitialized();
+
   await SupabaseConnect.init();
   setup();
 
-  // await Supabase.initialize(
-  //   url: dotenv.env["url"].toString(),
-  //   anonKey: dotenv.env["anon_key"].toString(),
-  // );
-
-  //   runApp(
-  //     // Wraps the app with EasyLocalization to support multiple languages and manage translations
-  //     EasyLocalization(
-  //       supportedLocales: [Locale('en', 'US'), Locale('ar', 'AR')],
-  //       path: 'assets/translations',
-  //       fallbackLocale: Locale('en', 'US'),
-
-  //       child:
-
-  //       MyApp(),
-  //     ),
-  //   );
-  // }
   runApp(
     EasyLocalization(
       supportedLocales: [Locale('en', 'US'), Locale('ar', 'AR')],

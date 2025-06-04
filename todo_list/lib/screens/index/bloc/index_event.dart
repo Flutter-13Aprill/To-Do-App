@@ -40,3 +40,8 @@ class TimeSelectedEvent extends IndexEvent {
   final TimeOfDay time;
   TimeSelectedEvent(this.time);
 }
+
+class DeleteTaskEvent extends IndexEvent {
+  final int taskId;
+  DeleteTaskEvent({required this.taskId});
+}

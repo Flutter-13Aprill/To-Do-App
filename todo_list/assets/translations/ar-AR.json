@@ -71,5 +71,8 @@
     "save": "حفظ",
     "choose_time": "اختر الوقت",
     "task_priority": "أولوية المهمة",
-    "search_for_your_task": "ابحث عن مهمتك..."
+    "search_for_your_task": "ابحث عن مهمتك...",
+    "old_password_required": "كلمة المرور القديمة مطلوبة",
+    "new_password_required": "كلمة المرور الجديدة مطلوبة",
+    "delete_task": "حذف المهمة"
 }

@@ -5,6 +5,7 @@ import 'package:todo_list/screens/index/bloc/index_bloc.dart';
 import 'package:todo_list/style/app_colors.dart';
 import 'package:todo_list/utils/extensions/screen/screen_size.dart';
 import 'package:todo_list/widgets/add_task_bottomsheet_widget.dart';
+import 'package:todo_list/widgets/edit_task_bottomsheet_widget.dart';
 
 class IndexScreen extends StatelessWidget {
   const IndexScreen({super.key});
@@ -144,181 +145,203 @@ class IndexScreen extends StatelessWidget {
                                 itemBuilder: (context, index) {
                                   final task = tasks[index];
 
-                                  return Container(
-                                    height: context.getHeight(factor: 0.09),
-                                    margin: const EdgeInsets.only(bottom: 12),
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 16,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color: AppColors.darkGray,
-                                      borderRadius: BorderRadius.circular(12),
-                                    ),
-                                    child: Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        IconButton(
-                                          icon: Icon(
-                                            task.isCompleted
-                                                ? Icons.check_circle_outline
-                                                : Icons.circle_outlined,
-                                            color: AppColors.whiteTransparent,
+                                  return InkWell(
+                                    onTap: () {
+                                      showModalBottomSheet(
+                                        isScrollControlled: true,
+                                        context: context,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.vertical(
+                                            top: Radius.circular(16),
                                           ),
-                                          onPressed: () {
-                                            if (task.id != null) {
-                                              bloc.add(
-                                                ToggleTaskCompletedEvent(
-                                                  task.id!,
-                                                ),
-                                              );
-                                            } else {
-                                              print('Task ID is null!');
-                                            }
-                                          },
                                         ),
+                                        builder: (BuildContext context) {
+                                          return BlocProvider.value(
+                                            value: bloc,
+                                            child: EditTaskBottomsheetWidget(
+                                              task: task,
+                                            ),
+                                          );
+                                        },
+                                      );
+                                    },
+                                    child: Container(
+                                      height: context.getHeight(factor: 0.09),
+                                      margin: const EdgeInsets.only(bottom: 12),
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 16,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: AppColors.darkGray,
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: Row(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          IconButton(
+                                            icon: Icon(
+                                              task.isCompleted
+                                                  ? Icons.check_circle_outline
+                                                  : Icons.circle_outlined,
+                                              color: AppColors.whiteTransparent,
+                                            ),
+                                            onPressed: () {
+                                              if (task.id != null) {
+                                                bloc.add(
+                                                  ToggleTaskCompletedEvent(
+                                                    task.id!,
+                                                  ),
+                                                );
+                                              } else {
+                                                print('Task ID is null!');
+                                              }
+                                            },
+                                          ),
 
-                                        const SizedBox(width: 16),
+                                          const SizedBox(width: 16),
 
-                                        Expanded(
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                task.title,
-                                                style: const TextStyle(
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.w600,
+                                          Expanded(
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  task.title,
+                                                  style: const TextStyle(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
                                                 ),
-                                              ),
 
-                                              const SizedBox(height: 4),
+                                                const SizedBox(height: 4),
 
-                                              Row(
-                                                children: [
-                                                  Expanded(
-                                                    child: Text(
-                                                      (task.datetime != null)
-                                                          ? bloc
-                                                              .formatDateTimeHumanFriendly(
-                                                                context,
-                                                                task.datetime,
-                                                              )
-                                                          : "date",
-                                                      style: const TextStyle(
-                                                        color: Colors.white,
-                                                        fontSize: 14,
+                                                Row(
+                                                  children: [
+                                                    Expanded(
+                                                      child: Text(
+                                                        (task.datetime != null)
+                                                            ? bloc
+                                                                .formatDateTimeHumanFriendly(
+                                                                  context,
+                                                                  task.datetime,
+                                                                )
+                                                            : "date",
+                                                        style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontSize: 14,
+                                                        ),
                                                       ),
                                                     ),
-                                                  ),
 
-                                                  const SizedBox(width: 8),
-                                                  Container(
-                                                    decoration: BoxDecoration(
-                                                      color: bloc
-                                                          .iconColors[task
-                                                              .categoryId!]
-                                                          .withOpacity(0.4),
+                                                    const SizedBox(width: 8),
+                                                    Container(
+                                                      decoration: BoxDecoration(
+                                                        color: bloc
+                                                            .iconColors[task
+                                                                .categoryId!]
+                                                            .withOpacity(0.4),
 
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                            5,
-                                                          ),
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              5,
+                                                            ),
+                                                      ),
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsets.symmetric(
+                                                              vertical: 4.0,
+                                                              horizontal: 8,
+                                                            ),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.min,
+                                                          children: [
+                                                            Icon(
+                                                              bloc.categoryIcons[bloc
+                                                                  .categories[task
+                                                                  .categoryId!]],
+                                                              size: 18,
+                                                              color:
+                                                                  bloc.iconColors[task
+                                                                      .categoryId!],
+                                                            ),
+                                                            const SizedBox(
+                                                              width: 4,
+                                                            ),
+                                                            Text(
+                                                              "${task.categoryId}",
+                                                              style: TextStyle(
+                                                                color:
+                                                                    AppColors
+                                                                        .whiteTransparent,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
                                                     ),
-                                                    child: Padding(
-                                                      padding:
-                                                          const EdgeInsets.symmetric(
-                                                            vertical: 4.0,
-                                                            horizontal: 8,
-                                                          ),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.min,
-                                                        children: [
-                                                          Icon(
-                                                            bloc.categoryIcons[bloc
-                                                                .categories[task
-                                                                .categoryId!]],
-                                                            size: 18,
-                                                            color:
-                                                                bloc.iconColors[task
-                                                                    .categoryId!],
-                                                          ),
-                                                          const SizedBox(
-                                                            width: 4,
-                                                          ),
-                                                          Text(
-                                                            "${task.categoryId}",
-                                                            style: TextStyle(
+                                                    const SizedBox(width: 6),
+                                                    Container(
+                                                      decoration: BoxDecoration(
+                                                        border: Border.all(
+                                                          color:
+                                                              AppColors
+                                                                  .lightPurole,
+                                                          width: 2,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              5,
+                                                            ),
+                                                      ),
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsets.all(
+                                                              2.0,
+                                                            ),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.min,
+                                                          children: [
+                                                            Icon(
+                                                              Icons
+                                                                  .flag_outlined,
+                                                              size: 18,
                                                               color:
                                                                   AppColors
                                                                       .whiteTransparent,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w500,
                                                             ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  const SizedBox(width: 6),
-                                                  Container(
-                                                    decoration: BoxDecoration(
-                                                      border: Border.all(
-                                                        color:
-                                                            AppColors
-                                                                .lightPurole,
-                                                        width: 2,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                            5,
-                                                          ),
-                                                    ),
-                                                    child: Padding(
-                                                      padding:
-                                                          const EdgeInsets.all(
-                                                            2.0,
-                                                          ),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.min,
-                                                        children: [
-                                                          Icon(
-                                                            Icons.flag_outlined,
-                                                            size: 18,
-                                                            color:
-                                                                AppColors
-                                                                    .whiteTransparent,
-                                                          ),
-                                                          const SizedBox(
-                                                            width: 4,
-                                                          ),
-                                                          Text(
-                                                            "${task.priority}",
-                                                            style: TextStyle(
-                                                              color:
-                                                                  AppColors
-                                                                      .whiteTransparent,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w500,
+                                                            const SizedBox(
+                                                              width: 4,
                                                             ),
-                                                          ),
-                                                        ],
+                                                            Text(
+                                                              "${task.priority}",
+                                                              style: TextStyle(
+                                                                color:
+                                                                    AppColors
+                                                                        .whiteTransparent,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   );
                                 },
