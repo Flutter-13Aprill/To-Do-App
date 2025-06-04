@@ -21,10 +21,16 @@ class HomeScreen extends StatelessWidget {
         ),
         leading: IconButton(
           icon: const Icon(Icons.menu, color: Colors.white),
-          onPressed: () {}, 
+          onPressed: () {},
         ),
-        actions: const [
-          Padding(
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.category, color: Colors.white),
+            onPressed: () {
+              Navigator.pushNamed(context, '/choose_category');
+            },
+          ),
+          const Padding(
             padding: EdgeInsets.only(right: 16.0),
             child: CircleAvatar(
               radius: 18,
@@ -34,9 +40,17 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
 
-
       body: BlocBuilder<TasksBloc, TasksState>(
         builder: (context, state) {
+          if (state is TasksInitial) {
+            context.read<TasksBloc>().add(FetchTasksEvent());
+            return const Center(child: CircularProgressIndicator());
+          }
+
+          if (state is TasksLoading) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
           if (state is TasksLoaded && state.tasks.isNotEmpty) {
             return ListView.builder(
               padding: const EdgeInsets.all(16),
@@ -66,33 +80,33 @@ class HomeScreen extends StatelessWidget {
                 );
               },
             );
-          } else {
-            return const Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image(
-                    image: AssetImage('assets/images/empty.png'),
-                    height: 200,
-                  ),
-                  SizedBox(height: 24),
-                  Text(
-                    'What do you want to do today?',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  SizedBox(height: 8),
-                  Text(
-                    'Tap + to add your tasks',
-                    style: TextStyle(color: Colors.white54, fontSize: 14),
-                  ),
-                ],
-              ),
-            );
           }
+
+          return const Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image(
+                  image: AssetImage('assets/images/empty.png'),
+                  height: 200,
+                ),
+                SizedBox(height: 24),
+                Text(
+                  'What do you want to do today?',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  'Tap + to add your tasks',
+                  style: TextStyle(color: Colors.white54, fontSize: 14),
+                ),
+              ],
+            ),
+          );
         },
       ),
 
@@ -140,7 +154,11 @@ class HomeScreen extends StatelessWidget {
             ),
           ],
           onTap: (index) {
- 
+            if (index == 1) {
+              Navigator.pushNamed(context, '/calendar');
+            } else if (index == 2) {
+              Navigator.pushNamed(context, '/profile');
+            }
           },
         ),
       ),

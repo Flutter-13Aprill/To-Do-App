@@ -4,16 +4,24 @@ import 'package:get_it/get_it.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'package:to_do_app/core/theme/app_theme.dart';
+import 'package:to_do_app/features/navigation/bloc/navigation_bloc.dart';
+import 'package:to_do_app/features/tasks/screens/calendar_screen.dart';
 import 'package:to_do_app/localization/localization_helper.dart';
+
 import 'package:to_do_app/features/intro/screens/splash_screen.dart';
 import 'package:to_do_app/features/intro/screens/onboarding_screen.dart';
 import 'package:to_do_app/features/intro/screens/start_screen.dart';
 import 'package:to_do_app/features/auth/screens/login_screen.dart';
 import 'package:to_do_app/features/auth/screens/register_screen.dart';
 import 'package:to_do_app/features/home/screens/home_screen.dart';
+import 'package:to_do_app/features/profile/screens/profile_screen.dart';
 import 'package:to_do_app/features/tasks/bloc/bloc/tasks_bloc.dart';
 import 'package:to_do_app/data/services/supabase_service.dart';
 import 'package:to_do_app/data/repositories/task_repository.dart';
+
+import 'package:to_do_app/features/categories/bloc/category_bloc.dart';
+import 'package:to_do_app/features/categories/screens/choose_category_screen.dart';
+import 'package:to_do_app/features/categories/screens/create_category_screen.dart';
 
 final getIt = GetIt.instance;
 
@@ -28,29 +36,27 @@ Future<void> main() async {
 
   setupLocator();
 
-  runApp(const MyAppWrapper());
+  runApp(
+    MultiBlocProvider(
+      providers: [
+        BlocProvider<TasksBloc>(
+          create: (context) =>
+              TasksBloc(taskRepository: getIt<TaskRepository>()),
+        ),
+        BlocProvider<CategoryBloc>(
+          create: (_) => CategoryBloc()..add(LoadCategoriesEvent()),
+        ),
+        BlocProvider<NavigationBloc>(create: (_) => NavigationBloc()),
+      ],
+      child: const UpTodoApp(),
+    ),
+  );
 }
 
 void setupLocator() {
   getIt.registerLazySingleton(() => Supabase.instance.client);
   getIt.registerLazySingleton(() => SupabaseService());
   getIt.registerLazySingleton(() => TaskRepository());
-}
-
-class MyAppWrapper extends StatelessWidget {
-  const MyAppWrapper({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (_) => TasksBloc(taskRepository: getIt<TaskRepository>()),
-        ),
-      ],
-      child: const UpTodoApp(),
-    );
-  }
 }
 
 class UpTodoApp extends StatelessWidget {
@@ -64,7 +70,8 @@ class UpTodoApp extends StatelessWidget {
       theme: AppTheme.darkTheme,
       locale: const Locale('en'),
       supportedLocales: const [Locale('en'), Locale('ar')],
-      // localizationsDelegates: [...],
+
+      // localizationsDelegates:
       initialRoute: '/splash',
       routes: {
         '/splash': (_) => const SplashScreen(),
@@ -73,6 +80,11 @@ class UpTodoApp extends StatelessWidget {
         '/login': (_) => const LoginScreen(),
         '/register': (_) => const RegisterScreen(),
         '/home': (_) => const HomeScreen(),
+        '/calendar': (_) => const CalendarScreen(),
+        '/choose_category': (_) => const ChooseCategoryScreen(),
+        '/create_category': (_) => const CreateCategoryScreen(),
+        //  '/profile': (_) => const ProfileScreen(),
+        // '/create_category': (_) => const CreateCategoryScreen(),
       },
     );
   }

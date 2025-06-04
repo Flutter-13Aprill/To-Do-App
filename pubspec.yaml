@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  easy_localization: ^3.0.1
   flutter:
     sdk: flutter
   flutter_localizations:
@@ -75,6 +76,9 @@ flutter:
     - assets/images/screenshot9.png
     - assets/images/screenshot10.png
     - assets/images/screenshot11.png
+    - assets/images/screenshot12.png
+    - assets/images/screenshot13.png
+    - assets/images/screenshot14.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

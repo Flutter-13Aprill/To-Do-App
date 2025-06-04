@@ -36,9 +36,15 @@ A modern to-do list app built with **Flutter**, using **Supabase** for backend a
 |------------------------|------------------------|------------------------|
 | ![](assets/images/screenshot7.png) | ![](assets/images/screenshot8.png) | ![](assets/images/screenshot9.png) |
 
-| Priority Selector      | Task Details (Empty)   |
-|------------------------|------------------------|
-| ![](assets/images/screenshot10.png) | ![](assets/images/screenshot11.png) |
+| Priority Selector      | Task Details (Empty)   | Calendar Today View    |
+|------------------------|------------------------|------------------------|
+| ![](assets/images/screenshot10.png) | ![](assets/images/screenshot11.png) | ![](assets/images/screenshot12.png) |
+
+| Choose Category Screen | Create Category Screen |                          |
+|------------------------|------------------------|--------------------------|
+| ![](assets/images/screenshot13.png) | ![](assets/images/screenshot14.png) |                          |
+
+
 ## 🧾 Getting Started
 
 ### 1. Install dependencies

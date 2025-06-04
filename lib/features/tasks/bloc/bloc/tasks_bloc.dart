@@ -10,6 +10,7 @@ class TasksBloc extends Bloc<TasksEvent, TasksState> {
 
   TasksBloc({required this.taskRepository}) : super(TasksInitial()) {
     on<AddTaskEvent>(_onAddTask);
+    on<FetchTasksEvent>(_onFetchTasks);
   }
 
   Future<void> _onAddTask(AddTaskEvent event, Emitter<TasksState> emit) async {
@@ -25,8 +26,22 @@ class TasksBloc extends Bloc<TasksEvent, TasksState> {
         emit(TasksLoaded([event.task]));
       }
     } catch (e) {
-
       print(' Failed to add task: $e');
+    }
+  }
+
+  Future<void> _onFetchTasks(
+    FetchTasksEvent event,
+    Emitter<TasksState> emit,
+  ) async {
+    emit(TasksLoading());
+
+    try {
+      final tasks = await taskRepository.getAllTasks();
+      emit(TasksLoaded(tasks));
+    } catch (e) {
+      print('Failed to fetch tasks: $e');
+      emit(TasksLoaded([]));
     }
   }
 }
