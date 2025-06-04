@@ -14,3 +14,5 @@ final class ChangePage extends HomeEvent{
 
 final class AddEvent extends HomeEvent{}
 final class  SupaEvent extends HomeEvent{}
+final class  CheckEvent extends HomeEvent{}
+final class  SelectPrioEvent extends HomeEvent{}

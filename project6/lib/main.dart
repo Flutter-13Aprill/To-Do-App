@@ -9,13 +9,15 @@ import 'package:project6/units/setup.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  
   await SupabaseConnect.init();
-  setup();
+    setup();
+
   runApp(
     ScreenUtilInit(
       designSize: Size(372, 812),
       child: EasyLocalization(
-        supportedLocales: [Locale('en', 'US'), Locale('de', 'DE')],
+        supportedLocales: [Locale('en', 'US'), Locale('ar', 'AR')],
         path:
             'assets/translations', // <-- change the path of the translation files
         fallbackLocale: Locale('en', 'US'),

@@ -4,7 +4,8 @@ import 'package:project6/layer_data/auth_layer.dart';
 
 void setup() async{
 
-GetIt.I.registerSingleton<AuthLayer>(AuthLayer());
+GetIt.I.registerSingletonAsync<AuthLayer>( () async =>  AuthLayer());
+GetIt.I.registerSingleton<AppData>(AppData());
 
 
 

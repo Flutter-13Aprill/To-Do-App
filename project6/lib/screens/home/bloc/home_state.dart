@@ -5,3 +5,4 @@ sealed class HomeState {}
 
 final class HomeInitial extends HomeState {}
 final class SuccessState extends HomeState {}
+final class CheckedState extends HomeState {}

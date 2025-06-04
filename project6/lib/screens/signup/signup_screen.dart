@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -30,14 +31,14 @@ class SignupScreen extends StatelessWidget {
                   children: [
                     Container(
                       width: 327.w,
-                      child: Text('Username', style: context.bodyM()),
+                      child: Text('username'.tr(), style: context.bodyM()),
                     ),
                     AuthTextField(
                       textEditingController: bloc.usernameController,
 
                       validator: (p0) {
                         if (p0 == null || p0.isEmpty) {
-                          return 'Please Enter Your Email';
+                          return 'emptyemail'.tr();
                           //input is an eamil
                         } 
                         // else if (!RegExp(
@@ -53,24 +54,24 @@ class SignupScreen extends StatelessWidget {
                           (p0) => {
                             bloc.add(CorrectEvent(isTrue: p0.isNotEmpty)),
                           },
-                      setHint: 'Username',
+                      setHint: 'username'.tr(),
                       isPassword: false,
                     ),
                     SizedBox(height: 25.h),
                     Container(
                       width: 327.w,
-                      child: Text('Password', style: context.bodyM()),
+                      child: Text('password'.tr(), style: context.bodyM()),
                     ),
                     AuthTextField(
                       textEditingController: bloc.passwordController,
-                      setHint: 'Password',
+                      setHint: 'password'.tr(),
                       isPassword: true,
                       validator: (p0) {
                         if (p0 == null || p0.isEmpty) {
-                          return 'Please Enter Your Password';
+                          return 'emptyPass'.tr();
                           //input is an eamil
                         } else if (p0.length < 6) {
-                          return 'Please enter password longer than 6 charcters';
+                          return 'lengPass'.tr();
                         } else {
                           bloc.confirmPassword = p0;
                           return null;
@@ -80,23 +81,23 @@ class SignupScreen extends StatelessWidget {
                     SizedBox(height: 25.h),
                     Container(
                       width: 327.w,
-                      child: Text('Confirm Password', style: context.bodyM()),
+                      child: Text('conPass'.tr(), style: context.bodyM()),
                     ),
                     AuthTextField(
                       validator: (p0) {
                         if (p0 == null || p0.isEmpty) {
-                          return 'Please Enter Your Password';
+                          return 'emptyPass'.tr();
                           //input is an eamil
                         } else if (p0.length < 6) {
-                          return 'Please enter password longer than 6 charcters';
+                          return 'lengPass'.tr();
                         } else if (p0 != bloc.confirmPassword) {
-                          return 'The password dosent match';
+                          return 'moMatch'.tr();
                         } else {
                           return null;
                         }
                       },
                       textEditingController: bloc.confirmPasswordController,
-                      setHint: 'Confirm Password',
+                      setHint: 'conPass',
                       isPassword: true,
                     ),
                     SizedBox(height: 50.h),
@@ -127,14 +128,14 @@ class SignupScreen extends StatelessWidget {
                                   }
                                 }
                                 : null,
-                        child: Text('Signup', style: context.bodyM()),
+                        child: Text('signUp'.tr(), style: context.bodyM()),
                       ),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Already have an account?',
+                          'haveAcc'.tr(),
                           style: TextStyle(
                             fontSize: 12,
                             color: Color.fromARGB(176, 255, 255, 255),
@@ -150,7 +151,7 @@ class SignupScreen extends StatelessWidget {
                             );
                           },
                           child: Text(
-                            'Login',
+                            'login'.tr(),
                             style: TextStyle(color: Colors.white, fontSize: 12),
                           ),
                         ),

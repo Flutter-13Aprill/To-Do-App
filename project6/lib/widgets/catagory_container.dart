@@ -12,9 +12,9 @@ class CatagoryContainer extends StatelessWidget {
   });
 
   final String setCatagory;
-  final String setImage;
+  final Image setImage;
   final Color setColor;
-  final Function()? onTap;
+  final  GestureTapCallback?  onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -35,7 +35,7 @@ class CatagoryContainer extends StatelessWidget {
               alignment: Alignment.center,
               width: 64.w,
               height: 64.h,
-              child: Image.asset(setImage),
+              child: setImage,
             ),
 
             Text(setCatagory, style: context.bodyM()),

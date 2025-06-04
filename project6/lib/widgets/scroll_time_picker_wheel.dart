@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project6/extensions/theming.dart';
+import 'package:project6/screens/home/bloc/home_bloc.dart';
 
 class ScrollTimePickerWheel extends StatefulWidget {
   const ScrollTimePickerWheel({super.key});
@@ -8,15 +10,16 @@ class ScrollTimePickerWheel extends StatefulWidget {
   ScrollTimePickerWheelState createState() => ScrollTimePickerWheelState();
 }
 
+
 class ScrollTimePickerWheelState extends State<ScrollTimePickerWheel> {
-  
   final FixedExtentScrollController hourController =
       FixedExtentScrollController();
   final FixedExtentScrollController minuteController =
       FixedExtentScrollController();
   final FixedExtentScrollController ampmController =
       FixedExtentScrollController();
-  DateTime selectedTime = DateTime.now();
+      DateTime selectedTime = DateTime.now();
+
 
   @override
   void initState() {
@@ -60,35 +63,45 @@ class ScrollTimePickerWheelState extends State<ScrollTimePickerWheel> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Row(spacing: 8,
+      child: Row(
+        spacing: 8,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           _buildPicker(
-              hourController,
-              12,
-              _onHourChanged,
-              (index) => (index + 1).toString().padLeft(2, '0'),
-              'HH',
-              const BorderRadius.only(
-                  topLeft: Radius.circular(8), bottomLeft: Radius.circular(8))),
-          
-            Text(':',style: context.titleL()!.copyWith(fontWeight: FontWeight.normal),),
+            hourController,
+            12,
+            _onHourChanged,
+            (index) => (index + 1).toString().padLeft(2, '0'),
+            'HH',
+            const BorderRadius.only(
+              topLeft: Radius.circular(8),
+              bottomLeft: Radius.circular(8),
+            ),
+          ),
+
+          Text(
+            ':',
+            style: context.titleL()!.copyWith(fontWeight: FontWeight.normal),
+          ),
           _buildPicker(
-              minuteController,
-              60,
-              _onMinuteChanged,
-              (index) => index.toString().padLeft(2, '0'),
-              'MM',
-              BorderRadius.zero),
+            minuteController,
+            60,
+            _onMinuteChanged,
+            (index) => index.toString().padLeft(2, '0'),
+            'MM',
+            BorderRadius.zero,
+          ),
           _buildPicker(
-              ampmController,
-              2,
-              _onAmpmChanged,
-              (index) => index == 0 ? 'AM' : 'PM',
-              'AM/PM',
-              const BorderRadius.only(
-                  topRight: Radius.circular(8),
-                  bottomRight: Radius.circular(8))),
+            ampmController,
+            2,
+            _onAmpmChanged,
+            (index) => index == 0 ? 'AM' : 'PM',
+            'AM/PM',
+            const BorderRadius.only(
+              topRight: Radius.circular(8),
+              bottomRight: Radius.circular(8),
+            ),
+          ),
         ],
       ),
     );
@@ -102,69 +115,78 @@ class ScrollTimePickerWheelState extends State<ScrollTimePickerWheel> {
     String semanticLabel,
     BorderRadius borderRadius,
   ) {
-    return SizedBox(
-      width: 75,
-      height: 100,
-      child: Center(
+    return BlocBuilder<HomeBloc, HomeState>(
+      builder: (context, state) {
+        final bloc  = context.read<HomeBloc>();
+        return SizedBox(
+          width: 75,
+          height: 100,
+          child: Center(
             child: Container(
               height: 64,
               width: 64,
-              decoration: BoxDecoration(backgroundBlendMode: BlendMode.colorDodge,
+              decoration: BoxDecoration(
+                backgroundBlendMode: BlendMode.colorDodge,
                 color: const Color.fromARGB(255, 39, 39, 39),
                 borderRadius: borderRadius,
-              
               ),
-            child: Stack(
-        children: [
-          ListWheelScrollView.useDelegate(
-            controller: controller,
-            itemExtent: 25,
-            diameterRatio: 1.2,
-            offAxisFraction: 0,
-            onSelectedItemChanged: onSelectedItemChanged,
-            physics: const FixedExtentScrollPhysics(),
-            childDelegate: ListWheelChildBuilderDelegate(
-              builder: (context, index) {
-                return Container(
-                  alignment: Alignment.center,
-                  child: TimeTileWidget(
-                      time: formatLabel(index), isSelected: false),
-                );
-              },
-              childCount: itemCount,
+              child: Stack(
+                children: [
+                  ListWheelScrollView.useDelegate(
+                    controller: controller,
+                    itemExtent: 25,
+                    diameterRatio: 1.2,
+                    offAxisFraction: 0,
+                    onSelectedItemChanged: (onSelectedItemChanged) {
+                      bloc.timer = TimeOfDay(hour: hourController.selectedItem, minute: minuteController.selectedItem);
+                    },
+                    physics: const FixedExtentScrollPhysics(),
+                    childDelegate: ListWheelChildBuilderDelegate(
+                      builder: (context, index) {
+                        return Container(
+                          alignment: Alignment.center,
+                          child: TimeTileWidget(
+                            time: formatLabel(index),
+                            isSelected: false,
+                          ),
+                        );
+                      },
+                      childCount: itemCount,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-         
-        ],
-      ),
-            ),
-
-          ),
+        );
+      },
     );
   }
 }
 
-
- 
 class TimeTileWidget extends StatelessWidget {
   final String time;
   final bool isSelected;
 
-  const TimeTileWidget(
-      {super.key, required this.time, required this.isSelected});
+  const TimeTileWidget({
+    super.key,
+    required this.time,
+    required this.isSelected,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 10),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-      ),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
       child: Center(
         child: Text(
           time,
           style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-              fontWeight: FontWeight.bold, fontSize: 25, color:  Colors.white),
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+            color: Colors.white,
+          ),
         ),
       ),
     );

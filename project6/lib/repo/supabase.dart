@@ -46,8 +46,6 @@ final AuthResponse res = await supabase!.client.auth.signInWithPassword(
   email: '$username@gmail.com',
   password: password,
 );
-final Session? session = res.session;
-final User? user = res.user;
 
 }
 

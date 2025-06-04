@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:project6/extensions/theming.dart';
@@ -33,7 +34,7 @@ class OnboardingScreen extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => LoginScreen()),
                     );
                   },
-                  child: Text('Skip', style: TextStyle(color: Colors.grey)),
+                  child: Text('skip'.tr(), style: TextStyle(color: Colors.grey)),
                 ),
               ),
             ),
@@ -89,19 +90,19 @@ class OnboardingScreen extends StatelessWidget {
                       },
                       children: [
                         OnboardingText(
-                          setTitle: 'Manage your Tasks',
+                          setTitle: 'manTask'.tr(),
                           setBody:
-                              'You can easily manage all of your daily tasks in DoMe for free',
+                              'onBordOne'.tr(),
                         ),
                         OnboardingText(
-                          setTitle: 'Create daily routine',
+                          setTitle: 'daily'.tr(),
                           setBody:
-                              'In Uptodo  you can create your personalized routine to stay productive',
+                              'onBordTwo'.tr(),
                         ),
                         OnboardingText(
-                          setTitle: 'Orgonaize your tasks',
+                          setTitle: 'orgTask'.tr(),
                           setBody:
-                              'You can organize your daily tasks by adding your tasks into separate categories',
+                              'onBordThree'.tr(),
                         ),
                       ],
                     ),
@@ -130,7 +131,7 @@ class OnboardingScreen extends StatelessWidget {
                                 curve: Curves.bounceInOut,
                               );
                             },
-                            child: Text('BACK',style: TextStyle(color: Colors.grey),),
+                            child: Text('back'.tr(),style: TextStyle(color: Colors.grey),),
                           ),
                         ),
                         Container(
@@ -162,7 +163,7 @@ class OnboardingScreen extends StatelessWidget {
                                 curve: Curves.bounceInOut,
                               );
                             },
-                            child: Text('NEXT',style: TextStyle(color: Colors.white),),
+                            child: Text('next'.tr(),style: TextStyle(color: Colors.white),),
                           ),
                         ),
                       ],

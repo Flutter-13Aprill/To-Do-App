@@ -1,6 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:project6/screens/calendar_screen.dart';
+import 'package:project6/screens/calendar/calendar_screen.dart';
 import 'package:project6/screens/home/home_screen.dart';
 import 'package:project6/screens/profile_screen.dart';
 import 'package:project6/widgets/bottom_nav/bloc/bottom_bloc.dart';
@@ -32,21 +33,21 @@ class BottomNavHandler extends StatelessWidget {
                       bloc.currentIndex == 0
                           ? Image.asset('assets/icons/home_select.png')
                           : Image.asset('assets/icons/home.png'),
-                  label: 'Home',
+                  label: 'home'.tr(),
                 ),
                 BottomNavigationBarItem(
                   icon:
                       bloc.currentIndex == 1
                           ? Image.asset('assets/icons/calendar_select.png')
                           : Image.asset('assets/icons/calendar.png'),
-                  label: 'Calendar',
+                  label: 'calendar'.tr(),
                 ),
                 BottomNavigationBarItem(
                   icon:
                       bloc.currentIndex == 2
                           ? Icon(Icons.person)
                           : Icon(Icons.person_outline),
-                  label: 'Profile',
+                  label: 'profile'.tr(),
                 ),
               ],
             ),

@@ -1,15 +1,29 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:project6/extensions/theming.dart';
+import 'package:project6/screens/home/bloc/home_bloc.dart';
 import 'package:project6/theme/app_colors.dart';
+import 'package:intl/intl.dart';
 
 class TasksContainer extends StatelessWidget {
-  const TasksContainer({super.key, required this.setIcon, required this.setTask, required this.setTime, required this.setCatagory, required this.setPriority});
-
+  const TasksContainer({
+    super.key,
+    required this.setIcon,
+    required this.setTask,
+    this.setTime,
+    required this.setCatagory,
+    required this.setPriority,
+    required this.setColors,
+    required this.date,
+  });
 
   final String setIcon;
   final String setTask;
-  final String setTime;
+  final TimeOfDay? setTime;
+  final DateTime date;
+  final Color setColors;
   final String setCatagory;
   final String setPriority;
   @override
@@ -23,21 +37,32 @@ class TasksContainer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Checkbox(
-            value: false,
-            onChanged: (value) {},
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
+          BlocBuilder<HomeBloc, HomeState>(
+            builder: (context, state) {
+              final bloc = context.read<HomeBloc>();
+              return Checkbox(
+                value: bloc.isChecked,
+                onChanged: (value) {
+                  bloc.add(CheckEvent());
+                },
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              );
+            },
           ),
-          Container(width: 150,
+          Container(
+            width: 150,
             child: Column(
               spacing: 8,
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(setTask, style: context.bodyM()),
-                Text(setTime, style: context.bodyM()!.copyWith(fontSize: 12)),
+                Text(
+                  '${DateFormat.MMMd().format(date)} ${setTime!.format(context).toString()}',
+                  style: context.bodyM()!.copyWith(fontSize: 12),
+                ),
               ],
             ),
           ),
@@ -50,7 +75,7 @@ class TasksContainer extends StatelessWidget {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                    color: AppColors().buttonColor,
+                    color: setColors,
                     borderRadius: BorderRadius.circular(4),
                   ),
                   width: 87.w,
