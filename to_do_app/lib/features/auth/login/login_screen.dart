@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:to_do_app/core/constant.dart';
 import 'package:to_do_app/core/extensions/navigation/navigation.dart';
 import 'package:to_do_app/core/extensions/screen/screen_size.dart';
@@ -99,25 +100,32 @@ class LoginScreen extends StatelessWidget {
                             textColor: AppPalette.textColor,
                             text: "Login",
                             fontSize: context.getShortest(per: 0.5),
-                            onTap: () async {
-                              if (loginFormkey.currentState!.validate()) {
-                                FocusScope.of(context).unfocus();
-                                final isValid = await SupabaseConnect.loginUser(
-                                username: usernameLoginController.text.trim(),
-                                password: passwordLoginController.text.trim(),
-                                );
+                           onTap: () async {
+  if (loginFormkey.currentState!.validate()) {
+    FocusScope.of(context).unfocus();
 
-                                await Future.delayed(Duration(milliseconds: 500));
-                                if (!context.mounted) return;
-                                if (isValid) {
+    final user = await SupabaseConnect.loginUser(
+      username: usernameLoginController.text.trim(),
+      password: passwordLoginController.text.trim(),
+    );
+
+    await Future.delayed(Duration(milliseconds: 500));
+
+    if (!context.mounted) return;
+
+    if (user != null) {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString('userId', user['id'].toString()); // Ensure it's a string
+
       context.replacement(BottomNavScreen());
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Incorrect username or password')),
       );
     }
-                              }
-                            },
+  }
+},
+
                             fontWeight: FontWeight.normal,
                           );
                         },

@@ -18,6 +18,9 @@
 ![App Screenshot](to_do_app/assets/screenshots/14.png)
 ![App Screenshot](to_do_app/assets/screenshots/15.png)
 ![App Screenshot](to_do_app/assets/screenshots/16.png)
+![App Screenshot](to_do_app/assets/screenshots/17.png)
+![App Screenshot](to_do_app/assets/screenshots/18.png)
+![App Screenshot](to_do_app/assets/screenshots/19.png)
 
 
 ---

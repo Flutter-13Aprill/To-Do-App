@@ -38,16 +38,16 @@ const CategoryDialog({super.key,
                   onTap: () => onCategorySelected(cat),
                   child: Container(
                     decoration: BoxDecoration(
-                      color: cat.color.withOpacity(0.2),
+                      color: cat.color,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     padding: const EdgeInsets.all(8),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(cat.icon, color: cat.color, size: 30),
+                        Icon(cat.icon, color: iconsColor[cat.colorIndex], size: 30),
                         SizedBox(height: 6),
-                        Text(cat.title, style: TextStyle(color: Colors.white, fontSize: 13)),
+                        Text(cat.title, style: TextStyle(color: Colors.black, fontSize: 13)),
                       ],
                     ),
                   ),
@@ -57,16 +57,16 @@ const CategoryDialog({super.key,
                   onTap: onCreateNew,
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.teal.withOpacity(0.2),
+                      color: Colors.teal,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     padding: const EdgeInsets.all(8),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.add, color: Colors.teal, size: 30),
+                        Icon(Icons.add, color: Colors.black, size: 30),
                         SizedBox(height: 6),
-                        Text("Create New", style: TextStyle(color: Colors.white, fontSize: 13)),
+                        Text("Create New", style: TextStyle(color: Colors.black, fontSize: 13)),
                       ],
                     ),
                   ),

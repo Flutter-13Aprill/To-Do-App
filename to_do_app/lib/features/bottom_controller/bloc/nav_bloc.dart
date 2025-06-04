@@ -11,7 +11,7 @@ part 'nav_state.dart';
 class NavBloc extends Bloc<NavEvent, NavState> {
   int selectIndex = 0;
 
-  List<Widget> screens = [IndexScreen(),CalenderScreen(),ProfileScreen()];
+  List<Widget> screens = [IndexScreen(),CalendarScreen(),ProfileScreen()];
 
   NavBloc() : super(NavInitial()) {
     on<ChangeNavSelectEvent>(changeMethod);

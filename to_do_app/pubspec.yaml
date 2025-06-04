@@ -24,6 +24,9 @@ dependencies:
   flutter_time_picker_spinner: ^2.0.0
   syncfusion_flutter_datepicker: ^29.2.7
   equatable: ^2.0.7
+  date_picker_timeline: ^1.2.7
+  easy_date_timeline: ^2.0.9
+  shared_preferences: ^2.5.3
 dev_dependencies:
   flutter_test:
     sdk: flutter

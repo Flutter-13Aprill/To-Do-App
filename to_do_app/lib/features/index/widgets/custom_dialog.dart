@@ -6,6 +6,7 @@ import 'package:to_do_app/core/models/categories/categories_model.dart';
 import 'package:to_do_app/core/repo/supabase.dart';
 import 'package:to_do_app/core/theme/app_palette.dart';
 import 'package:to_do_app/features/category/categories_screen.dart';
+import 'package:to_do_app/features/index/bloc/task_bloc.dart';
 import 'package:to_do_app/features/index/widgets/categories_widgets/bloc/categories_bloc.dart';
 import 'package:to_do_app/features/index/widgets/categories_widgets/categories_daialog.dart';
 import 'package:to_do_app/features/index/widgets/date_widget/bloc/calendar_bloc.dart';
@@ -15,6 +16,7 @@ import 'package:to_do_app/features/index/widgets/priority/priority_dialog.dart';
 import 'package:to_do_app/features/utilts/services/CategoryService.dart';
 
 class AddTaskDialog extends StatelessWidget {
+    
   AddTaskDialog({super.key});
 Category? selectedCategory;
 int? priorityselected;
@@ -24,7 +26,7 @@ int? priorityselected;
 
   @override
   Widget build(BuildContext context) {
-    final calendarBloc = context.read<CalendarBloc>();
+    
 
     DateTime? fullDateTime;
     return Dialog(
@@ -162,11 +164,7 @@ final selectedPriority = await showDialog<int>(
 
     try {
 
-      print('t$task');
-      print('d$description');
-      print('p$priorityselected');
-      print('sc${selectedCategory!.id}');
-      print('dt$dateTime');
+   
       final taskService =  await SupabaseConnect.addTask(
   title: task,
   description: description.isEmpty ? null : description,
@@ -174,13 +172,15 @@ final selectedPriority = await showDialog<int>(
   categoryId: selectedCategory!.id,
   dueDate: dateTime,
 );
+if(!context.mounted)return;
 
+context.read<TaskBloc>().add(LoadTasksEvent());
      
 
       Navigator.pop(context); 
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Failed to add task: $e")),
+        SnackBar(content: Text("Failed to add task Check your inputs")),
       );
     }
   },

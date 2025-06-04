@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:to_do_app/core/models/categories/categories_model.dart';
 import 'package:to_do_app/core/theme/app_palette.dart';
 import 'package:to_do_app/features/category/bloc/categories_bloc.dart';
 
@@ -8,16 +9,7 @@ class CategoriesScreen extends StatelessWidget {
   CategoriesScreen({super.key});
 
   final TextEditingController nameController = TextEditingController();
-  final List<Color> colors = [
-    Color.fromARGB(255, 211, 224, 22),
-    Color.fromARGB(255, 72, 177, 76),
-    Color.fromARGB(255, 32, 225, 177),
-    Color.fromARGB(255, 65, 161, 239),
-    Color.fromARGB(255, 4, 161, 234),
-    Color.fromARGB(255, 242, 159, 34),
-    Color.fromARGB(255, 165, 68, 182),
-    Color.fromARGB(255, 217, 28, 91),
-  ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -120,7 +112,7 @@ class CategoriesScreen extends StatelessWidget {
                   const SizedBox(height: 8),
                   Wrap(
                     spacing: 12,
-                    children: colors.map((color) {
+                    children: categoriesColors.map((color) {
                       return GestureDetector(
                         onTap: () {
                           context
@@ -132,7 +124,7 @@ class CategoriesScreen extends StatelessWidget {
                           backgroundColor: color,
                           child: state.color == color
                               ? const Icon(Icons.check,
-                                  color: Colors.white, size: 16)
+                                  color: Color.fromARGB(255, 0, 0, 0), size: 16)
                               : null,
                         ),
                       );
@@ -158,7 +150,7 @@ class CategoriesScreen extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.deepPurpleAccent,
                         ),
-                        child: const Text('Create Category'),
+                        child: Text('Create Category',style: TextStyle(color:AppPalette.textColor ),),
                       ),
                     ],
                   ),
@@ -172,12 +164,14 @@ class CategoriesScreen extends StatelessWidget {
   }
 }
 final List<IconData> availableIcons = [
-  Icons.home,
-  Icons.star,
+  Icons.bakery_dining,
   Icons.work,
-  Icons.shopping_cart,
-  Icons.fastfood,
-  Icons.favorite,
-  Icons.book,
+  Icons.fitness_center,
+  Icons.sports_esports,
+  Icons.school,
+  Icons.campaign,
   Icons.music_note,
+  Icons.favorite,
+  Icons.videocam,
+  Icons.home
 ];

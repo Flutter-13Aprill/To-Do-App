@@ -8,22 +8,27 @@ import 'package:to_do_app/features/loading/bloc/loading_bloc.dart';
 import 'package:to_do_app/features/splash/splash_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:to_do_app/features/utilts/setup.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await EasyLocalization.ensureInitialized();
+  await Future.delayed(Duration.zero);
+  //await EasyLocalization.ensureInitialized();
+  //await Future.delayed(Duration.zero);
   await SupabaseConnect.init();
+  await Future.delayed(Duration.zero);
   setup();
-  await SupabaseConnect.getUsersData();
+  await Future.delayed(Duration.zero);
  runApp(
   
-    EasyLocalization(
-      supportedLocales: [Locale('ar'),Locale('en')],
-      path: 'lib/core/text/translations',
-      fallbackLocale: Locale('en'),
-      child: const MainApp(),
-    ),
+    // EasyLocalization(
+    //   supportedLocales: [Locale('ar'),Locale('en')],
+    //   path: 'lib/core/text/translations',
+    //   fallbackLocale: Locale('en'),
+    //   child: const MainApp(),
+    // ),
+    const MainApp()
   );
 
 }
@@ -40,11 +45,11 @@ class MainApp extends StatelessWidget {
       ],child:MaterialApp(
       
       debugShowCheckedModeBanner: false,
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
+     // localizationsDelegates: context.localizationDelegates,
+     // supportedLocales: context.supportedLocales,
+     // locale: context.locale,
        theme: AppTheme.theme,
-      home: const SplashScreen()
+      home: const BottomNavScreen()
     ));
   }
 }
