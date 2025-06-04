@@ -1,0 +1,135 @@
+{
+  "OnboardingScreen": {
+    "tab1Title": "إدارة مهامك",
+    "tab1Subtitle": "يمكنك بسهولة إدارة جميع مهامك اليومية في DoMe مجانًا",
+    "tab2Title": "إنشاء روتين يومي",
+    "tab2Subtitle": "في Uptodo يمكنك إنشاء روتينك الشخصي للبقاء منتجًا",
+    "tab3Title": "تنظيم مهامك",
+    "tab3Subtitle": "يمكنك تنظيم مهامك اليومية عن طريق إضافتها إلى فئات منفصلة",
+    "nextButton": "التالي",
+    "backButton": "السابق",
+    "skipButton": "تخطي",
+    "getStartedButton": "ابدأ الآن"
+  },
+  "StartScreen": {
+    "title": "مرحبًا بك في UpTodo",
+    "subtitle": "يرجى تسجيل الدخول إلى حسابك أو إنشاء حساب جديد للمتابعة",
+    "loginButton": "تسجيل الدخول",
+    "createAnAccount": "إنشاء حساب"
+  },
+  "LoginScreen": {
+    "title": "تسجيل الدخول",
+    "usernamePlaceholder": "أدخل اسم المستخدم",
+    "passwordPlaceholder": "●●●●●●●●",
+    "passwordValidationError": "يرجى إدخال اسم مستخدم وكلمة مرور صالحين.",
+    "loginButton": "تسجيل الدخول",
+    "forgotPassword": "هل نسيت كلمة المرور؟",
+    "createAccount": "إنشاء حساب"
+  },
+  "RegisterScreen": {
+    "title": "تسجيل",
+    "usernameLabel": "اسم المستخدم",
+    "passwordLabel": "كلمة المرور",
+    "confirmPasswordLabel": "تأكيد كلمة المرور",
+    "usernamePlaceholder": "أدخل اسم المستخدم",
+    "passwordPlaceholder": "●●●●●●●●",
+    "confirmPasswordPlaceholder": "●●●●●●●●",
+    "passwordValidationError": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل وتحتوي على حرف كبير واحد على الأقل، وحرف صغير واحد على الأقل، ورقم واحد على الأقل.",
+    "passwordsDontMatchError": "كلمتا المرور غير متطابقتين.",
+    "usernameValidationError": "يرجى إدخال اسم مستخدم صالح.",
+    "signUpButton": "تسجيل",
+    "alreadyHaveAccount": "لديك حساب بالفعل؟",
+    "loginTextButton": "تسجيل الدخول"
+  },
+  "IndexScreen": {
+    "tab": "الرئيسية",
+    "title": "ماذا تريد أن تفعل اليوم؟",
+    "subtitle": "اضغط على + لإضافة مهامك",
+    "searchPlaceholder": "ابحث عن مهمتك..."
+  },
+  "TaskSheet": {
+    "title": "إضافة مهمة",
+    "taskNamePlaceholder": "واجب الرياضيات",
+    "taskDescriptionPlaceholder": "أكمل تمارين الرياضيات من الفصل الخامس",
+    "taskPriority": "أولوية المهمة",
+    "cancelButton": "إلغاء",
+    "chooseTimeButton": "اختر الوقت",
+    "saveButton": "حفظ"
+  },
+  "CategoryScreen": {
+    "title": "إنشاء فئة جديدة",
+    "categoryName": "اسم الفئة",
+    "categoryNamePlaceholder": "اسم الفئة",
+    "categoryIconTitle": "أيقونة الفئة:",
+    "categoryIconButton": "اختر أيقونة من المكتبة",
+    "categoryColorTitle": "لون الفئة:",
+    "createCategoryButton": "إنشاء الفئة",
+    "addCategoryButton": "إضافة فئة",
+    "cancelButton": "إلغاء",
+    "createNewTitle": "إنشاء فئة جديدة",
+    "chooseCategory": "اختر فئة"
+  },
+  "TaskScreen": {
+    "taskTime": "وقت المهمة:",
+    "taskCategory": "فئة المهمة:",
+    "taskPriority": "أولوية المهمة:",
+    "editTaskPriority": "تعديل أولوية المهمة",
+    "subTask": "مهمة فرعية:",
+    "subTaskButton": "إضافة مهمة فرعية",
+    "todoNameValidationError": "يرجى إدخال جميع تفاصيل المهمة الصالحة.", 
+    "todoDescriptionValidationError": "يرجى إدخال وصف المهمة.",
+    "editTaskButton": "تعديل المهمة",
+    "cancelButton": "إلغاء",
+    "deleteButton": "حذف المهمة"
+  },
+  "EditTaskDialog": {
+    "title": "تعديل المهمة"
+  },
+  "DeleteTaskDialog": {
+    "title": "حذف المهمة",
+    "message": "هل أنت متأكد أنك تريد حذف هذه المهمة؟",
+    "taskTitle": "عنوان المهمة: ",
+    "cancelButton": "إلغاء",
+    "deleteButton": "حذف"
+  },
+  "CalendarScreen": {
+    "title": "التقويم",
+    "todayTab": "اليوم",
+    "completed": "تم الانتهاء"
+  },
+  "ProfileScreen": {
+    "title": "الملف الشخصي",
+    "tasksCompleted": "المهام المنجزة",
+    "tasksLeft": "المهام المتبقية",
+    "settingsSection": "الإعدادات",
+    "settingsTile": "إعدادات التطبيق",
+    "accountSection": "الحساب",
+    "changeAccountNameTile": "تغيير اسم الحساب",
+    "changeAccountImageTile": "تغيير صورة الحساب",
+    "logOutTile": "تسجيل الخروج"
+  },
+  "ChangeAccountNameDialog": {
+    "title": "تغيير اسم الحساب",
+    "namePlaceholder": "أدخل اسم الحساب الجديد",
+    "changeButton": "تعديل",
+    "cancelButton": "إلغاء"
+  },
+  "changeAccountPasswordDialog": {
+    "title": "تغيير كلمة المرور",
+    "oldPasswordLabel": "أدخل كلمة المرور القديمة",
+    "oldPasswordPlaceholder": "●●●●●●●●",
+    "newPasswordPlaceholder": "●●●●●●●●",
+    "newPasswordLabel": "أدخل كلمة المرور الجديدة"
+  },
+  "changeAccountImageDialog": {
+    "title": "تغيير صورة الحساب",
+    "takeAPictureButton": "التقط صورة",
+    "importFromGalleryButton": "استيراد من المعرض"
+  },
+  "SettingsScreen": {
+    "title": "الإعدادات",
+    "sectionTitle": "الإعدادات",
+    "appColorTile": "تغيير لون التطبيق",
+    "language": "تغيير لغة التطبيق"
+  }
+}
