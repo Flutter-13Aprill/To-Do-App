@@ -4,6 +4,7 @@ class AppPalette {
   static const blackColor = Color(0xFF121212);
   static const lightBlack = Color(0xFF1D1D1D);
   static const lightBlack2 = Color(0xFF363636);
+  static const lightBlack3 = Color(0xFF272727);
   static const whiteColor = Colors.white;
   static const white44 = Color(0x70FFFFFF);
   static const white67 = Color(0xAAFFFFFF);

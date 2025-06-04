@@ -6,26 +6,27 @@ import 'package:project6/core/theme/app_palette.dart';
 import 'package:project6/core/widget/button/custom_button.dart';
 
 class CustomShowDialog {
-  static Future<void> show(
-    BuildContext context, {
+  static Future<void> show({
+    required BuildContext context,
+    required BuildContext blocContext,
     required String text,
     required VoidCallback onPressed,
-    required String title,
+    Widget? title,
     required Widget content,
   }) async {
     await showDialog(
       context: context,
 
-      builder: (context) {
+      builder: (_) {
         return AlertDialog(
           insetPadding: EdgeInsets.zero,
           backgroundColor: AppPalette.lightBlack2,
-          title: Text(
-            textAlign: TextAlign.center,
-            title,
-            style: TextStyles.lato70016,
+          title: title,
+          content: ConstrainedBox(
+            constraints: BoxConstraints(maxHeight: 700, minHeight: 100),
+            child: content,
           ),
-          content: content,
+
           actions: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

@@ -13,6 +13,11 @@ class TextStyles {
     fontSize: 32,
     color: AppPalette.whiteColor,
   );
+   static final lato70020 = GoogleFonts.lato(
+    fontWeight: FontWeight.w700,
+    fontSize: 20,
+    color: AppPalette.whiteColor,
+  );
   static final lato70016 = GoogleFonts.lato(
     fontWeight: FontWeight.w700,
     fontSize: 16,
@@ -26,6 +31,11 @@ class TextStyles {
   static final lato40016 = GoogleFonts.lato(
     fontWeight: FontWeight.w400,
     fontSize: 16,
+    color: AppPalette.whiteColor,
+  );
+    static final lato40014 = GoogleFonts.lato(
+    fontWeight: FontWeight.w400,
+    fontSize: 14,
     color: AppPalette.whiteColor,
   );
   static final lato40012 = GoogleFonts.lato(

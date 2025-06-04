@@ -1,5 +1,6 @@
 //Supabase (data base)
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:project6/feature/home/data/model/task_data/task_data_model.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SupabaseConnect {
@@ -66,5 +67,33 @@ class SupabaseConnect {
     } catch (e) {
       throw FormatException("There is error with log In");
     }
+  }
+
+  // Insert
+  static Future insertTask({required TaskDataModel task}) async {
+    await supabase!.client.from('task_data').insert({task.mapForAddSupabase()});
+  }
+
+  //Read
+  static getTaskData() async {
+    final data = await supabase?.client.from('task_data').select();
+    List<TaskDataModel> taskData = [];
+    if (data != null || data!.isNotEmpty) {
+      taskData = data.map((task) => TaskDataModelMapper.fromMap(task)).toList();
+    }
+    return taskData;
+  }
+
+  //Update
+  static Future updateTask({required TaskDataModel task}) async {
+    await supabase!.client
+        .from('task_data')
+        .update(task.toMap())
+        .eq('id', task.id!);
+  }
+
+  //Delete
+  static Future deleteTask({required TaskDataModel task}) async {
+    await supabase!.client.from('task_data').delete().eq('id', task.id!);
   }
 }

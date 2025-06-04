@@ -48,9 +48,20 @@ class AppText {
   static const String description = "Description";
   static const String hintDescription = "Do chapter 2 to 5 for next week";
 
-//Flag
-static const String priority = "Task Priority";
-static const String cancel = "Cancel";
-static const String save = "Save";
-static const String time = "Choose Time";
+  //Flag
+  static const String priority = "Task Priority";
+  static const String cancel = "Cancel";
+  static const String save = "Save";
+  static const String time = "Choose Time";
+
+  //Category Screens
+  static const String category = "Create new category";
+  static const String categoryName = "Category name :";
+  static const String hintCategory = "Category name";
+  static const String categoryIcon = "Category icon :";
+  static const String library = "Choose icon from library";
+  static const String categoryColor = "Category color :";
+  static const String create = "Create Category";
+  static const String addCategory = "Add Category";
+  static const String chooseCategory = "Choose Category";
 }

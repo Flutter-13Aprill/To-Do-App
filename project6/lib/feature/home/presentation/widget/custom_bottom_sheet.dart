@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project6/core/extension/git_size_screen.dart';
+import 'package:project6/core/extension/navigation.dart';
 import 'package:project6/core/text/app_text.dart';
+import 'package:project6/core/text/text_styles.dart';
 import 'package:project6/core/theme/app_palette.dart';
 import 'package:project6/core/widget/button/custom_Icon_button.dart';
 import 'package:project6/core/widget/custom_show_dialog.dart';
 import 'package:project6/core/widget/custom_text_field.dart';
 import 'package:project6/feature/home/presentation/bloc/home_bloc.dart';
+import 'package:project6/feature/home/presentation/page/category_page.dart';
+import 'package:project6/feature/home/presentation/widget/calendar.dart';
+import 'package:project6/feature/home/presentation/widget/category_screens/choose_category.dart';
+import 'package:project6/feature/home/presentation/widget/task_priority.dart';
+import 'package:project6/feature/home/presentation/widget/time.dart';
 
 class CustomBottomSheet extends StatelessWidget {
   const CustomBottomSheet({super.key});
@@ -29,34 +36,108 @@ class CustomBottomSheet extends StatelessWidget {
             text: AppText.hintDescription,
             labelText: AppText.description,
           ),
-
           Row(
             children: [
               CustomIconButton(
-                onPressed: () {
-                  CustomShowDialog.show(
-                    context,
-                    text: AppText.save,
-                    onPressed: () {},
-                    title: AppText.priority,
-                    content: Divider(),
+                onPressed: () async {
+                  await CustomShowDialog.show(
+                    context: context,
+                    blocContext: context,
+                    text: AppText.time,
+
+                    onPressed: () async {
+                      Navigator.of(context).pop();
+                      await CustomShowDialog.show(
+                        context: context,
+                        blocContext: context,
+                        text: AppText.save,
+                        onPressed: () {
+                          print('Selected date: ${bloc.formattedDate}');
+                          print('Selected time: ${bloc.formattedTime}');
+                          context.customPop();
+                        },
+                        title: Text(
+                          textAlign: TextAlign.center,
+                          AppText.time,
+                          style: TextStyles.lato70016,
+                        ),
+                        content: BlocProvider.value(
+                          value: bloc,
+                          child: SizedBox(height: 250, child: Time()),
+                        ),
+                      );
+                    },
+
+                    content: BlocProvider.value(
+                      value: bloc,
+                      child: SizedBox(
+                        height: context.getHeight() * 0.40,
+                        width: context.getWidth() * 0.80,
+                        child: Calendar(),
+                      ),
+                    ),
                   );
-                  // Calendar.selectDate(context);
                 },
                 icon: Icons.timer_outlined,
               ),
               CustomIconButton(
-                onPressed: () {},
-                icon: Icons.location_on_outlined,
+                onPressed: () async {
+                  await CustomShowDialog.show(
+                    context: context,
+                    blocContext: context,
+                    text: AppText.addCategory,
+                    onPressed: () async {
+                      context.customPush(CategoryPage(bloc: bloc));
+                    },
+                    title: Text(
+                      textAlign: TextAlign.center,
+                      AppText.chooseCategory,
+                      style: TextStyles.lato70016,
+                    ),
+                    content: BlocProvider.value(
+                      value: bloc,
+                      child: SizedBox(
+                        width: context.getWidth() * 0.80,
+                        height: context.getHeight() * 0.50,
+                        child: Column(
+                          children: [
+                            Divider(),
+                            SizedBox(height: 20),
+                            ChooseCategory(),
+                          ],
+                        ),
+                      ),
+                    ), 
+                  );
+                },
+                icon: Icons.local_offer_outlined,
               ),
               CustomIconButton(
                 onPressed: () {
                   CustomShowDialog.show(
-                    context,
+                    context: context,
+                    blocContext: context,
                     text: AppText.save,
                     onPressed: () {},
-                    title: AppText.priority,
-                    content: Divider(),
+                    title: Text(
+                      textAlign: TextAlign.center,
+                      AppText.priority,
+                      style: TextStyles.lato70016,
+                    ),
+                    content: BlocProvider.value(
+                      value: bloc,
+                      child: SizedBox(
+                        width: context.getWidth() * 0.80,
+                        height: context.getHeight() * 0.35,
+                        child: Column(
+                          children: [
+                            Divider(),
+                            SizedBox(height: 20),
+                            TaskPriority(),
+                          ],
+                        ),
+                      ),
+                    ),
                   );
                 },
                 icon: Icons.flag_outlined,

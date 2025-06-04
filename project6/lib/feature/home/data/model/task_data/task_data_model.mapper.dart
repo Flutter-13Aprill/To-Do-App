@@ -20,6 +20,9 @@ class TaskDataModelMapper extends ClassMapperBase<TaskDataModel> {
   @override
   final String id = 'TaskDataModel';
 
+  static String? _$id(TaskDataModel v) => v.id;
+  static const Field<TaskDataModel, String> _f$id =
+      Field('id', _$id, opt: true);
   static String _$task(TaskDataModel v) => v.task;
   static const Field<TaskDataModel, String> _f$task = Field('task', _$task);
   static String _$description(TaskDataModel v) => v.description;
@@ -29,31 +32,28 @@ class TaskDataModelMapper extends ClassMapperBase<TaskDataModel> {
   static const Field<TaskDataModel, String> _f$date = Field('date', _$date);
   static String _$time(TaskDataModel v) => v.time;
   static const Field<TaskDataModel, String> _f$time = Field('time', _$time);
-  static String _$status(TaskDataModel v) => v.status;
-  static const Field<TaskDataModel, String> _f$status =
-      Field('status', _$status);
-  static int _$taskCategory(TaskDataModel v) => v.taskCategory;
-  static const Field<TaskDataModel, int> _f$taskCategory =
-      Field('taskCategory', _$taskCategory);
+  static int _$priority(TaskDataModel v) => v.priority;
+  static const Field<TaskDataModel, int> _f$priority =
+      Field('priority', _$priority);
 
   @override
   final MappableFields<TaskDataModel> fields = const {
+    #id: _f$id,
     #task: _f$task,
     #description: _f$description,
     #date: _f$date,
     #time: _f$time,
-    #status: _f$status,
-    #taskCategory: _f$taskCategory,
+    #priority: _f$priority,
   };
 
   static TaskDataModel _instantiate(DecodingData data) {
     return TaskDataModel(
+        id: data.dec(_f$id),
         task: data.dec(_f$task),
         description: data.dec(_f$description),
         date: data.dec(_f$date),
         time: data.dec(_f$time),
-        status: data.dec(_f$status),
-        taskCategory: data.dec(_f$taskCategory));
+        priority: data.dec(_f$priority));
   }
 
   @override
@@ -110,12 +110,12 @@ extension TaskDataModelValueCopy<$R, $Out>
 abstract class TaskDataModelCopyWith<$R, $In extends TaskDataModel, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   $R call(
-      {String? task,
+      {String? id,
+      String? task,
       String? description,
       String? date,
       String? time,
-      String? status,
-      int? taskCategory});
+      int? priority});
   TaskDataModelCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -129,28 +129,28 @@ class _TaskDataModelCopyWithImpl<$R, $Out>
       TaskDataModelMapper.ensureInitialized();
   @override
   $R call(
-          {String? task,
+          {Object? id = $none,
+          String? task,
           String? description,
           String? date,
           String? time,
-          String? status,
-          int? taskCategory}) =>
+          int? priority}) =>
       $apply(FieldCopyWithData({
+        if (id != $none) #id: id,
         if (task != null) #task: task,
         if (description != null) #description: description,
         if (date != null) #date: date,
         if (time != null) #time: time,
-        if (status != null) #status: status,
-        if (taskCategory != null) #taskCategory: taskCategory
+        if (priority != null) #priority: priority
       }));
   @override
   TaskDataModel $make(CopyWithData data) => TaskDataModel(
+      id: data.get(#id, or: $value.id),
       task: data.get(#task, or: $value.task),
       description: data.get(#description, or: $value.description),
       date: data.get(#date, or: $value.date),
       time: data.get(#time, or: $value.time),
-      status: data.get(#status, or: $value.status),
-      taskCategory: data.get(#taskCategory, or: $value.taskCategory));
+      priority: data.get(#priority, or: $value.priority));
 
   @override
   TaskDataModelCopyWith<$R2, TaskDataModel, $Out2> $chain<$R2, $Out2>(

@@ -1,20 +1,32 @@
-import 'package:cupertino_calendar_picker/cupertino_calendar_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:project6/core/text/text_styles.dart';
+import 'package:project6/feature/home/presentation/bloc/home_bloc.dart';
+import 'package:time_picker_spinner/time_picker_spinner.dart';
 
-class Time {
-  static Future<DateTime?> onCalendarWidgetTap(BuildContext context) async {
-    final RenderBox? renderBox = context.findRenderObject() as RenderBox?;
-    final nowDate = DateTime.now();
+class Time extends StatelessWidget {
+  const Time({super.key});
+  
 
-    return showCupertinoCalendarPicker(
-      context,
-      widgetRenderBox: renderBox,
-      minimumDateTime: nowDate.subtract(const Duration(days: 15)),
-      initialDateTime: nowDate,
-      maximumDateTime: nowDate.add(const Duration(days: 360)),
-      mode: CupertinoCalendarMode.dateTime,
-      timeLabel: 'Ends',
-      onDateTimeChanged: (dateTime) {},
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<HomeBloc, HomeState>(
+      builder: (context, state) {
+        final bloc = context.read<HomeBloc>();
+        return TimePickerSpinner(
+          is24HourMode: false,
+          normalTextStyle: TextStyles.lato40016.copyWith(color: Colors.grey),
+          highlightedTextStyle: TextStyles.lato40016.copyWith(
+            color: Colors.white,
+          ),
+          spacing: 30,
+          itemHeight: 50,
+          isForce2Digits: true,
+          onTimeChange: (time) {
+            bloc.add(GetTimeEvent(time: time));
+          },
+        );
+      },
     );
   }
 }

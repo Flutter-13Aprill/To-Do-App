@@ -19,18 +19,15 @@ class AppTheme {
       backgroundColor: AppPalette.lightPurple,
       foregroundColor: AppPalette.whiteColor,
       shape: CircleBorder(),
-      iconSize:32,
-      sizeConstraints:BoxConstraints(
-        minWidth: 64,
-        minHeight: 64,
-
-      )
+      iconSize: 32,
+      sizeConstraints: BoxConstraints(minWidth: 64, minHeight: 64),
     ),
     //Elevated Button Theme
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusGeometry.circular(4),
+
           side: BorderSide(color: AppPalette.purpleColor, width: 2),
         ),
       ),

@@ -17,7 +17,11 @@ dependencies:
   dart_mappable: ^4.5.0
   supabase_flutter: ^2.9.0
   flutter_dotenv: ^5.2.1
-  cupertino_calendar_picker: ^2.2.5
+  table_calendar: ^3.2.0
+  intl: ^0.20.2
+  wheel_picker: ^0.2.1
+  time_picker_spinner: ^1.0.2
+
 
 dev_dependencies:
   flutter_test:
