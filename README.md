@@ -8,6 +8,12 @@ You will focus on creating a functional and well-designed app with a user-friend
 
 ---
 
+### 🎨 Figma Design
+
+[🔗 Figma Desig](https://www.figma.com/design/uRS0DgqudB60wE47MadsFB/todo-app?node-id=1-15253&t=w1CSISQclJTFWRjn-0)
+
+---
+
 ### Features ⭐️
 
 - Intro Screens to welcome the user  
