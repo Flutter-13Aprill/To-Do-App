@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:uptodo/core/theme/app_palette.dart';
 
 class AuthTextfield extends StatelessWidget {
-  const AuthTextfield({super.key,required this.label,required this.onValidate, required this.onSubmit, required this.focusNode ,this.isPassword = false});
+  const AuthTextfield({super.key,required this.label,required this.controller ,required this.onValidate, required this.onSubmit, required this.focusNode ,this.isPassword = false});
   final String label;
   final bool isPassword;
   final FocusNode focusNode;
+  final TextEditingController controller;
   final void Function(String value)? onSubmit;
 
   final String? Function(String? value)? onValidate;
@@ -13,6 +14,7 @@ class AuthTextfield extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       focusNode: focusNode,
       cursorColor: AppPalette.primaryTextColor,
       cursorHeight: 12,
@@ -45,9 +47,6 @@ class AuthTextfield extends StatelessWidget {
       ),
       validator: onValidate,
       onFieldSubmitted: onSubmit ,
-      onTapOutside: (event) {
-        FocusScope.of(context).unfocus();
-      },
     );
   }
 }

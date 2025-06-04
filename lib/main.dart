@@ -3,6 +3,8 @@ import 'package:uptodo/core/theme/app_theme.dart';
 import 'package:uptodo/core/connection_supabase.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:uptodo/features/bottom_nav/presentation/bottom_nav_screen.dart';
+import 'package:uptodo/features/home/presentation/home_screen.dart';
 import 'package:uptodo/features/onboarding/presentation/onboarding_screen.dart';
 
 void main() async {

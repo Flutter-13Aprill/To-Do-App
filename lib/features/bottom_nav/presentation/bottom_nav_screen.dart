@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:uptodo/features/Authentication/presentation/login_screen.dart';
-import 'package:uptodo/features/Authentication/presentation/register_screen.dart';
-import 'package:uptodo/features/Authentication/presentation/start_screen.dart';
 import 'package:uptodo/features/bottom_nav/logic/bloc/bottom_nav_bloc.dart';
+import 'package:uptodo/features/calendar/presentation/calendar_screen.dart';
 import 'package:uptodo/features/home/presentation/home_screen.dart';
+import 'package:uptodo/features/profile/presentation/profile_screen.dart';
 
 class BottomNavScreen extends StatelessWidget {
   BottomNavScreen({super.key});
 
-  List<Widget> screens = [HomeScreen(), LoginScreen(), StartScreen()];
+  final List<Widget> screens = [HomeScreen(), CalendarScreen(), ProfileScreen()];
 
   @override
   Widget build(BuildContext context) {

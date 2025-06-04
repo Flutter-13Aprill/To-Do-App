@@ -14,7 +14,8 @@ class AppTheme {
     ),
 
     appBarTheme: AppBarTheme(
-      backgroundColor: AppPalette.scaffoldBackgroundColor
+      backgroundColor: AppPalette.scaffoldBackgroundColor,
+      titleTextStyle: TextStyles.lato60024
     ),
 
     floatingActionButtonTheme: FloatingActionButtonThemeData(
@@ -25,7 +26,7 @@ class AppTheme {
 
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        disabledBackgroundColor: AppPalette.disabledBackgroundButtonColor ,
+        disabledBackgroundColor: AppPalette.disabledBackgroundButtonColor,
         backgroundColor: AppPalette.primaryBackgroundButtonColor,
         foregroundColor: Colors.white,
         textStyle: TextStyles.lato40018,

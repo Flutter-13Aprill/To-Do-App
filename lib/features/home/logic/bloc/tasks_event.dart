@@ -3,10 +3,14 @@ part of 'tasks_bloc.dart';
 @immutable
 sealed class TasksEvent {}
 
-class PressedFloatingButton extends TasksEvent{}
+final class ToAddTaskEvent extends TasksEvent{}
 
-class AddTaskEvent extends TasksEvent{
+final class AddTaskEvent extends TasksEvent{
   final TaskModel task;
-
   AddTaskEvent({required this.task});
+}
+
+final class SelectedDateEvent extends TasksEvent{
+
+  SelectedDateEvent();
 }

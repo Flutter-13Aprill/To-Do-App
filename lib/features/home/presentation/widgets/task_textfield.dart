@@ -14,6 +14,7 @@ class TaskTextfield extends StatelessWidget {
       controller: controller,
       cursorHeight: 18,
       cursorColor: Colors.white,
+      style: TextStyle(color: Colors.white),
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: TextStyles.lato40018,

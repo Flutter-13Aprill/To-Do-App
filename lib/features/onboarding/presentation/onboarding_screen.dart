@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/svg.dart';
 import 'package:uptodo/core/extensions/screen_size.dart';
+import 'package:uptodo/core/extensions/navigation_extensions.dart';
 import 'package:uptodo/core/text/text_styles.dart';
 import 'package:uptodo/core/theme/app_palette.dart';
 import 'package:uptodo/core/widgets/empty_space.dart';
+import 'package:uptodo/features/authentication/presentation/start_screen.dart';
 import 'package:uptodo/features/onboarding/logic/bloc/onboarding_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:uptodo/features/onboarding/presentation/widgets/onboarding_main_section.dart';
@@ -32,9 +34,12 @@ class OnboardingScreen extends StatelessWidget {
                 child: Column(
                   children: [
 
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(tr('onboarding_screen.skip'), style: TextStyles.lato40018.copyWith( color: AppPalette.tertiaryTextColor)),
+                    GestureDetector(
+                      onTap: () => context.goToWithReplacement(screen: StartScreen()),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(tr('onboarding_screen.skip'), style: TextStyles.lato40018.copyWith( color: AppPalette.tertiaryTextColor)),
+                      ),
                     ),
 
                     EmptySpace.sizeH24,
@@ -92,15 +97,27 @@ class OnboardingScreen extends StatelessWidget {
                             imagePageController.animateToPage(onboardingBloc.currentIndex - 1, duration: Duration(milliseconds: 200), curve: Curves.easeInOut);
                             textPageController.animateToPage(onboardingBloc.currentIndex - 1, duration: Duration(milliseconds: 200), curve: Curves.easeInOut);
                           }, 
+                          style: TextButton.styleFrom(
+                            side: BorderSide.none
+                          ),
                           child:Text(tr('onboarding_screen.back'),style: TextStyles.lato40018.copyWith(color: AppPalette.secondaryTextColor))
                           ),
 
                         ElevatedButton(
                           onPressed: (){
+
+                            if(onboardingBloc.currentIndex == 2){
+                              context.goToWithReplacement(screen: StartScreen());
+                            }
+
                             imagePageController.animateToPage(onboardingBloc.currentIndex + 1, duration: Duration(milliseconds: 200), curve: Curves.easeInOut);
                             textPageController.animateToPage(onboardingBloc.currentIndex + 1, duration: Duration(milliseconds: 200), curve: Curves.easeInOut);
                           }, 
-                          style: ElevatedButton.styleFrom(), 
+                          style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadiusGeometry.circular(4)
+                            )
+                          ),
                           child: Text(tr('onboarding_screen.next')))
                       ],
                     ),

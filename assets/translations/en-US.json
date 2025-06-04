@@ -34,8 +34,48 @@
 
 
     "home_screen": {
+        "app_bar_title": "Home",
         "empty_list_title": "What do you want to do today?",
         "empty_list_subtitle": "Tap + to add your tasks",
-        "bottom_sheet_headline": "Add Task"
+        "bottom_sheet_headline": "Add Task",
+        "task_name": "Task Name",
+        "description": "Description",
+        "task_priority": "Task Priority",
+        "search": "Search for your task...",
+        "choose_category": "Choose Category",
+        "Grocery": "Grocery",
+        "Work": "Work",
+        "Sport": "Sport",
+        "Design": "Design",
+        "University": "University",
+        "Social": "Social",
+        "Music": "Music",
+        "Health": "Health",
+        "Movie" : "Movie",
+        "Home": "Home"
+    },
+
+    "edit_task_screen": {
+        "task_time": "Task Time",
+        "task_category": "Task Category",
+        "task_priority": "Task Priority",
+        "sub_task" : "Sub - Task",
+        "delete_task": "Delete Task"
+    },
+
+    "calendar_screen": {
+        "app_bar_title": "Calendar"
+    },
+
+    "profile_screen": {
+        "app_bar_title": "Profile",
+        "task_left": "{} Tasks left",
+        "task_done": "{} Tasks done",
+        "settings": "Settings",
+        "app_settings": "App Settings",
+        "account": "Account",
+        "change_account_name": "Change account name",
+        "change_account_image": "Change account Image",
+        "log_out": "Log out"
     }
 }

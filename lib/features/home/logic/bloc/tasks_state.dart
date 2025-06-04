@@ -5,8 +5,8 @@ sealed class TasksState {}
 
 final class TasksInitial extends TasksState {}
 
-final class SuccessPressingFloatingButtonState extends TasksState{}
+final class ToShowAddTaskDialog extends TasksState{}
 
-final class SuccessSelectDateState extends TasksState{}
+final class SuccessAddingTaskState extends TasksState{}
 
-final class SuccessAddTaskState extends TasksState {}
+final class SuccessSelectingState extends TasksState{}

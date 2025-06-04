@@ -1,14 +1,14 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:uptodo/core/helpers/extensions/navigation_extensions.dart';
+import 'package:uptodo/core/extensions/navigation_extensions.dart';
 import 'package:uptodo/core/helpers/validator/textfield_validator.dart';
 import 'package:uptodo/core/text/text_styles.dart';
 import 'package:uptodo/core/widgets/app_custom_button.dart';
 import 'package:uptodo/core/widgets/empty_space.dart';
-import 'package:uptodo/features/Authentication/logic/bloc/auth_bloc.dart';
-import 'package:uptodo/features/Authentication/presentation/register_screen.dart';
-import 'package:uptodo/features/Authentication/presentation/widgets/auth_textfield.dart';
+import 'package:uptodo/features/authentication/logic/bloc/auth_bloc.dart';
+import 'package:uptodo/features/authentication/presentation/register_screen.dart';
+import 'package:uptodo/features/authentication/presentation/widgets/auth_textfield.dart';
 import 'package:uptodo/features/bottom_nav/presentation/bottom_nav_screen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -40,10 +40,7 @@ class LoginScreen extends StatelessWidget {
 
                           Align(
                             alignment: Alignment.centerLeft,
-                            child: Text(
-                              tr('auth_screen.login'),
-                              style: TextStyles.lato70032,
-                            ),
+                            child: Text(tr('auth_screen.login'),style: TextStyles.lato70032,),
                           ),
 
                           EmptySpace.sizeH40,
@@ -52,17 +49,14 @@ class LoginScreen extends StatelessWidget {
                             key: authBloc.formKey,
                             child: Column(
                               children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    tr('auth_screen.username'),
-                                    style: TextStyles.lato40018,
-                                  ),
+                                Align(alignment: Alignment.centerLeft,
+                                  child: Text(tr('auth_screen.username'),style: TextStyles.lato40018,),
                                 ),
 
                                 EmptySpace.sizeH8,
 
                                 AuthTextfield(
+                                  controller: authBloc.usernameController,
                                   focusNode: authBloc.usernameNode,
                                   label: tr('auth_screen.asking_for_username'),
                                   onValidate: nameValidator,
@@ -74,9 +68,7 @@ class LoginScreen extends StatelessWidget {
                                         isConfirmationPassword: false,
                                       ),
                                     );
-                                    FocusScope.of(
-                                      context,
-                                    ).requestFocus(authBloc.passwordNode);
+                                    FocusScope.of(context,).requestFocus(authBloc.passwordNode);
                                   },
                                 ),
 
@@ -84,15 +76,13 @@ class LoginScreen extends StatelessWidget {
 
                                 Align(
                                   alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    tr('auth_screen.password'),
-                                    style: TextStyles.lato40018,
-                                  ),
+                                  child: Text(tr('auth_screen.password'),style: TextStyles.lato40018,),
                                 ),
 
                                 EmptySpace.sizeH8,
 
                                 AuthTextfield(
+                                  controller: authBloc.passwordController,
                                   focusNode: authBloc.passwordNode,
                                   label: tr('auth_screen.asking_for_password'),
                                   onValidate: validatePassword,
@@ -106,14 +96,8 @@ class LoginScreen extends StatelessWidget {
                                       ),
                                     );
 
-                                    final firstField = authBloc
-                                        .passwordController
-                                        .text
-                                        .isNotEmpty;
-                                    final secondField = authBloc
-                                        .passwordController
-                                        .text
-                                        .isNotEmpty;
+                                    final firstField = authBloc.passwordController.text.isNotEmpty;
+                                    final secondField = authBloc.passwordController.text.isNotEmpty;
 
                                     if (firstField && secondField) {
                                       authBloc.add(

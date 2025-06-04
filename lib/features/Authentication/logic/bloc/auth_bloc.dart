@@ -4,7 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:meta/meta.dart';
-import 'package:uptodo/features/Authentication/data/auth_data_layer.dart';
+import 'package:uptodo/features/authentication/data/auth_data_layer.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -59,8 +59,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   FutureOr<void> signUp(SignUpEvent event, Emitter<AuthState> emit) async{
 
     try{
+      
+      usernameController.clear();
+      passwordController.clear();
+      confirmationPasswordController.clear();
       await authGetit.getItSignUp(username: event.username , password: event.password);
-      emit(SuccessCreatingAccount());
+
+      emit(SuccessCreatingAccount(message: 'You have created an account'));
     }catch(error){
       emit(ErrorCreatingAccount(message: error.toString()));
     }
@@ -69,6 +74,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   FutureOr<void> signIn(LogInEvent event, Emitter<AuthState> emit) async{
     
     try{
+      
+      usernameController.clear();
+      passwordController.clear();
+      
       await authGetit.getItSignIn(username: event.username , password: event.password);
       emit(SuccessLogInState());
     }catch(error){

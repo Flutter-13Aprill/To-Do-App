@@ -26,4 +26,10 @@ class TextStyles {
     fontWeight: FontWeight.w400,
     fontSize: 14
   );
+
+  static final lato50020 = GoogleFonts.inter(
+    fontWeight: FontWeight.w500,
+    fontSize: 20,
+    color: AppPalette.primaryTextColor,
+  );
 }

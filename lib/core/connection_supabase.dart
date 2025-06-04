@@ -6,7 +6,9 @@ import 'package:uptodo/features/home/data/model/task_model.dart';
 
 class ConnectionSupabase {
 
-  static Supabase? _supabase = Supabase.instance;
+  static Supabase? supabase = Supabase.instance;
+
+  static User? user;
 
   /// [init] a method use to connect with the supabase services
   static Future<void> init() async{
@@ -17,7 +19,7 @@ class ConnectionSupabase {
 
       await dotenv.load(fileName: '.env');
 
-      _supabase = await Supabase.initialize(
+      supabase = await Supabase.initialize(
         url: dotenv.get('supabase_url'),
         anonKey: dotenv.get('anon_public_key')
       );
@@ -25,36 +27,20 @@ class ConnectionSupabase {
       log('*** Connection with Supabase has been done successfully ***');
 
     }catch(error){
+      log('----- Error with connection with Supabase');
       throw SupabaseRepoException(error.toString());
     }
   }
 
-  /// [signUpWithUsernamePassword] a method used to create an account for the user
-  static Future<AuthResponse> signUpWithUsernamePassword({required String username, required String password}) async {
-    final fakeEmail = '$username@gmail.com';
-    return await _supabase!.client.auth.signUp(
-      email: fakeEmail,
-      password: password
-    );
-  }
-
-  /// [ signInWithUsernamePassword ] a method used to sign in with username
-  static Future<AuthResponse> signInWithUsernamePassword({required String username,required String password,}) async {
-    final fakeEmail = '$username@gmail.com';
-    return await _supabase!.client.auth.signInWithPassword(
-      email: fakeEmail,
-      password: password,
-    );
-  }
 
 
   static Future<void> signOut() async{
-    await _supabase!.client.auth.signOut();
+    await supabase!.client.auth.signOut();
   }
 
 
   String getUserName(){
-    final session = _supabase!.client.auth.currentSession;
+    final session = supabase!.client.auth.currentSession;
     final user = session!.user;
 
     final indexOfHash = user.email!.indexOf('@');
@@ -64,7 +50,7 @@ class ConnectionSupabase {
 
   static Future<List<TaskModel>> getTasks() async {
 
-    final result = await _supabase?.client.from('tasks').select();
+    final result = await supabase?.client.from('tasks').select();
 
     List<TaskModel> tasks = [];
 
@@ -77,6 +63,6 @@ class ConnectionSupabase {
   }
 
   static addNewTask({ required TaskModel task}) async {
-    await _supabase?.client.from('tasks').insert(task);
+    await supabase?.client.from('tasks').insert(task);
   }
 }
