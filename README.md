@@ -1,75 +1,66 @@
-# 📝 To-Do App Development
+# ✔ UP ToDo App  
+![TO DO App Demo Video](Recording 2025-06-02 055111.mp4)
+![Meeple](assets/images/splach.png)
 
-![To-Do App](https://paper-attachments.dropboxusercontent.com/s_00CD5CACA09F1C68917B504E80CC816F26752426CE251F931A757D85A4A86FEC_1734423199269_image.png)
+---
+- Designed for productivity seekers, this To-Do app offers a smart and intuitive platform to organize daily tasks, manage priorities, and stay focused — all in one seamless and user-friendly experience.
+
+
+# 🏗 Tech Stack
+- 📱 Frontend: Flutter, Dart
+- 🎨 Design: Figma
+- 🔮 State Management: BLoC
+- ☁ Backend: Supabase
 
 ---
 
-## 📘 Introduction
+# ⬇ Installation
 
-The goal of this project is to develop a **To-Do Application**. This app will allow users to manage their daily tasks efficiently by adding, organizing, and viewing tasks. You will focus on creating a polished, functional app with a **user-friendly design**.
+1. ⿻ Clone the repository:
+   git clone 
 
-The app will include several features and screens, such as:
+2. ➤ Navigate to the project folder:
 
-- Intro Screens for welcoming the user.
-- Login & Register screens for user authentication.
-- A Home Screen for managing tasks.
-- A Calendar Screen for viewing tasks by date.
-- A Settings Screen for customization.
+3. ⬇ Install dependencies:
+flutter pub get
 
----
+4. ⚡ Run the app:
+flutter run
 
-## 📱 Core Functionality
+# 🎨 Figma Design
+ - [TO DO App Figma](https://www.figma.com/design/uRS0DgqudB60wE47MadsFB/todo-app?node-id=0-1&t=mg2vVcchifwroUgF-1)
 
-- Intro Screens  
-- Login & Register Screens  
-- Home Screen (Index)  
-- Category Screens  
-- Task Screen  
-- Calendar Screen  
-- User Profile Screen  
-- Settings Screen  
+# 📦 External packages
+ - 🧊 flutter_bloc & bloc – Used for implementing a clean BLoC architecture and state management throughout the app.
 
----
+ - ⚙ get_it & injectable – Used for dependency injection to improve code modularity and maintainability.
 
-## 🔧 Concepts to Implement
+-  🛢 supabase_flutter – Handles backend services including authentication and data storage.
 
-- Custom Theme Design  
-- Form Validation  
-- Localization Support  
-- BLoC Pattern  
-- Supabase Integration  
-- Dependency Injection using GetIt  
+# 💡How to Use
+1. ✍🏽 Login / Sign Up:
 
-> **Note:**  
-> _All logical operations should be performed within the interface._
+      Start by creating a new account or logging in using your username and password.
 
----
+2. ➕  Add a Task:
 
-## 🎨 Figma Design
+      Start by quickly adding your daily tasks — just enter the title, time, and an optional description.
+   
+3. ✔ Mark as Completed:
 
-- [Figma Design Link (Main)](https://www.figma.com/design/uRS0DgqudB60wE47MadsFB/todo-app?node-id=1-16749&t=BWTFqAeY2FjwyIRe-1)  
-- [Figma Design Link (Alternative)](https://www.figma.com/design/uRS0DgqudB60wE47MadsFB/todo-app?node-id=1-16749&t=BWTFqAeY2FjwyIRe-1)
+      Once a task is done, simply check it off to keep track of your accomplishments.
 
----
+4.  📊 Organize by Priority:
 
-## 💻 GitHub Submission Guidelines
+     Sort your tasks based on priority and focus on what matters most.
 
-- Your pull request must include a **well-structured `README.md` file**.
-- The README should include:
-  - Description of the project  
-  - Setup instructions  
-  - A screenshot of your app  
 
----
+5.   🌐 Change Language:
 
-## ⏰ Deadline
+        Proceed to checkout, select your payment method, and confirm your order.
 
-**Your project must be submitted by June 2, before 10:00 AM.**
+6.  👤 View Profile:
 
----
-
-## 🌟 Reminder
-
-> Dream big,  
-> Code smart,  
-> And never stop learning. 🌠💡
+        Track completed tasks, update your personal info, and manage preferences — all from your profile.
+#  👨🏻‍🎨Author
+- Wafa Alsibyani
